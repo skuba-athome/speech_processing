@@ -54,13 +54,13 @@ class recognizer(object):
 
         # parameters for lm and dic
         try:
-	    rospy.set_param('~lm','/home/xcerx/ros_workspace/rharmony/pocketsphinx/demo/1634.lm')
+	    rospy.set_param('~lm','/home/xcerx/skuba_athome_main/rharmony/pocketsphinx/demo/1634.lm')
             lm_ = rospy.get_param('~lm')
         except:
             rospy.logerr('Please specify a language model file')
             return
         try:
-	    rospy.set_param('~dict','/home/xcerx/ros_workspace/rharmony/pocketsphinx/demo/1634.dic')
+	    rospy.set_param('~dict','/home/xcerx/skuba_athome_main/rharmony/pocketsphinx/demo/1634.dic')
             dict_ = rospy.get_param('~dict')
         except:
             rospy.logerr('Please specify a dictionary')
