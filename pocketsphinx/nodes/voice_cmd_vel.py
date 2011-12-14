@@ -59,7 +59,7 @@ class voice_cmd_vel:
 		elif(msg == 'test'):
 			self.fspeak('command is '+msg+' yes or no')
 			self.state = 5
-		elif(msg == 'target'):
+		elcif(msg == 'target'):
 			self.fspeak('command is '+msg+' yes or no')
 			self.state = 6
 		else:
