@@ -1,0 +1,134 @@
+Language model created by QuickLM on Tue Dec 20 15:02:54 EST 2011
+Copyright (c) 1996-2010 Carnegie Mellon University and Alexander I. Rudnicky
+
+The model is in standard ARPA format, designed by Doug Paul while he was at MITRE.
+
+The code that was used to produce this language model is available in Open Source.
+Please visit http://www.speech.cs.cmu.edu/tools/ for more information
+
+The (fixed) discount mass is 0.5. The backoffs are computed using the ratio method.
+This model based on a corpus of 24 sentences and 30 words
+
+\data\
+ngram 1=30
+ngram 2=52
+ngram 3=28
+
+\1-grams:
+-0.8016 </s> -0.3010
+-0.8016 <s> -0.2264
+-2.1818 BRIAN -0.2264
+-2.1818 BRITNEY -0.2264
+-2.1818 DANIEL -0.2264
+-2.1818 DONNA -0.2264
+-2.1818 EMMA -0.2264
+-2.1818 HENRY -0.2264
+-2.1818 IS -0.2982
+-2.1818 JOSEPH -0.2264
+-2.1818 JUSTIN -0.2264
+-2.1818 KEVIN -0.2264
+-2.1818 ME -0.2264
+-2.1818 MICHAEL -0.2264
+-2.1818 MICHELLE -0.2264
+-2.1818 MY -0.2982
+-2.1818 NAME -0.2264
+-2.1818 NO -0.2264
+-2.1818 PETER -0.2264
+-2.1818 PHILIP -0.2264
+-2.1818 REMEMBER -0.2982
+-2.1818 RICHARD -0.2264
+-2.1818 ROBERT -0.2264
+-2.1818 SARAH -0.2264
+-2.1818 STEVE -0.2264
+-2.1818 THOMAS -0.2264
+-2.1818 TINA -0.2264
+-2.1818 TONY -0.2264
+-2.1818 WHAT -0.2982
+-2.1818 YES -0.2264
+
+\2-grams:
+-1.6812 <s> BRIAN 0.0000
+-1.6812 <s> BRITNEY 0.0000
+-1.6812 <s> DANIEL 0.0000
+-1.6812 <s> DONNA 0.0000
+-1.6812 <s> EMMA 0.0000
+-1.6812 <s> HENRY 0.0000
+-1.6812 <s> JOSEPH 0.0000
+-1.6812 <s> JUSTIN 0.0000
+-1.6812 <s> KEVIN 0.0000
+-1.6812 <s> MICHAEL 0.0000
+-1.6812 <s> MICHELLE 0.0000
+-1.6812 <s> NO 0.0000
+-1.6812 <s> PETER 0.0000
+-1.6812 <s> PHILIP 0.0000
+-1.6812 <s> REMEMBER 0.0000
+-1.6812 <s> RICHARD 0.0000
+-1.6812 <s> ROBERT 0.0000
+-1.6812 <s> SARAH 0.0000
+-1.6812 <s> STEVE 0.0000
+-1.6812 <s> THOMAS 0.0000
+-1.6812 <s> TINA 0.0000
+-1.6812 <s> TONY 0.0000
+-1.6812 <s> WHAT 0.0000
+-1.6812 <s> YES 0.0000
+-0.3010 BRIAN </s> -0.3010
+-0.3010 BRITNEY </s> -0.3010
+-0.3010 DANIEL </s> -0.3010
+-0.3010 DONNA </s> -0.3010
+-0.3010 EMMA </s> -0.3010
+-0.3010 HENRY </s> -0.3010
+-0.3010 IS MY 0.0000
+-0.3010 JOSEPH </s> -0.3010
+-0.3010 JUSTIN </s> -0.3010
+-0.3010 KEVIN </s> -0.3010
+-0.3010 ME </s> -0.3010
+-0.3010 MICHAEL </s> -0.3010
+-0.3010 MICHELLE </s> -0.3010
+-0.3010 MY NAME 0.0000
+-0.3010 NAME </s> -0.3010
+-0.3010 NO </s> -0.3010
+-0.3010 PETER </s> -0.3010
+-0.3010 PHILIP </s> -0.3010
+-0.3010 REMEMBER ME 0.0000
+-0.3010 RICHARD </s> -0.3010
+-0.3010 ROBERT </s> -0.3010
+-0.3010 SARAH </s> -0.3010
+-0.3010 STEVE </s> -0.3010
+-0.3010 THOMAS </s> -0.3010
+-0.3010 TINA </s> -0.3010
+-0.3010 TONY </s> -0.3010
+-0.3010 WHAT IS 0.0000
+-0.3010 YES </s> -0.3010
+
+\3-grams:
+-0.3010 <s> BRIAN </s>
+-0.3010 <s> BRITNEY </s>
+-0.3010 <s> DANIEL </s>
+-0.3010 <s> DONNA </s>
+-0.3010 <s> EMMA </s>
+-0.3010 <s> HENRY </s>
+-0.3010 <s> JOSEPH </s>
+-0.3010 <s> JUSTIN </s>
+-0.3010 <s> KEVIN </s>
+-0.3010 <s> MICHAEL </s>
+-0.3010 <s> MICHELLE </s>
+-0.3010 <s> NO </s>
+-0.3010 <s> PETER </s>
+-0.3010 <s> PHILIP </s>
+-0.3010 <s> REMEMBER ME
+-0.3010 <s> RICHARD </s>
+-0.3010 <s> ROBERT </s>
+-0.3010 <s> SARAH </s>
+-0.3010 <s> STEVE </s>
+-0.3010 <s> THOMAS </s>
+-0.3010 <s> TINA </s>
+-0.3010 <s> TONY </s>
+-0.3010 <s> WHAT IS
+-0.3010 <s> YES </s>
+-0.3010 IS MY NAME
+-0.3010 MY NAME </s>
+-0.3010 REMEMBER ME </s>
+-0.3010 WHAT IS MY
+
+\end\
+
