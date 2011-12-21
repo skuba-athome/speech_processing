@@ -18,7 +18,7 @@ import os
 import pygtk
 pygtk.require('2.0')
 import gtk
-
+import sys
 import gobject
 import pygst
 pygst.require('0.10')
@@ -28,6 +28,10 @@ import gst
 from std_msgs.msg import String
 from std_srvs.srv import *
 
+filename = sys.argv[1]
+print filename
+
+filepath = '/home/xcerx/ros_workspace/'
 class recognizer(object):
     """ GStreamer based speech recognizer. """
 
@@ -54,13 +58,14 @@ class recognizer(object):
 
         # parameters for lm and dic
         try:
-	    rospy.set_param('~lm','/home/xcerx/ros_workspace/skuba_athome_main/rharmony/pocketsphinx/demo/1634.lm')
+	    rospy.set_param('~lm',filepath+'skuba_athome_main/rharmony/pocketsphinx/demo/'+ filename +'.lm')
             lm_ = rospy.get_param('~lm')
         except:
+			
             rospy.logerr('Please specify a language model file')
             return
         try:
-	    rospy.set_param('~dict','/home/xcerx/ros_workspace/skuba_athome_main/rharmony/pocketsphinx/demo/1634.dic')
+	    rospy.set_param('~dict',filepath+'skuba_athome_main/rharmony/pocketsphinx/demo/'+ filename +'.dic')
             dict_ = rospy.get_param('~dict')
         except:
             rospy.logerr('Please specify a dictionary')
