@@ -28,10 +28,10 @@ import gst
 from std_msgs.msg import String
 from std_srvs.srv import *
 
-filename = sys.argv[1]
-print filename
+#filename = sys.argv[1]
+#print filename
 
-filepath = '/home/xcerx/ros_workspace/'
+filepath = '/home/skuba/'
 class recognizer(object):
     """ GStreamer based speech recognizer. """
 

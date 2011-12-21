@@ -10,6 +10,8 @@
   <depend package="std_msgs"/>
   <depend package="geometry_msgs"/><!-- only needed for demo -->
   <depend package="std_srvs"/>
+  <depend package="move_base_msgs"/>
+  
   <rosdep name="gstreamer_pocketsphinx"/>
 </package>
 
