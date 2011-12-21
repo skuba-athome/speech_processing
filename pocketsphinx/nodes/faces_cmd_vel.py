@@ -16,7 +16,7 @@ from geometry_msgs.msg import Twist
 from std_msgs.msg import String
 
 set_init = ['lumyai']
-set_name = ['pond','bank','max','ohm','pee']
+set_name = ['richard','philip','emma','daniel','tina','steve','henry','peter','robert','sarah','brian','thomas','britney','justin','tony','kevin','joseph','micheal','michelle','donna','pond']
 
 
 class voice_cmd_vel:
@@ -44,7 +44,7 @@ class voice_cmd_vel:
 	#self.FollowMe=enum('none','start','stop')
 
     def fspeak(self,sp):
-	os.system("espeak --stdout \'" + sp + "' | aplay")
+	os.system("espeak --stdout '" + sp + "' | aplay")
 
     def checkstate(self, msg):
         rospy.loginfo(msg.data+' '+str(self.state))
@@ -52,11 +52,12 @@ class voice_cmd_vel:
 	msg = str(msg.data)
 	if(msg in set_init):
 		state = 1
+		self.fspeak('sir yes ir')
 	if(self.state == 1):
 		if(msg == 'remember me'):
 			self.fspeak('command is '+msg+' yes or no')
 			self.state = 2
-		elif(msg == 'test'):
+		elif(msg == 'what is my name'):
 			self.fspeak('command is '+msg+' yes or no')
 			self.state = 5
 		elif(msg == 'target'):
@@ -86,8 +87,11 @@ class voice_cmd_vel:
 			self.fspeak('yes or no')
 	elif(self.state == 3):
 		self.name = msg
-		self.fspeak('your name is '+msg+' yes or no')
-		self.state = 4
+		if not( self.name in set_name):
+			self.fspeak('i dont know your name')
+		else:
+			self.fspeak('your name is '+msg+' yes or no')
+			self.state = 4
 	elif(self.state == 4):
 		if(msg == 'yes'):	
 			self.fspeak('please wait')
