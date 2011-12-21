@@ -70,6 +70,8 @@ class recognizer(object):
         except:
             rospy.logerr('Please specify a dictionary')
             return
+
+	print lm_
         asr.set_property('lm',lm_)
         asr.set_property('dict',dict_)
 
