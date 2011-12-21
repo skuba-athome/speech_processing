@@ -1,4 +1,4 @@
-Language model created by QuickLM on Wed Dec 21 14:45:55 EST 2011
+Language model created by QuickLM on Thu Dec 22 08:26:52 EST 2011
 Copyright (c) 1996-2010 Carnegie Mellon University and Alexander I. Rudnicky
 
 The model is in standard ARPA format, designed by Doug Paul while he was at MITRE.
@@ -7,35 +7,38 @@ The code that was used to produce this language model is available in Open Sourc
 Please visit http://www.speech.cs.cmu.edu/tools/ for more information
 
 The (fixed) discount mass is 0.5. The backoffs are computed using the ratio method.
-This model based on a corpus of 7 sentences and 10 words
+This model based on a corpus of 8 sentences and 11 words
 
 \data\
-ngram 1=10
-ngram 2=15
-ngram 3=10
+ngram 1=11
+ngram 2=17
+ngram 3=11
 
 \1-grams:
--0.8361 </s> -0.3010
--0.8361 <s> -0.2326
--1.6812 A -0.2326
--1.6812 B -0.2326
--1.6812 C -0.2326
--1.6812 LAMYAI -0.2326
--1.6812 NAVIGATION -0.2326
--1.6812 NO -0.2326
--1.2041 POINT -0.2730
--1.6812 YES -0.2326
+-0.8293 </s> -0.3010
+-0.8293 <s> -0.2314
+-1.7324 A -0.2314
+-1.7324 B -0.2314
+-1.7324 C -0.2314
+-1.7324 LAMYAI -0.2314
+-1.7324 LUMYAI -0.2314
+-1.7324 NAVIGATION -0.2314
+-1.7324 NO -0.2314
+-1.2553 POINT -0.2762
+-1.7324 YES -0.2314
 
 \2-grams:
--1.1461 <s> LAMYAI 0.0000
--1.1461 <s> NAVIGATION 0.0000
--1.1461 <s> NO 0.0000
--0.6690 <s> POINT 0.0000
--1.1461 <s> YES 0.0000
+-1.2041 <s> LAMYAI 0.0000
+-1.2041 <s> LUMYAI 0.0000
+-1.2041 <s> NAVIGATION 0.0000
+-1.2041 <s> NO 0.0000
+-0.7270 <s> POINT 0.0000
+-1.2041 <s> YES 0.0000
 -0.3010 A </s> -0.3010
 -0.3010 B </s> -0.3010
 -0.3010 C </s> -0.3010
 -0.3010 LAMYAI </s> -0.3010
+-0.3010 LUMYAI </s> -0.3010
 -0.3010 NAVIGATION </s> -0.3010
 -0.3010 NO </s> -0.3010
 -0.7782 POINT A 0.0000
@@ -45,6 +48,7 @@ ngram 3=10
 
 \3-grams:
 -0.3010 <s> LAMYAI </s>
+-0.3010 <s> LUMYAI </s>
 -0.3010 <s> NAVIGATION </s>
 -0.3010 <s> NO </s>
 -0.7782 <s> POINT A

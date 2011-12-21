@@ -1,10 +1,20 @@
 <launch>
 
-  <node name="recognizer" pkg="pocketsphinx" type="recognizer.py">
+  <node name="recognizer" pkg="pocketsphinx" type="recognizer_move.py">
     <param name="lm" value="$(find pocketsphinx)/demo/voice_goal.lm"/>
     <param name="dict" value="$(find pocketsphinx)/demo/voice_goal.dic"/>
   </node>
 
-  <node name="voice_move_base" pkg="pocketsphinx" type="voice_move_base.py"/>
+  <node name="voice_move_base" pkg="pocketsphinx" type="voice_move_base.py">
+    <param name="xA" type="double" value="50.0"/>
+    <param name="yA" type="double" value="50.0"/>
+    <param name="thA" type="double" value="0.0"/>
+    <param name="xB" type="double" value="20.0"/>
+    <param name="yB" type="double" value="20.0"/>
+    <param name="thB" type="double" value="0.0"/>
+    <param name="xC" type="double" value="20.0"/>
+    <param name="yC" type="double" value="20.0"/>
+    <param name="thC" type="double" value="0.0"/>
+  </node>
 
 </launch>
