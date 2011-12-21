@@ -28,8 +28,6 @@ import gst
 from std_msgs.msg import String
 from std_srvs.srv import *
 
-filename = sys.argv[1]
-print filename
 
 filepath = '/home/xcerx/ros_workspace/'
 class recognizer(object):
@@ -58,18 +56,20 @@ class recognizer(object):
 
         # parameters for lm and dic
         try:
-			rospy.set_param('~lm',filepath+'skuba_athome_main/rharmony/pocketsphinx/demo/'+ filename +'.lm')
+	#		rospy.set_param('~lm',filepath+'skuba_athome_main/rharmony/pocketsphinx/demo/'+ filename +'.lm')
 			lm_ = rospy.get_param('~lm')
+ 			print lm_
         except:
 			
             rospy.logerr('Please specify a language model file')
             return
         try:
-			rospy.set_param('~dict',filepath+'skuba_athome_main/rharmony/pocketsphinx/demo/'+ filename +'.dic')
+	#		rospy.set_param('~dict',filepath+'skuba_athome_main/rharmony/pocketsphinx/demo/'+ filename +'.dic')
 			dict_ = rospy.get_param('~dict')
         except:
             rospy.logerr('Please specify a dictionary')
             return
+ #       print lm_
         asr.set_property('lm',lm_)
         asr.set_property('dict',dict_)
 
