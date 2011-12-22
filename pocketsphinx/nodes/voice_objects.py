@@ -17,7 +17,7 @@ from std_msgs.msg import String
 
 set_init = ['lumyai']
 set_name = ['richard','philip','emma','daniel','tina','steve','henry','peter','robert','sarah','brian','thomas','britney','justin','tony','kevin','joseph','micheal','michelle','donna','pond']
-
+set_cmd = ['get coke','get numtip','get coke']
 
 class voice_cmd_vel:
 
@@ -32,6 +32,7 @@ class voice_cmd_vel:
 	self.pubManipulation = rospy.Publisher('cmd_Followme', String)
 	self.state = 1
 	self.name = ''
+	self.obj = ''
 	#Subscribe
 	rospy.Subscriber('recognizer/output', String, self.checkstate)
 
@@ -50,68 +51,23 @@ class voice_cmd_vel:
         rospy.loginfo(msg.data+' '+str(self.state))
 	#self.pub_.publish(self.Currentstate[1]*10+self.Currentstate[0])
 	msg = str(msg.data)
-	if(msg in set_init):
-		state = 1
-		#self.fspeak('sir yes ir')
-		os.system("espeak --stdout 'sirrr,yes sir' -s 260 -a 200 -p 25| aplay")
 	if(self.state == 1):
-		if('my name is' in msg):
-			self.name = msg.split()[3]
-			self.fspeak('your name is'+msg.split()[3]+' yes or no')
-			self.state = 4
-		elif(msg == 'what is my name'):
-			self.fspeak('command is '+msg+' yes or no')
-			self.state = 5
-		elif(msg == 'target'):
-			self.fspeak('command is '+msg+' yes or no')
-			self.state = 6
-		elif(msg == 'hello' ):
-			self.fspeak('hello my name is lumyai')
-			#self.fspeak('what is your name')
-		else:
-			self.state = 1
-	elif(self.state == 5 or self.state == 6 ):
-		if(msg == 'yes'):	
-			self.fspeak('please wait')
-			if(self.state == 5):
-				self.pub_.publish('test')
-			else:
-				self.pub_.publish('target')
-			self.state = 1
-		elif(msg == 'no'):
-			self.state = 1
-		else:
-			self.fspeak('yes or no')
+		if(msg in set_cmd):
+			self.obj = msg.split()[1]
+			self.fspeak('your command is get '+self.obj+' yes or no')
+			self.state = 2
+		else :
+			self.fspeak('input command again')
 	elif(self.state == 2):
 		if(msg == 'yes'):
-			self.fspeak('what is your name')
-			self.state = 3
+			self.pub_.publish(self.obj)
+			os.system("espeak --stdout 'sirrr,yes sir' -s 260 -a 200 -p 25| aplay")
+			self.state = 1
 		elif(msg == 'no'):
 			self.state = 1
-		else:
-			self.fspeak('yes or no')
-	elif(self.state == 3):
-		if not( self.name in set_name):
-			self.fspeak('i dont know your name')
-		else:
-			self.fspeak('your name is '+msg+' yes or no')
-			self.state = 4
-	elif(self.state == 4):
-		if(msg == 'yes'):
-			if( not(self.name in set_name ) ):
-				self.fspeak('i dont know your name')
-				state = 1
-			else :
-				os.system("espeak --stdout 'sirrr,yes sir' -s 260 -a 200 -p 25| aplay")
-				self.fspeak('please wait')
-				self.pub_.publish(self.name)
-				self.state = 1
-		elif(msg == 'no'):
-			self.fspeak('what is your name')
-			self.state = 1
-		else:
-			self.fspeak('yes or no')
-	rospy.loginfo('now state is'+str(self.state))
+			self.fspeak('plese input command again')
+		else :
+			self.fspeak('yes or no please')
 			
 		
 if __name__=="__main__":
