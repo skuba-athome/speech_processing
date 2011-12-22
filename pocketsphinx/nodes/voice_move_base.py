@@ -64,7 +64,7 @@ class VoiceMoveBase:
 		self._goal_state = ''
 	#Subscribe
 		rospy.Subscriber('recognizer/output', String, self._getMsg)
-		self._GoalPublisher = rospy.Publisher('move_base_simple/goal',MoveBaseGoal)
+		self._GoalPublisher = rospy.Publisher('voice_goal',MoveBaseGoal)
 		rospy.Subscriber('move_goal_state', String, self._getGoalState)
 	#self.checkstate(_self.msg)
         #r = rospy.Rate(10.0)
