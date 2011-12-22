@@ -33,21 +33,21 @@ class VoiceMoveBase:
 		_yC = rospy.get_param('~yC',1)
 		_thC = rospy.get_param('~thC',0)
 		self._A = MoveBaseGoal()
-		self._A.target_pose.header.frame_id = "base_link"
+		self._A.target_pose.header.frame_id = "/map"
 		self._A.target_pose.header.stamp = rospy.Time.now()
 		self._A.target_pose.pose.position.x = _xA
 		self._A.target_pose.pose.position.y = _yA
 		self._A.target_pose.pose.orientation.z = sin(_thA/2.0)
 		self._A.target_pose.pose.orientation.w = cos(_thA/2.0)
 		self._B = MoveBaseGoal()
-		self._B.target_pose.header.frame_id = "base_link"
+		self._B.target_pose.header.frame_id = "/map"
 		self._B.target_pose.header.stamp = rospy.Time.now()
 		self._B.target_pose.pose.position.x = _xB
 		self._B.target_pose.pose.position.y = _yB
 		self._B.target_pose.pose.orientation.z = sin(_thB/2.0)
 		self._B.target_pose.pose.orientation.w = cos(_thB/2.0)
 		self._C = MoveBaseGoal()
-		self._C.target_pose.header.frame_id = "base_link"
+		self._C.target_pose.header.frame_id = "/map"
 		self._C.target_pose.header.stamp = rospy.Time.now()
 		self._C.target_pose.pose.position.x = _xC
 		self._C.target_pose.pose.position.y = _yC
@@ -89,7 +89,7 @@ class VoiceMoveBase:
 	#self.pub_.publish(self.Currentstate[1]*10+self.Currentstate[0])
 		print self.state
 		print msg
-		if(msg in set_init):
+		if(msg in set_init and self.state!='Wait'):
 			self.state = 'Start'
 			os.system("espeak --stdout 'sirrr,yes sir' -s 260 -a 200  -p 25| aplay")
 		if(self.state == 'Start'):
