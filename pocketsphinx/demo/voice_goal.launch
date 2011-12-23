@@ -9,12 +9,6 @@
     <param name="xA" type="double" value="34.5"/>
     <param name="yA" type="double" value="55.0"/>
     <param name="thA" type="double" value="1.57"/>
-    <param name="xB" type="double" value="26.0"/>
-    <param name="yB" type="double" value="51.0"/>
-    <param name="thB" type="double" value="0.0"/>
-    <param name="xC" type="double" value="49.0"/>
-    <param name="yC" type="double" value="55.0"/>
-    <param name="thC" type="double" value="4.71"/>
   </node>
 
 
