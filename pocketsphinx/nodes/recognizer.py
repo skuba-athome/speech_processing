@@ -31,7 +31,7 @@ from std_srvs.srv import *
 filename = sys.argv[1]
 print filename
 
-filepath = '/home/xcerx/ros_workspace/'
+filepath = '/home/xcerx/'
 class recognizer(object):
     """ GStreamer based speech recognizer. """
 
