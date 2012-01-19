@@ -59,7 +59,7 @@ class voice_cmd_vel:
 			self.fspeak('do you want to know your name')
 		msg = msg.split()
 		if( len(msg)==3 ):
-			if( msg[2] in set_name):
+			if( msg[0] == 'i' and msg[1]=='am' and msg[2] in set_name):
 				self.fspeak('your name is '+msg[2]+" yes or no")
 				self.name = msg[2]
 				#self.fspeak('yes of no')
