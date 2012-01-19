@@ -16,7 +16,7 @@ from geometry_msgs.msg import Twist
 from std_msgs.msg import String
 
 set_init = ['lumyai']
-set_name = ['richard','philip','emma','daniel','tina','steve','henry','peter','robert','sarah','brian','thomas','britney','justin','tony','kevin','joseph','micheal','michelle','donna','pond']
+set_name = ['richard','philip','emma','daniel','tina','steve','henry','peter','robert','sarah','brian','thomas','britney','justin','tony','kevin','joseph','michael','michelle','donna','pond']
 
 
 class voice_cmd_vel:
@@ -60,9 +60,9 @@ class voice_cmd_vel:
 		msg = msg.split()
 		if( len(msg)==3 ):
 			if( msg[2] in set_name):
-				self.fspeak('your name is '+msg[2])
+				self.fspeak('your name is '+msg[2]+" yes or no")
 				self.name = msg[2]
-				self.fspeak('yes of no')
+				#self.fspeak('yes of no')
 				self.state = 'remember'
 	elif(self.state == 'remember'):
 		if( msg == 'yes' ):
@@ -70,7 +70,7 @@ class voice_cmd_vel:
 			self.pub_.publish(self.name)
 			self.state = 'init'
 		elif( msg == 'no'):
-			self.fspea('what is your name')
+			self.fspeak('what is your name')
 			self.state = 'init'
 		else:
 			self.fspeak('yes or no') 
