@@ -30,7 +30,7 @@ class voice_cmd_vel:
 	self.pubWhoiswho = rospy.Publisher('cmd_Whoiswho', String)
 	self.pubFollowme = rospy.Publisher('cmd_Followme', String)
 	self.pubManipulation = rospy.Publisher('cmd_Followme', String)
-	self.state = 1 
+	self.state = 'init' 
 	self.name = ''
 	#Subscribe
 	rospy.Subscriber('recognizer/output', String, self.checkstate)
@@ -50,7 +50,44 @@ class voice_cmd_vel:
         rospy.loginfo(msg.data+' '+str(self.state))
 	#self.pub_.publish(self.Currentstate[1]*10+self.Currentstate[0])
 	msg = str(msg.data)
-	if( self.state == 1):
+	if( msg == 'hello' ):
+		self.state = 'init'
+		self.fspeak('hi')
+	elif(self.state == 'init'):
+		if( msg == 'what is my name' or msg == 'my name'):
+			self.state = 'check'
+			self.fspeak('do you want to know your name')
+		msg = msg.split()
+		if( len(msg)==3 ):
+			if( msg[2] in set_name):
+				self.fspeak('your name is '+msg[2])
+				self.name = msg[2]
+				self.fspeak('yes of no')
+				self.state = 'remember'
+	elif(self.state == 'remember'):
+		if( msg == 'yes' ):
+			os.system("espeak --stdout 'sirrr,yes sir' -s 260 -a 200 -p 25| aplay")
+			self.pub_.publish(self.name)
+			self.state = 'init'
+		elif( msg == 'no'):
+			self.fspea('what is your name')
+			self.state = 'init'
+		else:
+			self.fspeak('yes or no') 
+	elif(self.state == 'check'):
+		if( msg == 'yes' ):
+			os.system("espeak --stdout 'sirrr,yes sir' -s 260 -a 200 -p 25| aplay")
+			self.pub_.publish('test')
+			self.state = 'init'
+		elif( msg == 'no'):
+			self.fspeak('again')
+			self.state = 'init'
+		else:
+			self.fspeak('yes or no') 	
+		
+
+
+	'''if( self.state == 1):
 		if(msg == 'lumyai'):
 			self.fspeak("what is your name")
 			state == 2
@@ -70,7 +107,7 @@ class voice_cmd_vel:
 			self.fspea('what is your name')
 			self.state = 2
 		else:
-			self.fspeak('yes or no')
+			self.fspeak('yes or no') '''
 
 	rospy.loginfo('now state is'+str(self.state))
 
