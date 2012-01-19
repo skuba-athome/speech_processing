@@ -17,7 +17,7 @@ from std_msgs.msg import String
 
 set_init = ['lumyai']
 set_name = ['richard','philip','emma','daniel','tina','steve','henry','peter','robert','sarah','brian','thomas','britney','justin','tony','kevin','joseph','micheal','michelle','donna','pond']
-set_cmd = ['get coke','get numtip','get coke']
+set_cmd = ['get pringles','get numtip','get coke','get water']
 
 class voice_cmd_vel:
 
