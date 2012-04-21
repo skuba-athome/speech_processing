@@ -85,6 +85,7 @@ class VoiceMoveBase:
 	#Subscribe
 		rospy.Subscriber('recognizer/output', String, self._getMsg)
 		self._GoalPublisher = rospy.Publisher('move_base_simple/goal',PoseStamped)
+		self._StatePublisher = rospy.Publisher('move_base_state',String)
 #		self._initposePublisher = rospy.Publisher('initialpose',PoseWithCovariaceStamped)
 		rospy.Subscriber('move_goal_state', String, self._getGoalState)
 	#self.checkstate(_self.msg)
@@ -110,10 +111,12 @@ class VoiceMoveBase:
 	#self.pub_.publish(self.Currentstate[1]*10+self.Currentstate[0])
 		if(msg in set_init and self.state!='Wait'):
 			self.state = 'Start'
+			self._StatePublisher.publish('start')
 			os.system("espeak --stdout 'sirrr,yes sir' -s 260 -a 200  -p 25| aplay")
 		if(self.state == 'Start'):
-			if(msg == 'go to target' or msg == 'go to the target'):
+			if(msg == 'go'):
 				self.fspeak('your command is go to target?')
+				self._StatePublisher.publish('confirm')
 				self.state = 'Confirm'
 		#<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<,,
 	#	elif(self.state == 'Where'):
@@ -154,7 +157,8 @@ class VoiceMoveBase:
 		elif(self.state == 'Confirm'):
 			if(msg == 'yes'):
 				self.state = 'Wait'
-				self.fspeak("I'm going to the target")
+				self.fspeak("I am going to the target")
+				self._StatePublisher.publish('go')
 #				if self._init_flag == 1.0 :
 #					self._initposePublisher.publisher(self._initpose)
 				self._GoalPublisher.publish(self._A)

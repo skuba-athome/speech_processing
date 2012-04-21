@@ -6,8 +6,8 @@
   </node>
 
   <node name="voice_move_base" pkg="pocketsphinx" type="voice_move_base.py">
-    <param name="xA" type="double" value="34.5"/>
-    <param name="yA" type="double" value="55.0"/>
+    <param name="xA" type="double" value="41"/>
+    <param name="yA" type="double" value="58.5"/>
     <param name="thA" type="double" value="1.57"/>
   </node>
 

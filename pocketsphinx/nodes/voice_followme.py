@@ -19,11 +19,11 @@ set_init = ['lumyai']
 set_name = ['richard','philip','emma','daniel','tina','steve','henry','peter','robert','sarah','brian','thomas','britney','justin','tony','kevin','joseph','micheal','michelle','donna','pond']
 set_cmd = ['follow me','stop']
 
-class voice_cmd_vel:
+class voice_follow:
 
     def __init__(self):
 	self.Currentstate=[0,0]
-       	self.pub_ = rospy.Publisher('cmd_state', String)
+       	self.pub_ = rospy.Publisher('follow_state', String)
 	
 	#topic state
 	self.pubNavigation = rospy.Publisher('cmd_Navigation', String)
@@ -35,7 +35,6 @@ class voice_cmd_vel:
 	self.cmd = ''
 	#Subscribe
 	rospy.Subscriber('recognizer/output', String, self.checkstate)
-
         r = rospy.Rate(10.0)
         while not rospy.is_shutdown():
             r.sleep()
@@ -52,29 +51,30 @@ class voice_cmd_vel:
 	#self.pub_.publish(self.Currentstate[1]*10+self.Currentstate[0])
 	msg = str(msg.data)
 	if(self.state == 1):
-		if(msg in set_cmd):
-			self.cmd = msg
-			self.fspeak('your command is '+self.cmd+' yes or no')
+		if(msg == 'follow me' or msg == 'follow'):
+			self.cmd = 'follow me'
+			self.fspeak('your command is follow me yes or no')
 			self.state = 2
-		else :
-			self.fspeak('input command again')
 	elif(self.state == 2):
-		if(msg == 'yes'):
+		if(msg == 'yes' or  True):
 			print self.cmd
 			self.pub_.publish(self.cmd)
 			os.system("espeak --stdout 'sirrr,yes sir' -s 260 -a 200 -p 25| aplay")
-			self.state = 1
+			self.state = 3
 		elif(msg == 'no'):
 			self.state = 1
 			self.fspeak('plese input command again')
 		else :
 			self.fspeak('yes or no')
-			
-		
+	elif(self.state == 3 and msg == 'stop'):
+		self.state = 1;
+		self.pub_.publish('stop')
+		self.fspeak('stop sir')
 if __name__=="__main__":
-    rospy.init_node('voice_cmd_vel')
+    rospy.init_node('voice_follow')
     try:
-        voice_cmd_vel()
+        voice_follow()
+	checkstate()
     except:
         pass
 
