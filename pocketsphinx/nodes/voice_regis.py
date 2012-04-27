@@ -100,6 +100,7 @@ class VoiceMoveBase:
 		rospy.Subscriber('door_cmd', String, self._getDoorcmd)
 		self._GoalPublisher = rospy.Publisher('move_base_simple/goal',PoseStamped)
 		self._StatePublisher = rospy.Publisher('move_base_state',String)
+		self._LocationPublisher = rospy.Publisher('location',PoseStamped)
 #		self._initposePublisher = rospy.Publisher('initialpose',PoseWithCovariaceStamped)
 		rospy.Subscriber('move_goal_state', String, self._getGoalState)
 	#self.checkstate(_self.msg)
@@ -185,7 +186,8 @@ class VoiceMoveBase:
 			if self._tf.frameExists("/base_link") and self._tf.frameExists("/map"):
           	 		t = self._tf.getLatestCommonTime("/base_link", "/map")
             			position, quaternion = self._tf.lookupTransform("/base_link", "/map", t)
-				if dist(position,self._A) < 2:
+				self._LocationPublisher.publish(position)
+				if dist(position,self._table.pose.position) < 2:
 					self.fspeak('SKUBA SKUBA SKUBA')
 					self.state == 'Target Reach'	
 		elif(self.state == 'Target Reach'):
@@ -204,7 +206,7 @@ class VoiceMoveBase:
 		#	self.checkstate(self._msg)
 	#		r.sleep()
 	def _dis(self,p1,p2):
-		return ((p1.x-p2.x)*(p1.x-p2.x))+((p1.y-p2.y)*(p1.y-p2.y))
+		return ((p1[0]-p2.x)*(p1[0]-p2.x))+((p[1]-p2.y)*(p[1]-p2.y))
 if __name__=="__main__":
 	rospy.init_node('voice_regis')
 	voice = VoiceMoveBase()
