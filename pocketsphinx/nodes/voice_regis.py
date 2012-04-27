@@ -100,6 +100,7 @@ class VoiceMoveBase:
 		rospy.Subscriber('door_cmd', String, self._getDoorcmd)
 		self._GoalPublisher = rospy.Publisher('move_base_simple/goal',PoseStamped)
 		self._StatePublisher = rospy.Publisher('move_base_state',String)
+		self._DistPublisher = rospy.Publisher('dist',String)
 		self._LocationPublisher = rospy.Publisher('location',PoseStamped)
 #		self._initposePublisher = rospy.Publisher('initialpose',PoseWithCovariaceStamped)
 		rospy.Subscriber('move_goal_state', String, self._getGoalState)
@@ -206,7 +207,9 @@ class VoiceMoveBase:
 		#	self.checkstate(self._msg)
 	#		r.sleep()
 	def _dis(self,p1,p2):
-		return ((p1[0]-p2.x)*(p1[0]-p2.x))+((p[1]-p2.y)*(p[1]-p2.y))
+		x = ((p1[0]-p2.x)*(p1[0]-p2.x))+((p[1]-p2.y)*(p[1]-p2.y))
+		self._DistPublisher.publish(x)
+		return x
 if __name__=="__main__":
 	rospy.init_node('voice_regis')
 	voice = VoiceMoveBase()
