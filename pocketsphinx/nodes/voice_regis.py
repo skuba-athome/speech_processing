@@ -98,6 +98,7 @@ class VoiceMoveBase:
 		self._doorcmd =  ''
 		self._tf = TransformListener()
 		self._position=()
+		self._i = 0
 	#Subscribe
 		rospy.Subscriber('recognizer/output', String, self._getMsg)
 		rospy.Subscriber('door_cmd', String, self._getDoorcmd)
@@ -197,19 +198,25 @@ class VoiceMoveBase:
 		#		self.fspeak('Please repeat your command')
 		elif(self.state == 'Wait'):
 			if self._dis(self._position,self._table.pose.position) < 0.3:
-				self.fspeak('SKUBA SKUBA SKUBA')
+				#self.fspeak('SKUBA SKUBA SKUBA')
 				
-				here = PoseStamped()
-				here.header.stamp = rospy.Time.now()
-                		here.header.frame_id = '/map'
-                		here.pose.position.x = self._position[0]
-                		here.pose.position.y = self._position[1]
-                		here.pose.orientation.z = sin(_thA/2.0)
-                		here.pose.orientation.w = cos(_thA/2.0)
+				#here = PoseStamped()
+				#here.header.stamp = rospy.Time.now()
+                		#here.header.frame_id = '/map'
+                		#here.pose.position.x = self._position[0]
+                		#here.pose.position.y = self._position[1]
+                		#here.pose.orientation.z = sin(_thA/2.0)
+                		#here.pose.orientation.w = cos(_thA/2.0)
 
-				self._GoalPublisher.publish(here);           	#	print position, quaternion
+				#self._GoalPublisher.publish(here);           	#	print position, quaternion
 				self.state = 'Target Reach'	
+
 		elif(self.state == 'Target Reach'):
+			self._i = self._i + 1
+			if self._i == 50:
+				self.fspeakI("SKUBA SKUBA SKUBA")
+				self.state = 'Continue'
+		elif self.state == 'Continue':
 			if (msg=='go'):
 				self._GoalPublisher.publish(self._door);           	#	print position, quaternion
 		#	if(self._goal_state == 'SUCCEEDED'):
