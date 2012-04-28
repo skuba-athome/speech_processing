@@ -20,8 +20,9 @@ from move_base_msgs.msg import MoveBaseGoal
 from geometry_msgs.msg import Twist,PoseStamped
 from std_msgs.msg import String
 
-set_init = ['lamyai','lumyai']
+import time
 
+set_init = ['lamyai','lumyai']
 
 class VoiceMoveBase:
 
@@ -65,6 +66,7 @@ class VoiceMoveBase:
 		self._door.pose.orientation.z = sin(_thB/2.0)
 		self._door.pose.orientation.w = cos(_thB/2.0)
 		
+		self._flag = False
 		#<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 	#	_xB = rospy.get_param('~xB',1.0)
@@ -104,13 +106,13 @@ class VoiceMoveBase:
 	#Subscribe
 		rospy.Subscriber('recognizer/output', String, self._getMsg)
 		rospy.Subscriber('door_cmd', String, self._getDoorcmd)
-		rospy.Subscriber('odom', Odometry, self._getOdom)
 		self._GoalPublisher = rospy.Publisher('move_base_simple/goal',PoseStamped)
 		self._StatePublisher = rospy.Publisher('move_base_state',String)
 		self._DistPublisher = rospy.Publisher('dist',String)
 		self._HandPublisher = rospy.Publisher('hand_cmd',String)
 		self._LocationPublisher = rospy.Publisher('location',String)
 #		self._initposePublisher = rospy.Publisher('initialpose',PoseWithCovariaceStamped)
+		rospy.Subscriber('hand_state', String, self._getHandState)
 		rospy.Subscriber('move_goal_state', String, self._getGoalState)
 	#self.checkstate(_self.msg)
         #r = rospy.Rate(10.0)
@@ -120,8 +122,8 @@ class VoiceMoveBase:
 	#self.Navigation=enum('none','one','two','three')
 	#self.WhoIsWho=enum('none','richard','phillip','emma','daniel','tina','steve','henry','peter','robert','sarah','brian','thomas','britney','justin','tony','kevin','joseph','michael','michelle','donna')
 	#self.FollowMe=enum('none','start','stop')
-	def _getOdom(self,msg):
-		self.checkstate("")
+	def _getHandState(self,msg):
+		self.checkstate(msg.data)
 	def _getGoalState(self,msg):
 		self._goal_state = str(msg.data)
 		self.checkstate(self._msg)
@@ -214,17 +216,28 @@ class VoiceMoveBase:
                 		#here.pose.orientation.w = cos(_thA/2.0)
 
 				#self._GoalPublisher.publish(here);           	#	print position, quaternion
-				self.state = 'Target Reach'	
-				rospy.sleep(10)
+				if self._i > 100:
+					self.state = 'Target Reach'
+					self._i = 0
+				else:
+					self._i = self._i + 1
 		elif(self.state == 'Target Reach'):
+		#	if self._i == 100:
+			self.state = 'Hand'
 			self.fspeak("I am from SKUBA team. My name is lamyai")
-			self.state = 'Continue'
-			rospy.sleep(2)
+		#		self._i=0
+		#	self._i = self._i + 1
+		elif self.state == 'Hand':
+			if self._flag:
+				self._i = self._i + 1
+			if msg == '1':
+				if self._i == 0:	 
+					self._HandPublisher.publish('send')
+					self._flag = True
+				if self._i > 300 :
+					self._HandPublisher.publish('back')
+					self.state = 'Continue'
 		elif self.state == 'Continue':
-			self._HandPublisher.publish('send')
-			rospy.sleep(30)
-			self._HandPublisher.publish('back')
-			rospy.sleep(30)
 			if (msg=='go to target'):
 				self.fspeak('continue')
 				self._GoalPublisher.publish(self._door);           	#	print position, quaternion
@@ -239,7 +252,7 @@ class VoiceMoveBase:
 		
 		#	self.checkstate(self._msg)
 	#		r.sleep()
-		self._StatePublisher.publish(self.state)
+		self._StatePublisher.publish(self.state+str(self._i))
 	def _dis(self,p1,p2):
 		if len(p1)>0:
 			x = ((p1[0]-p2.x)*(p1[0]-p2.x))+((p1[1]-p2.y)*(p1[1]-p2.y))
