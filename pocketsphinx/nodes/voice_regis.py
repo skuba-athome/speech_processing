@@ -8,10 +8,12 @@ voice_cmd_vel.py is a simple demo of speech recognition.
 
 import roslib; roslib.load_manifest('pocketsphinx')
 import rospy
+
 from math import sin,cos,pi
+#import tf
+from tf import TransformListener
 import os
 
-from tf import TransformListener
 from move_base_msgs.msg import MoveBaseGoal
 from geometry_msgs.msg import Twist,PoseStamped
 from std_msgs.msg import String
@@ -101,7 +103,7 @@ class VoiceMoveBase:
 		self._GoalPublisher = rospy.Publisher('move_base_simple/goal',PoseStamped)
 		self._StatePublisher = rospy.Publisher('move_base_state',String)
 		self._DistPublisher = rospy.Publisher('dist',String)
-		self._LocationPublisher = rospy.Publisher('location',PoseStamped)
+		self._LocationPublisher = rospy.Publisher('location',String)
 #		self._initposePublisher = rospy.Publisher('initialpose',PoseWithCovariaceStamped)
 		rospy.Subscriber('move_goal_state', String, self._getGoalState)
 	#self.checkstate(_self.msg)
@@ -187,7 +189,7 @@ class VoiceMoveBase:
 			if self._tf.frameExists("/base_link") and self._tf.frameExists("/map"):
           	 		t = self._tf.getLatestCommonTime("/base_link", "/map")
             			position, quaternion = self._tf.lookupTransform("/base_link", "/map", t)
-				self._LocationPublisher.publish(position)
+				self._LocationPublisher.publish((str)position)
 				if dist(position,self._table.pose.position) < 2:
 					self.fspeak('SKUBA SKUBA SKUBA')
 					self.state == 'Target Reach'	
