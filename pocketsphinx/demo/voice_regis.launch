@@ -4,7 +4,7 @@
     <param name="lm" value="$(find pocketsphinx)/demo/voice_regis.lm"/>
     <param name="dict" value="$(find pocketsphinx)/demo/voice_regis.dic"/>
   </node>
-
+  <node name="door" pkg="objects" type="open_door"/>
   <node name="voice_regis" pkg="pocketsphinx" type="voice_regis.py">
     <param name="xA" type="double" value="41"/>
     <param name="xA" type="double" value="41"/>
