@@ -11,8 +11,8 @@
   <depend package="geometry_msgs"/><!-- only needed for demo -->
   <depend package="std_srvs"/>
   <depend package="move_base_msgs"/>
-  
+  <depend package="tf"/> 
   <rosdep name="gstreamer_pocketsphinx"/>
 </package>
-
+ 
 
