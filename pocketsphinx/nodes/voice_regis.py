@@ -97,9 +97,11 @@ class VoiceMoveBase:
 		self._goal_state = ''
 		self._doorcmd =  ''
 		self._tf = TransformListener()
+		self._position=()
 	#Subscribe
 		rospy.Subscriber('recognizer/output', String, self._getMsg)
 		rospy.Subscriber('door_cmd', String, self._getDoorcmd)
+		rospy.Subscriber('serial', String, self._getMsg)
 		self._GoalPublisher = rospy.Publisher('move_base_simple/goal',PoseStamped)
 		self._StatePublisher = rospy.Publisher('move_base_state',String)
 		self._DistPublisher = rospy.Publisher('dist',String)
@@ -122,15 +124,23 @@ class VoiceMoveBase:
 		self._msg = str(msg.data)
 		self.checkstate(self._msg)
 	def _getDoorcmd(self,msg):
-		self._doorcmd = str(msg.date)
-		self.checkstate(self._msg)
+		self._doorcmd = str(msg.data)
+		self.checkstate(self._doorcmd)
 	def fspeak(self,sp):
 		os.system("espeak --stdout '" + sp + "' | aplay")
+	def _checklocation(self):
+		if self._tf.frameExists("/base_link") and self._tf.frameExists("/map"):
+          		t = self._tf.getLatestCommonTime("/base_link", "/map")
+            		position, quaternion = self._tf.lookupTransform("/map","/base_link", t)
+            		#position, quaternion = self._tf.lookupTransform("/base_link", "/map", t)
+			self._LocationPublisher.publish(str(position))
+			self._position = position
 	def checkstate(self, msg):
-   #rospy.loginfo(msg.data+' '+str(self.state))
+		self._checklocation()
+   #rospy.loginfo(msg.data+' '+str(self.starte))
 	#self.pub_.publish(self.Currentstate[1]*10+self.Currentstate[0])
 		if(msg=='open' and self.state!='Wait'):
-			self.state = 'Start'
+			self.state = 'Confirm'
 		#	self._StatePublisher.publish('start')
 		#	os.system("espeak --stdout 'sirrr,yes sir' -s 260 -a 200  -p 25| aplay")
 		if(self.state == 'Start'):
@@ -186,17 +196,22 @@ class VoiceMoveBase:
 		#		self.state = 'Start'
 		#		self.fspeak('Please repeat your command')
 		elif(self.state == 'Wait'):
-			if self._tf.frameExists("/base_link") and self._tf.frameExists("/map"):
-          	 		t = self._tf.getLatestCommonTime("/base_link", "/map")
-            			position, quaternion = self._tf.lookupTransform("/base_link", "/map", t)
-				self._LocationPublisher.publish((str)position)
-				if dist(position,self._table.pose.position) < 2:
-					self.fspeak('SKUBA SKUBA SKUBA')
-					self.state == 'Target Reach'	
+			if self._dis(self._position,self._table.pose.position) < 0.3:
+				self.fspeak('SKUBA SKUBA SKUBA')
+				
+				here = PoseStamped()
+				here.header.stamp = rospy.Time.now()
+                		here.header.frame_id = '/map'
+                		here.pose.position.x = self._position[0]
+                		here.pose.position.y = self._position[1]
+                		here.pose.orientation.z = sin(_thA/2.0)
+                		here.pose.orientation.w = cos(_thA/2.0)
+
+				self._GoalPublisher.publish(here);           	#	print position, quaternion
+				self.state = 'Target Reach'	
 		elif(self.state == 'Target Reach'):
 			if (msg=='go'):
-				self._GoalPublisher.publish(self._door);
-            	#	print position, quaternion
+				self._GoalPublisher.publish(self._door);           	#	print position, quaternion
 		#	if(self._goal_state == 'SUCCEEDED'):
 		#		self.fspeak('Target Reached')
    		#		self._goal_state = ''
@@ -209,9 +224,10 @@ class VoiceMoveBase:
 		#	self.checkstate(self._msg)
 	#		r.sleep()
 	def _dis(self,p1,p2):
-		x = ((p1[0]-p2.x)*(p1[0]-p2.x))+((p[1]-p2.y)*(p[1]-p2.y))
-		self._DistPublisher.publish(x)
-		return x
+		if len(p1)>0:
+			x = ((p1[0]-p2.x)*(p1[0]-p2.x))+((p1[1]-p2.y)*(p1[1]-p2.y))
+			self._DistPublisher.publish(str(x))
+			return x
 if __name__=="__main__":
 	rospy.init_node('voice_regis')
 	voice = VoiceMoveBase()
