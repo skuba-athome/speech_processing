@@ -1,6 +1,6 @@
 <launch>
   
-  <include file="$(find openni_camera)/launch/openni_node.launch"/>
+  <include file="$(find openni_launch)/launch/openni.launch"/>
   <node name="recognizer" pkg="pocketsphinx" type="recognizer_regis.py">
     <param name="lm" value="$(find pocketsphinx)/demo/voice_goal.lm"/>
     <param name="dict" value="$(find pocketsphinx)/demo/voice_goal.dic"/>
@@ -8,10 +8,10 @@
   <node name="door" pkg="objects" type="open_door"/>
   <node name="voice_regis" pkg="pocketsphinx" type="voice_regis.py">
     <param name="xA" type="double" value="34"/>
-    <param name="yA" type="double" value="56"/>
+    <param name="yA" type="double" value="54"/>
     <param name="thA" type="double" value="1.57"/>
-    <param name="xB" type="double" value="27"/>
-    <param name="yB" type="double" value="51"/>
+    <param name="xB" type="double" value="47"/>
+    <param name="yB" type="double" value="53"/>
     <param name="thB" type="double" value="1.57"/>
   </node>
   <node name="hand" pkg="objects" type="hand_regis.py"/>
