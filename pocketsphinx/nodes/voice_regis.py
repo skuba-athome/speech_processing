@@ -234,13 +234,23 @@ class VoiceMoveBase:
 				if self._i == 0:	 
 					self._HandPublisher.publish('send')
 					self._flag = True
-				if self._i > 300 :
+				if self._i > 220 :
 					self._HandPublisher.publish('back')
 					self.state = 'Continue'
+					self._flag = False
 		elif self.state == 'Continue':
-			if (msg=='go to target'):
-				self.fspeak('continue')
-				self._GoalPublisher.publish(self._door);           	#	print position, quaternion
+			if self._flag :
+				if (msg=='yes'):
+					self.fspeak('continue')
+					self._GoalPublisher.publish(self._door)
+				else:
+					self.fspeak('yes or no')
+			else:
+				if msg == 'continue':
+					self.fspeak('continue,yes or no')
+					self._flag = True
+					
+		#	print position, quaternion
 		#	if(self._goal_state == 'SUCCEEDED'):
 		#		self.fspeak('Target Reached')
    		#		self._goal_state = ''
