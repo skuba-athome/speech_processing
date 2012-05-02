@@ -109,6 +109,7 @@ class VoiceMoveBase:
 		self._GoalPublisher = rospy.Publisher('move_base_simple/goal',PoseStamped)
 		self._StatePublisher = rospy.Publisher('move_base_state',String)
 		self._DistPublisher = rospy.Publisher('dist',String)
+		self._VelPublisher = rospy.Publisher('cmd_vel',Twist)
 		self._HandPublisher = rospy.Publisher('hand_cmd',String)
 		self._LocationPublisher = rospy.Publisher('location',String)
 #		self._initposePublisher = rospy.Publisher('initialpose',PoseWithCovariaceStamped)
@@ -194,12 +195,21 @@ class VoiceMoveBase:
 		#<<<<<<<<<<<<<<<<<<<<<<<<<<<,,,
 		elif(self.state == 'Confirm'):
 		#	if(msg == 'yes'):
-				self.state = 'Wait'
 		#		self.fspeak("I am going to the target")
 		#		self._StatePublisher.publish('go')
 #				if self._init_flag == 1.0 :
 #					self._initposePublisher.publisher(self._initpose)
-				self._GoalPublisher.publish(self._table)
+			#if self._i > 100:
+			self._GoalPublisher.publish(self._table)
+			
+			self.state = 'Wait'
+				#self._i = 0
+			#else:
+				#self._i = self._i + 1
+				#cmd = Twist()
+				#cmd.linear.x = 1 
+				#self._VelPublisher.publish(cmd)
+				
 		#	elif msg == 'no' :
 		#		self.state = 'Start'
 		#		self.fspeak('Please repeat your command')
@@ -239,16 +249,16 @@ class VoiceMoveBase:
 					self.state = 'Continue'
 					self._flag = False
 		elif self.state == 'Continue':
-			if self._flag :
-				if (msg=='yes'):
-					self.fspeak('continue')
-					self._GoalPublisher.publish(self._door)
-				else:
-					self.fspeak('yes or no')
-			else:
-				if msg == 'continue':
-					self.fspeak('continue,yes or no')
-					self._flag = True
+		#	if self._flag :
+			if (msg=='continue'):
+				self.fspeak('continue')
+				self._GoalPublisher.publish(self._door)
+				#else:
+				#	self.fspeak('yes or no')
+		#	else:
+		#		if msg == 'continue':
+		#			self.fspeak('continue,yes or no')
+		#			self._flag = True
 					
 		#	print position, quaternion
 		#	if(self._goal_state == 'SUCCEEDED'):

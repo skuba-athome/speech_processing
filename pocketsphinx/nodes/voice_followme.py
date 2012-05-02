@@ -56,9 +56,9 @@ class voice_follow:
 			self.fspeak('your command is follow me yes or no')
 			self.state = 2
 	elif(self.state == 2):
-		if(msg == 'yes' or  True):
+		if(msg == 'yes'):
 			print self.cmd
-			self.pub_.publish(self.cmd)
+			self.pub_.publish('follow me')
 			os.system("espeak --stdout 'sirrr,yes sir' -s 260 -a 200 -p 25| aplay")
 			self.state = 3
 		elif(msg == 'no'):
