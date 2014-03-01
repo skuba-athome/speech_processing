@@ -14,11 +14,11 @@ recognizer.py is a wrapper for pocketsphinx.
 
 import roslib; roslib.load_manifest('pocketsphinx')
 import rospy
-import os
+
 import pygtk
 pygtk.require('2.0')
 import gtk
-import sys
+
 import gobject
 import pygst
 pygst.require('0.10')
@@ -28,10 +28,6 @@ import gst
 from std_msgs.msg import String
 from std_srvs.srv import *
 
-filename = sys.argv[1]
-print filename
-
-filepath = '/home/skuba/'
 class recognizer(object):
     """ GStreamer based speech recognizer. """
 
@@ -39,7 +35,6 @@ class recognizer(object):
         """ Initialize the speech pipeline components. """
         rospy.init_node('recognizer')
         self.pub = rospy.Publisher('~output',String)
-        self.pubSound = rospy.Publisher('~sound',String)
         rospy.on_shutdown(self.shutdown)
 
         # services to start/stop recognition
@@ -58,15 +53,12 @@ class recognizer(object):
 
         # parameters for lm and dic
         try:
-			rospy.set_param('~lm',filepath+'skuba_athome_main/rharmony/pocketsphinx/demo/'+ filename +'.lm')
-			lm_ = rospy.get_param('~lm')
+            lm_ = rospy.get_param('~lm')
         except:
-			
             rospy.logerr('Please specify a language model file')
             return
         try:
-			rospy.set_param('~dict',filepath+'skuba_athome_main/rharmony/pocketsphinx/demo/'+ filename +'.dic')
-			dict_ = rospy.get_param('~dict')
+            dict_ = rospy.get_param('~dict')
         except:
             rospy.logerr('Please specify a dictionary')
             return
@@ -124,8 +116,8 @@ class recognizer(object):
         msg = String()
         msg.data = str(hyp.lower())
         rospy.loginfo(msg.data)
-        self.pub.publish(msg)        
-        self.pubSound.publish(msg)
-        #self.os.system("espeak --stdout \'" + msg.data + "' | aplay")
+        self.pub.publish(msg)
+
 if __name__=="__main__":
     r = recognizer()
+
