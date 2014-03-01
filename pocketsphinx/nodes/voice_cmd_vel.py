@@ -9,98 +9,68 @@ voice_cmd_vel.py is a simple demo of speech recognition.
 import roslib; roslib.load_manifest('pocketsphinx')
 import rospy
 import math
-import os
-
 
 from geometry_msgs.msg import Twist
 from std_msgs.msg import String
 
-set_init = ['lumyai']
-set_name = ['pond','bank','max','ohm','pee']
-
-
 class voice_cmd_vel:
 
     def __init__(self):
-	self.Currentstate=[0,0]
-       	self.pub_ = rospy.Publisher('cmd_state', String)
-	
-	#topic state
-	self.pubNavigation = rospy.Publisher('cmd_Navigation', String)
-	self.pubWhoiswho = rospy.Publisher('cmd_Whoiswho', String)
-	self.pubFollowme = rospy.Publisher('cmd_Followme', String)
-	self.pubManipulation = rospy.Publisher('cmd_Followme', String)
-	self.state = 1
-	self.name = ''
-	#Subscribe
-	rospy.Subscriber('recognizer/output', String, self.checkstate)
+        rospy.on_shutdown(self.cleanup)
+        self.speed = 0.2
+        self.msg = Twist()
+
+        # publish to cmd_vel, subscribe to speech output
+        self.pub_ = rospy.Publisher('cmd_vel', Twist)
+        rospy.Subscriber('recognizer/output', String, self.speechCb)
 
         r = rospy.Rate(10.0)
         while not rospy.is_shutdown():
+            self.pub_.publish(self.msg)
             r.sleep()
-        #self.TypeContest=enum('none','navigation','whoiswho','followme','manipulate')
-	#self.Navigation=enum('none','one','two','three')
-	#self.WhoIsWho=enum('none','richard','phillip','emma','daniel','tina','steve','henry','peter','robert','sarah','brian','thomas','britney','justin','tony','kevin','joseph','michael','michelle','donna')
-	#self.FollowMe=enum('none','start','stop')
+        
+    def speechCb(self, msg):
+        rospy.loginfo(msg.data)
 
-    def fspeak(self,sp):
-	os.system("espeak --stdout \'" + sp + "' | aplay")
+        if msg.data.find("full speed") > -1:
+            if self.speed == 0.2:
+                self.msg.linear.x = self.msg.linear.x*2
+                self.msg.angular.z = self.msg.angular.z*2
+                self.speed = 0.4
+        if msg.data.find("half speed") > -1:
+            if self.speed == 0.4:
+                self.msg.linear.x = self.msg.linear.x/2
+                self.msg.angular.z = self.msg.angular.z/2
+                self.speed = 0.2
 
-    def checkstate(self, msg):
-        rospy.loginfo(msg.data+' '+str(self.state))
-	#self.pub_.publish(self.Currentstate[1]*10+self.Currentstate[0])
-	msg = str(msg.data)
-	if(msg in set_init):
-		state = 1
-	if(self.state == 1):
-		if(msg == 'remember me'):
-			self.fspeak('command is '+msg+' yes or no')
-			self.state = 2
-		elif(msg == 'test'):
-			self.fspeak('command is '+msg+' yes or no')
-			self.state = 5
-		elcif(msg == 'target'):
-			self.fspeak('command is '+msg+' yes or no')
-			self.state = 6
-		else:
-			self.state = 1
-	elif(self.state == 5 or self.state == 6 ):
-		if(msg == 'yes'):	
-			self.fspeak('please wait')
-			if(self.state == 5):
-				self.pub_.publish('test')
-			else:
-				self.pub_.publish('target')
-			self.state = 1
-		elif(msg == 'no'):
-			self.state = 1
-		else:
-			self.fspeak('yes or no')
-	elif(self.state == 2):
-		if(msg == 'yes'):
-			self.fspeak('what is your name')
-			self.state = 3
-		elif(msg == 'no'):
-			self.state = 1
-		else:
-			self.fspeak('yes or no')
-	elif(self.state == 3):
-		self.name = msg
-		self.fspeak('your name is '+msg+' yes or no')
-		self.state = 4
-	elif(self.state == 4):
-		if(msg == 'yes'):	
-			self.fspeak('please wait')
-			self.pub_.publish(self.name)
-			self.state = 1
-		elif(msg == 'no'):
-			self.fspeak('what is your name')
-			self.state = 3
-		else:
-			self.fspeak('yes or no')
-	rospy.loginfo('now state is'+str(self.state))
-			
-		
+        if msg.data.find("forward") > -1:    
+            self.msg.linear.x = self.speed
+            self.msg.angular.z = 0
+        elif msg.data.find("left") > -1:
+            if self.msg.linear.x != 0:
+                if self.msg.angular.z < self.speed:
+                    self.msg.angular.z += 0.05
+            else:        
+                self.msg.angular.z = self.speed*2
+        elif msg.data.find("right") > -1:    
+            if self.msg.linear.x != 0:
+                if self.msg.angular.z > -self.speed:
+                    self.msg.angular.z -= 0.05
+            else:        
+                self.msg.angular.z = -self.speed*2
+        elif msg.data.find("back") > -1:
+            self.msg.linear.x = -self.speed
+            self.msg.angular.z = 0
+        elif msg.data.find("stop") > -1 or msg.data.find("halt") > -1:          
+            self.msg = Twist()
+        
+        self.pub_.publish(self.msg)
+
+    def cleanup(self):
+        # stop the robot!
+        twist = Twist()
+        self.pub_.publish(twist)
+
 if __name__=="__main__":
     rospy.init_node('voice_cmd_vel')
     try:
