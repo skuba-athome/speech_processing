@@ -1,0 +1,18 @@
+#JSGF V1.0;
+grammar GPSR;
+public <gpsr_command> =  <category_2>;
+
+/* Category 1 rule* /
+
+
+/* Category 2 rule */
+<category_2> = <move_object> | <bring_object>;
+<move_object> = <move> <article> <object_category> TO <article> <location_category>;
+<bring_object> = <bring> ME <article> <object_category>;
+
+/* Verb,Article,Object and Location */
+<move> = BRING | CARRY;
+<bring> = GIVE | GET | BRING;
+<article> = A | AN | THE | SOME;
+<object_category> = DRINK | KITCHENARY | FOOD | SNACK;
+<location_category> = TABLE | STAFF | DOOR | APPLIANCE | SEAT;
