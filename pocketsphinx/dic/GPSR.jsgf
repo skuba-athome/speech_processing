@@ -1,18 +1,47 @@
 #JSGF V1.0;
 grammar GPSR;
-public <gpsr_command> =  <category_2>;
+public <gpsr_command> = <category_2> | <category_1>;
 
-/* Category 1 rule* /
-
+/* Category 1 rule */
+<category_1> = <category_1_command> [<article>];
+<category_1_command> = <go_to> | <exit_apartment> | <get_object> | <introduce_yourself> | <memorize_person> | <recognize_person> | <follow> | <find_person> | <retrieve_item> | <carry_object> | <detect_object>;
+<go_to> = <go> TO [<article>] <location>;
+<exit_apartment> = <exit> [<article>] APARTMENT;
+<get_object> = <get> [<article>] (<object> | IT);
+<introduce_yourself> = <introduce> YOURSELF;
+<memorize_person> = MEMORIZE THE PERSON | ASK PERSON NAME;
+<recognize_person> = RECOGNIZE (HIM | HER);
+<follow> = FOLLOW PERSON IN FRONT OF YOU;
+<find_person> = FIND <article> PERSON;
+<retrieve_item> = <retrieve> [<article>] <object> FROM <location>;
+<carry_object> = <carry> [IT] TO <location>;
+<detect_object> = <detect> THE <object>;
 
 /* Category 2 rule */
-<category_2> = <move_object> | <bring_object>;
-<move_object> = <move> <article> <object_category> TO <article> <location_category>;
-<bring_object> = <bring> ME <article> <object_category>;
+<category_2> = <carry_object> | <bring_me_object>;
+<carry_object> = <carry> [<article>] <object_category> TO [<article>] <location_category>;
+<bring_me_object> = <bring> ME [<article>] <object_category>;
 
-/* Verb,Article,Object and Location */
-<move> = BRING | CARRY;
-<bring> = GIVE | GET | BRING;
+/* Article */
 <article> = A | AN | THE | SOME;
+
+/* Conjunction */
+<conjuction> = AND | THEN;
+
+/* Verb */
+<go> = GO | MOVE | NAVIGATE;
+<exit> = EXIT | LEAVE;
+<get> = GET | GRASP | TAKE;
+<introduce> = INTRODUCE | TELL SOMETHING ABOUT;
+<carry> = BRING | CARRY;
+<bring> = GIVE | GET | BRING;
+<detect> = DETECT | FIND | IDENTIFY;
+<retrieve> = RETRIEVE | BRING;
+
+/* Object & Location category */
 <object_category> = DRINK | KITCHENARY | FOOD | SNACK;
 <location_category> = TABLE | STAFF | DOOR | APPLIANCE | SEAT;
+
+/* Object & Location*/
+<object> = PRINGLES | PEPSI;
+<location> = KITCHEN | LIVING ROOM;
