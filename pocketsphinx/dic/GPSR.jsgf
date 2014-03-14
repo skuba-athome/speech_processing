@@ -3,8 +3,8 @@ grammar GPSR;
 public <gpsr_command> = <category_2> | <category_1>;
 
 /* Category 1 rule */
-<category_1> = <category_1_command> [<article>];
-<category_1_command> = <go_to> | <exit_apartment> | <get_object> | <introduce_yourself> | <memorize_person> | <recognize_person> | <follow> | <find_person> | <retrieve_item> | <carry_object> | <detect_object>;
+<category_1> = <category_1_command> [<conjunction>] <category_1_command> [<conjunction>] <category_1_command>;
+<category_1_command> = <go_to> | <exit_apartment> | <get_object> | <introduce_yourself> | <memorize_person> | <recognize_person> | <follow> | <find_person> | <retrieve_item> | <carry_object_1> | <detect_object>;
 <go_to> = <go> TO [<article>] <location>;
 <exit_apartment> = <exit> [<article>] APARTMENT;
 <get_object> = <get> [<article>] (<object> | IT);
@@ -14,19 +14,19 @@ public <gpsr_command> = <category_2> | <category_1>;
 <follow> = FOLLOW PERSON IN FRONT OF YOU;
 <find_person> = FIND <article> PERSON;
 <retrieve_item> = <retrieve> [<article>] <object> FROM <location>;
-<carry_object> = <carry> [IT] TO <location>;
+<carry_object_1> = <carry> [IT] TO <location>;
 <detect_object> = <detect> THE <object>;
 
 /* Category 2 rule */
-<category_2> = <carry_object> | <bring_me_object>;
-<carry_object> = <carry> [<article>] <object_category> TO [<article>] <location_category>;
+<category_2> = <carry_object_2> | <bring_me_object>;
+<carry_object_2> = <carry> [<article>] <object_category> TO [<article>] <location_category>;
 <bring_me_object> = <bring> ME [<article>] <object_category>;
 
 /* Article */
 <article> = A | AN | THE | SOME;
 
 /* Conjunction */
-<conjuction> = AND | THEN;
+<conjunction> = AND | THEN;
 
 /* Verb */
 <go> = GO | MOVE | NAVIGATE;
@@ -40,8 +40,7 @@ public <gpsr_command> = <category_2> | <category_1>;
 
 /* Object & Location category */
 <object_category> = DRINK | KITCHENARY | FOOD | SNACK;
-<location_category> = TABLE | STAFF | DOOR | APPLIANCE | SEAT;
-
+<location_category> = SEATING | TABLE | UTENSIL | SHELF | APPLIANCE;
 /* Object & Location*/
-<object> = PRINGLES | PEPSI;
-<location> = KITCHEN | LIVING ROOM;
+<object> = PRINGLES | PEPSI | WATER | MILK;
+<location> = BENCH | HALLWAY TABLE | HANGER | UMBRELLA STAND | BAR | SIDETABLE | KITCHEN TABLE | KITCHEN COUNTER | STOVE | TRASH BIN | CUPBOARD | SINK | FRIDGE | BED | DRESSER | SIDEBOARD | BEDSIDE TABLE | BOOKSHELF | PANTRY | CABINET | DINNER TABLE | COUCH TABLE | ARM CHAIR | SOFA | TV COUNTER | PLANT;
