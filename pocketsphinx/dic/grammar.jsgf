@@ -1,0 +1,15 @@
+#JSGF V1.0;
+grammar robocup;
+public <robocup_command> = <introduce>|<command>|<location>|<etc>;
+<introduce> = <preword> <names>;
+<command> = <verb> <subject> <object>;
+<location> = <prelocation> <number>;
+<etc> = <general>;
+<preword> = /128.000000/MY NAME IS|/128.000000/I AM;
+<names> = /128.000000/TINA|/128.000000/THOMAS|/128.000000/ROBERT|/128.000000/EMMA|/128.000000/DONNA;
+<verb> = /128.000000/BRING|/128.000000/TAKE;
+<subject> = /128.000000/ME;
+<object> = /128.000000/PRINGLES|/128.000000/COFFEE|/128.000000/COFFEE MAX|/128.000000/DEODORANT|/128.000000/PEPSI;
+<prelocation> = /128.000000/THIS IS LOCATION;
+<number> = /128.000000/ONE|/128.000000/TWO|/128.000000/THREE;
+<general> = /128.000000/FOLLOW ME|/128.000000/THANK YOU|/128.000000/ROBOT YES|/128.000000/ROBOT NO|/128.000000/GET OUT;
