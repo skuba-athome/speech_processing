@@ -1,8 +1,8 @@
 <launch>
 
-  <node name="recognizer" pkg="pocketsphinx" type="recognizer.py" output="screen">
+  <node name="recognizer_grammar" pkg="pocketsphinx" type="recognizer_grammar.py" output="screen">
     <remap from="recognizer/output" to="voice/output" />
-    <param name="lm" value="$(find pocketsphinx)/dic/GPSR.lm"/>
+    <param name="grammar" value="$(find pocketsphinx)/dic/GPSR.fsg"/>
     <param name="dict" value="$(find pocketsphinx)/dic/GPSR.dic"/>
   </node>
 
