@@ -64,10 +64,6 @@ class grammar_recognizer(object):
             rospy.logerr('Please specify a dictionary')
             return
 
-        print '###########################################'
-        print 'Grammar = ' + self.grammar_
-        print '###########################################'
-
         asr.set_property('fsg',self.grammar_)
         asr.set_property('dict',self.dict_)
 
