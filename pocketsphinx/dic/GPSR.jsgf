@@ -1,10 +1,11 @@
 #JSGF V1.0;
 grammar GPSR;
-public <gpsr_command> = <category_2> | <category_1>;
+public <gpsr_command> = <category_1> | <category_2> | <object> | <location> | <cancel> | <confirm>;
 
 /* Category 1 rule */
 <category_1> = <category_1_command> [<conjunction>] <category_1_command> [<conjunction>] <category_1_command>;
 <category_1_command> = <go_to> | <exit_apartment> | <get_object> | <introduce_yourself> | <memorize_person> | <recognize_person> | <follow> | <find_person> | <retrieve_item> | <carry_object_1> | <detect_object>;
+
 <go_to> = <go> TO [<article>] <location>;
 <exit_apartment> = <exit> [<article>] APARTMENT;
 <get_object> = <get> [<article>] (<object> | IT);
@@ -41,6 +42,11 @@ public <gpsr_command> = <category_2> | <category_1>;
 /* Object & Location category */
 <object_category> = DRINK | KITCHENARY | FOOD | SNACK;
 <location_category> = SEATING | TABLE | UTENSIL | SHELF | APPLIANCE;
+
 /* Object & Location*/
-<object> = PRINGLES | PEPSI | WATER | MILK;
+<object> = DEODORANT | TOOTH PASTE | CLEANER | FRESH DISCS | SPONGE | BEER BOTTLE | FANTA | BEER CAN | COKE | SEVEN UP | CHOCOLATE MILK | ENERGY DRINK | ORANGE JUICE | MILK | APPLE JUICE | TOMATO SAUCE | PEANUT BUTTER | CHICKEN NOODLES | MARMALADE | VEGGIE NOODLES | GARLIC SAUCE | CHOCOLATE | COOKIES | DROPS | CRACKERS;
 <location> = BENCH | HALLWAY TABLE | HANGER | UMBRELLA STAND | BAR | SIDETABLE | KITCHEN TABLE | KITCHEN COUNTER | STOVE | TRASH BIN | CUPBOARD | SINK | FRIDGE | BED | DRESSER | SIDEBOARD | BEDSIDE TABLE | BOOKSHELF | PANTRY | CABINET | DINNER TABLE | COUCH TABLE | ARM CHAIR | SOFA | TV COUNTER | PLANT;
+
+/* Confirmation and Cancelation */
+<confirm> = YES;
+<cancel> = NO;
