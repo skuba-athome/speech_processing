@@ -1,9 +1,10 @@
 #JSGF V1.0;
 grammar GPSR;
-public <gpsr_command> = <category_1> | <category_2> | <object> | <location> | <cancel> | <confirm>;
+public <gpsr_command> = <category_1> | <category_2> | <object> | <location> | ROBOT YES | ROBOT NO;
 
 /* Category 1 rule */
 <category_1> = <category_1_command> [<conjunction>] <category_1_command> [<conjunction>] <category_1_command>;
+
 <category_1_command> = <go_to> | <exit_apartment> | <get_object> | <introduce_yourself> | <memorize_person> | <recognize_person> | <follow> | <find_person> | <retrieve_item> | <carry_object_1> | <detect_object>;
 
 <go_to> = <go> TO [<article>] <location>;
@@ -12,15 +13,16 @@ public <gpsr_command> = <category_1> | <category_2> | <object> | <location> | <c
 <introduce_yourself> = <introduce> YOURSELF;
 <memorize_person> = MEMORIZE THE PERSON | ASK PERSON NAME;
 <recognize_person> = RECOGNIZE (HIM | HER);
-<follow> = FOLLOW PERSON IN FRONT OF YOU;
-<find_person> = FIND <article> PERSON;
+<follow> = FOLLOW PERSON;
+<find_person> = FIND <article> <person>;
 <retrieve_item> = <retrieve> [<article>] <object> FROM <location>;
 <carry_object_1> = <carry> [IT] TO <location>;
 <detect_object> = <detect> THE <object>;
 
 /* Category 2 rule */
-<category_2> = <carry_object_2> | <bring_me_object>;
+<category_2> = <carry_object_2> | <bring_me_object> | <go_to_category>;
 <carry_object_2> = <carry> [<article>] <object_category> TO [<article>] <location_category>;
+<go_to_category> = <go> TO [<article>] <location_category>;
 <bring_me_object> = <bring> ME [<article>] <object_category>;
 
 /* Article */
@@ -30,7 +32,7 @@ public <gpsr_command> = <category_1> | <category_2> | <object> | <location> | <c
 <conjunction> = AND | THEN;
 
 /* Verb */
-<go> = GO | MOVE | NAVIGATE;
+<go> = GO | MOVE | NAVIGATE | POINT | HEAD;
 <exit> = EXIT | LEAVE;
 <get> = GET | GRASP | TAKE;
 <introduce> = INTRODUCE | TELL SOMETHING ABOUT;
@@ -40,13 +42,11 @@ public <gpsr_command> = <category_1> | <category_2> | <object> | <location> | <c
 <retrieve> = RETRIEVE | BRING;
 
 /* Object & Location category */
-<object_category> = DRINK | KITCHENARY | FOOD | SNACK;
-<location_category> = SEATING | TABLE | UTENSIL | SHELF | APPLIANCE;
+<object_category> = DRINK | CLEANING STUFF | FOOD | SNACKS;
+<location_category> = SEAT | TABLE | UTENSIL | SHELF | APPLIANCE;
 
 /* Object & Location*/
 <object> = DEODORANT | TOOTH PASTE | CLEANER | FRESH DISCS | SPONGE | BEER BOTTLE | FANTA | BEER CAN | COKE | SEVEN UP | CHOCOLATE MILK | ENERGY DRINK | ORANGE JUICE | MILK | APPLE JUICE | TOMATO SAUCE | PEANUT BUTTER | CHICKEN NOODLES | MARMALADE | VEGGIE NOODLES | GARLIC SAUCE | CHOCOLATE | COOKIES | DROPS | CRACKERS;
 <location> = BENCH | HALLWAY TABLE | HANGER | UMBRELLA STAND | BAR | SIDETABLE | KITCHEN TABLE | KITCHEN COUNTER | STOVE | TRASH BIN | CUPBOARD | SINK | FRIDGE | BED | DRESSER | SIDEBOARD | BEDSIDE TABLE | BOOKSHELF | PANTRY | CABINET | DINNER TABLE | COUCH TABLE | ARM CHAIR | SOFA | TV COUNTER | PLANT;
+<person> = MICHAEL | CHRISTOPHER | MATTHEW | JOSHUA | DANIEL | DAVID | ANDREW | JAMES | JUSTIN | JOSEPH | JESSICA | ASHLEY | BRITTANY | AMANDA | SAMANTHA | SARAH | STEPHANIE | JENNIFER | ELIZABETH | LAUREN;
 
-/* Confirmation and Cancelation */
-<confirm> = YES;
-<cancel> = NO;
