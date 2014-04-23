@@ -1,9 +1,9 @@
 <launch>
 
-  <node name="recognizer" pkg="pocketsphinx" type="recognizer.py" output="screen">
+  <node name="recognizer_grammar" pkg="pocketsphinx" type="recognizer_grammar.py" output="screen">
     <remap from="recognizer/output" to="voice/output" />
-    <param name="lm" value="$(find pocketsphinx)/dic/cocktail_2013.lm"/>
-    <param name="dict" value="$(find pocketsphinx)/dic/cocktail_2013.dic"/>
+    <param name="grammar" value="$(find pocketsphinx)/dic/cocktail.fsg"/>
+    <param name="dict" value="$(find pocketsphinx)/dic/cocktail.dic"/>
   </node>
 
 </launch>
