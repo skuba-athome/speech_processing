@@ -1,3 +1,3 @@
 #JSGF V1.0;
 grammar FOLLOWME;
-public <followme_command> = FOLLOW ME | GET OUT | LEAVE ELEVATOR;
+public <followme_command> = FOLLOW ME | GET OUT | (LEAVE [THE] ELEVATOR);
