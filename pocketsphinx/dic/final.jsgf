@@ -1,6 +1,6 @@
 #JSGF V1.0;
 grammar final;
-public <final_command> = <breakfast> | <hungry> | <object>;
+public <final_command> = <breakfast> | <hungry> | <confirm> | <object>;
 <breakfast> = I <want> BREAKFAST;
 <hungry> = I AM HUNGRY;
 <want> = WANT | NEED;
