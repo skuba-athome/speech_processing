@@ -1,0 +1,53 @@
+Language model created by QuickLM on Thu Jan 19 15:44:05 EST 2012
+Copyright (c) 1996-2010 Carnegie Mellon University and Alexander I. Rudnicky
+
+The model is in standard ARPA format, designed by Doug Paul while he was at MITRE.
+
+The code that was used to produce this language model is available in Open Source.
+Please visit http://www.speech.cs.cmu.edu/tools/ for more information
+
+The (fixed) discount mass is 0.5. The backoffs are computed using the ratio method.
+This model based on a corpus of 7 sentences and 9 words
+
+\data\
+ngram 1=9
+ngram 2=14
+ngram 3=7
+
+\1-grams:
+-0.7782 </s> -0.3010
+-0.7782 <s> -0.2218
+-1.6232 COKE -0.2218
+-1.6232 GET -0.2218
+-1.6232 NO -0.2218
+-1.6232 NUMTIP -0.2218
+-1.6232 PRINGLES -0.2218
+-1.6232 WATER -0.2218
+-1.6232 YES -0.2218
+
+\2-grams:
+-1.1461 <s> COKE 0.0000
+-1.1461 <s> GET 0.0000
+-1.1461 <s> NO 0.0000
+-1.1461 <s> NUMTIP 0.0000
+-1.1461 <s> PRINGLES 0.0000
+-1.1461 <s> WATER 0.0000
+-1.1461 <s> YES 0.0000
+-0.3010 COKE </s> -0.3010
+-0.3010 GET </s> -0.3010
+-0.3010 NO </s> -0.3010
+-0.3010 NUMTIP </s> -0.3010
+-0.3010 PRINGLES </s> -0.3010
+-0.3010 WATER </s> -0.3010
+-0.3010 YES </s> -0.3010
+
+\3-grams:
+-0.3010 <s> COKE </s>
+-0.3010 <s> GET </s>
+-0.3010 <s> NO </s>
+-0.3010 <s> NUMTIP </s>
+-0.3010 <s> PRINGLES </s>
+-0.3010 <s> WATER </s>
+-0.3010 <s> YES </s>
+
+\end\

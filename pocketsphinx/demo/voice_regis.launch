@@ -1,0 +1,19 @@
+<launch>
+  
+  <include file="$(find openni_launch)/launch/openni.launch"/>
+  <node name="recognizer" pkg="pocketsphinx" type="recognizer_regis.py">
+    <param name="lm" value="$(find pocketsphinx)/demo/voice_regis.lm"/>
+    <param name="dict" value="$(find pocketsphinx)/demo/voice_regis.dic"/>
+  </node>
+  <node name="door" pkg="objects" type="open_door"/>
+  <node name="voice_regis" pkg="pocketsphinx" type="voice_regis.py">
+    <param name="xA" type="double" value="55.5"/>
+    <param name="yA" type="double" value="46.5"/>
+    <param name="thA" type="double" value="1.57"/>
+    <param name="xB" type="double" value="62.8"/>
+    <param name="yB" type="double" value="48.5"/>
+    <param name="thB" type="double" value="1.57"/>
+  </node>
+  <node name="hand" pkg="objects" type="hand_regis.py"/>
+
+</launch>

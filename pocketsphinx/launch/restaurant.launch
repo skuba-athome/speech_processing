@@ -1,0 +1,9 @@
+<launch>
+
+  <node name="recognizer_grammar" pkg="pocketsphinx" type="recognizer_grammar.py" output="screen">
+    <remap from="recognizer/output" to="voice/output" />
+    <param name="grammar" value="$(find pocketsphinx)/dic/restaurant.fsg"/>
+    <param name="dict" value="$(find pocketsphinx)/dic/restaurant.dic"/>
+  </node>
+
+</launch>
