@@ -4,4 +4,5 @@ public <final_command> = <breakfast> | <hungry> | <object>;
 <breakfast> = I <want> BREAKFAST;
 <hungry> = I AM HUNGRY;
 <want> = WANT | NEED;
-<object> = CORNFLAKE | ANYTHING | NOTHING;
+<confirm> = YES | ALRIGHT | NO;
+<object> = CORNFLAKE | ANYTHING | NOTHING | WHATEVER;
