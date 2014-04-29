@@ -1,6 +1,6 @@
 #JSGF V1.0;
 grammar RESTAURANT;
-public <restaurant_command> = <follow> | <stop> | <confirm> | <intro_place> | <intro_shelf> | <bring_object> ;
+public <restaurant_command> = <follow> | <stop> | <confirm> | <intro_place> | <intro_shelf> | <bring_object> | <noise>;
 <follow> = FOLLOW ME;
 <stop> = (ROBOT STOP) | HALTING;
 <confirm> = ROBOT ( YES | NO );
@@ -10,4 +10,5 @@ public <restaurant_command> = <follow> | <stop> | <confirm> | <intro_place> | <i
 <location_number> = ONE | TWO | THREE;
 <direction> = LEFT | RIGHT | BACK;
 <shelf_category> = FOOD | DRINK | CUP | TOY | SNACK | TOOL;
-<object> = DEODORANT | TOOTH PASTE | CLEANER | FRESH DISCS | SPONGE | BEER BOTTLE | FANTA | BEER CAN | COKE | SEVEN UP | CHOCOLATE MILK |ENERGY DRINK | ORANGE JUICE | MILK | APPLE JUICE | TOMATO SAUCE | PEANUT BUTTER | CHICKEN NOODLES | MARMALADE | VEGGIE NOODLES | GARLIC SAUCE | CHOCOLATE | COOKIES | DROPS | CRACKERS;
+<object> = VASELINE | WD | FANTA GREEN | SILICONE | MINUTE MAID | NESCAFE | KNORR | SUNLIGHT | METER | BLASTER | PETER PAN | LOREAL | FANTA RED | QUICK | MILO | LACTASOY | REDONDO | PRINGLES;
+<noise> = GET OUT | LEAVE APARTMENT;

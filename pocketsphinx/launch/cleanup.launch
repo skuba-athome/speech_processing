@@ -1,9 +1,9 @@
 <launch>
 
-  <node name="recognizer" pkg="pocketsphinx" type="recognizer.py" output="screen">
-    <remap from="recognizer/output" to="voice/output" />
-    <param name="lm" value="$(find pocketsphinx)/demo/robocup.lm"/>
-    <param name="dict" value="$(find pocketsphinx)/demo/robocup.dic"/>
+  <node name="recognizer_grammar" pkg="pocketsphinx" type="recognizer_grammar.py" output="screen">
+    <remap from="recognizer_grammar/output" to="voice/output" />
+    <param name="grammar" value="$(find pocketsphinx)/dic/cleanup.fsg"/>
+    <param name="dict" value="$(find pocketsphinx)/dic/cleanup.dic"/>
   </node>
 
 </launch>

@@ -1,6 +1,6 @@
 #JSGF V1.0;
 grammar GPSR;
-public <gpsr_command> = <category_1> | <category_2> | <object> | <location> | <confirm>;
+public <gpsr_command> = <category_1> | <category_2> | <object> | <location> | <confirm> | <noise>;
 
 /* Category 1 rule */
 <category_1> = <category_1_command> [<conjunction>] <category_1_command> [<conjunction>] <category_1_command>;
@@ -48,7 +48,7 @@ public <gpsr_command> = <category_1> | <category_2> | <object> | <location> | <c
 <location_category> = SEAT | TABLE | UTENSIL | SHELF | APPLIANCE;
 
 /* Object & Location*/
-<object> = DEODORANT | TOOTH PASTE | CLEANER | FRESH DISCS | SPONGE | BEER BOTTLE | FANTA | BEER CAN | COKE | SEVEN UP | CHOCOLATE MILK | ENERGY DRINK | ORANGE JUICE | MILK | APPLE JUICE | TOMATO SAUCE | PEANUT BUTTER | CHICKEN NOODLES | MARMALADE | VEGGIE NOODLES | GARLIC SAUCE | CHOCOLATE | COOKIES | DROPS | CRACKERS;
+<object> = VASELINE | WD | FANTA GREEN | SILICONE | MINUTE MAID | NESCAFE | KNORR | SUNLIGHT | METER | BLASTER | PETER PAN | LOREAL | FANTA RED | QUICK | MILO | LACTASOY | REDONDO | PRINGLES;
 <location> = BENCH | HALLWAY TABLE | HANGER | UMBRELLA STAND | BAR | SIDETABLE | KITCHEN TABLE | KITCHEN COUNTER | STOVE | TRASH BIN | CUPBOARD | SINK | FRIDGE | BED | DRESSER | SIDEBOARD | BEDSIDE TABLE | BOOKSHELF | PANTRY | CABINET | DINNER TABLE | COUCH TABLE | ARM CHAIR | SOFA | TV COUNTER | PLANT;
 <person> = MICHAEL | CHRISTOPHER | MATTHEW | JOSHUA | DANIEL | DAVID | ANDREW | JAMES | JUSTIN | JOSEPH | JESSICA | ASHLEY | BRITTANY | AMANDA | SAMANTHA | SARAH | STEPHANIE | JENNIFER | ELIZABETH | LAUREN;
-
+<noise> = STOP | GET OUT;
