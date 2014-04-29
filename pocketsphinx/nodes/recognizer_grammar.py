@@ -34,7 +34,7 @@ class grammar_recognizer(object):
 
     def __init__(self):
         """ Initialize the speech pipeline components. """
-        rospy.init_node('recognizer')
+        rospy.init_node('recognizer_grammar')
         self.pub = rospy.Publisher('~output',String)
         rospy.on_shutdown(self.shutdown)
 
