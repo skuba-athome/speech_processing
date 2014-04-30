@@ -1,0 +1,6 @@
+#JSGF V1.0;
+grammar CLEANUP;
+public <cleanup_command> = <room> | <confirm> | <noise>;
+<room> = KITCHEN | LIVING ROOM;
+<confirm> = ROBOT ( YES | NO );
+<noise> = GET OUT | FOLLOW ME | STOP;
