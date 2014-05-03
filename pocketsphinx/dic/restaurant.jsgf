@@ -1,0 +1,14 @@
+#JSGF V1.0;
+grammar RESTAURANT;
+public <restaurant_command> = <follow> | <stop> | <confirm> | <intro_place> | <intro_shelf> | <bring_object> | <noise>;
+<follow> = FOLLOW ME;
+<stop> = (ROBOT STOP) | HALTING;
+<confirm> = ROBOT ( YES | NO );
+<intro_place> = LOCATION <location_number> ON MY <direction>;
+<intro_shelf> = THIS IS <shelf_category> SHELF;
+<bring_object> = BRING <object> TO LOCATION <location_number>;
+<location_number> = ONE | TWO | THREE;
+<direction> = LEFT | RIGHT | BACK;
+<shelf_category> = FOOD | DRINK | CUP | TOY | SNACK | TOOL;
+<object> = VASELINE | WD | FANTA GREEN | SILICONE | MINUTE MAID | NESCAFE | KNORR | SUNLIGHT | METER | BLASTER | PETER PAN | LOREAL | FANTA RED | QUICK | MILO | LACTASOY | REDONDO | PRINGLES;
+<noise> = GET OUT | LEAVE APARTMENT;
