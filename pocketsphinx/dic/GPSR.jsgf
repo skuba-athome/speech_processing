@@ -1,6 +1,6 @@
 #JSGF V1.0;
 grammar GPSR;
-public <gpsr_command> = <category_1> | <category_2> | <object> | <location> | <confirm> | <noise>;
+public <gpsr_command> = <category_1_command> | <category_2> | <object> | <location> | <confirm> | <noise>;
 
 /* Category 1 rule */
 <category_1> = <category_1_command> [<conjunction>] <category_1_command> [<conjunction>] <category_1_command>;
@@ -44,11 +44,11 @@ public <gpsr_command> = <category_1> | <category_2> | <object> | <location> | <c
 <retrieve> = RETRIEVE | BRING;
 
 /* Object & Location category */
-<object_category> = DRINK | CLEANING STUFF | FOOD | SNACKS;
-<location_category> = SEAT | TABLE | UTENSIL | SHELF | APPLIANCE;
+<object_category> = CUP | TOY | DRINK | SNACK | TOOL;
+<location_category> = TABLE | SHELF | APPLIANCE;
 
 /* Object & Location*/
-<object> = VASELINE | WD | FANTA GREEN | SILICONE | MINUTE MAID | NESCAFE | KNORR | SUNLIGHT | METER | BLASTER | PETER PAN | LOREAL | FANTA RED | QUICK | MILO | LACTASOY | REDONDO | PRINGLES;
-<location> = BENCH | HALLWAY TABLE | HANGER | UMBRELLA STAND | BAR | SIDETABLE | KITCHEN TABLE | KITCHEN COUNTER | STOVE | TRASH BIN | CUPBOARD | SINK | FRIDGE | BED | DRESSER | SIDEBOARD | BEDSIDE TABLE | BOOKSHELF | PANTRY | CABINET | DINNER TABLE | COUCH TABLE | ARM CHAIR | SOFA | TV COUNTER | PLANT;
-<person> = MICHAEL | CHRISTOPHER | MATTHEW | JOSHUA | DANIEL | DAVID | ANDREW | JAMES | JUSTIN | JOSEPH | JESSICA | ASHLEY | BRITTANY | AMANDA | SAMANTHA | SARAH | STEPHANIE | JENNIFER | ELIZABETH | LAUREN;
+<object> = GREEN CUP | BLUE CUP | PINK CUP | YELLOW CUP | PAPER CUP | RABBIT | BEAR | CLAY | FIRE TRUCK | MIXER TRUCK | ORANGE JUICE | SODA | GREEN TEA | GRAPEFRUIT JUICE | COFFEE | BEER | POTATO SNACK | RED CHIPS | GREEN CHIPS | BISCUIT | SPRAY CAN | LIGHT | WATERING POT | PEN STAND | SHAMPOO BOTTLE;
+<location> = RECEPTION TABLE | SHOEBOX | DESK | BROWN SHELF | LIBRARY TABLE | WHITE SHELF | SHOWCASE | DUST BIN | SOFA | TV BOARD | LIVING TABLE | DINING TABLE | DINING SHELF | BAR | KITCHEN TABLE | FRIDGE | KITCHEN BOARD;
+<person> = JACOB | MICHAEL | JOSHUA | MATTHEW | DANIEL | CHRISTOPHER | ANDREW | ETHAN | JOSEPH | WILLIAM | EMILY | MADISON | EMMA | OLIVIA | HANNAH | ISABELLA | SAMANTHA | ASHLEY | ALEXIS | SARAH;
 <noise> = STOP | GET OUT;
