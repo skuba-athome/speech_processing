@@ -1,0 +1,58 @@
+#JSGF V1.0;
+grammar GPSR;
+public <gpsr_command> = <category_1> | <category_2> | <object> | <location> | <confirm> | <noise>;
+
+/* Category 1 rule */
+<category_1> = <category_1_command> [<conjunction>] <category_1_command>;
+
+<category_1_command> = <go_to> | <exit_apartment> | <bring_object> | <introduce_yourself> | <memorize_person> | <recognize_person> | <follow> | <find_person> | <retrieve_item> | <carry_object_1> | <detect_object> | <make_breakfast> | <notify>;
+
+<go_to> = <go> TO <location>;
+<exit_apartment> = <exit> APARTMENT;
+<bring_object> = <bring> ([<article>] <object> | IT);
+<introduce_yourself> = <introduce> YOURSELF;
+<memorize_person> = MEMORIZE PERSON | ASK PERSON NAME;
+<recognize_person> = RECOGNIZE (HIM | HER);
+<follow> = FOLLOW PERSON;
+<find_person> = FIND <person>;
+<retrieve_item> = <retrieve> [<article>] <object> FROM <location>;
+<carry_object_1> = <carry> ( [<article>] <object> | IT) TO <location>;
+<detect_object> = <detect> [<article>] <object>;
+<make_breakfast> = <make> BREAKFAST;
+<notify> = <remind> ME AT <location>;
+
+/* Category 2 rule */
+<category_2> = <carry_object_2> | <bring_me_object> | <go_to_category>;
+<carry_object_2> = <carry> [<article>] <object_category> FROM <location_category>;
+<go_to_category> = <go> TO [<article>] <location_category>;
+<bring_me_object> = <bring> ME [<article>] <object_category>;
+<find_object_2> = <detect> [<article>] <object_category>;
+
+<confirm> = ROBOT (YES | NO);
+
+/* Article */
+<article> = A | AN | THE | SOME;
+
+/* Conjunction */
+<conjunction> = AND | THEN;
+
+/* Verb */
+<go> = GO | MOVE | NAVIGATE | POINT | HEAD;
+<exit> = EXIT | LEAVE;
+<introduce> = INTRODUCE | TELL SOMETHING ABOUT;
+<carry> = BRING | CARRY;
+<bring> = GIVE | GET | BRING | GRASP | TAKE;
+<detect> = DETECT | FIND | IDENTIFY;
+<retrieve> = RETRIEVE | BRING;
+<make> = MAKE;
+<remind> = NOTIFY | REMIND | TELL;
+
+/* Object & Location category */
+<object_category> = CUP | TOY | DRINK | SNACK | TOOL;
+<location_category> = TABLE | SHELF | APPLIANCE;
+
+/* Object & Location*/
+<object> = GREEN CUP | BLUE CUP | PINK CUP | YELLOW CUP | PAPER CUP | RABBIT | BEAR | CLAY | FIRE TRUCK | MIXER TRUCK | ORANGE JUICE | SODA | GREEN TEA | GRAPEFRUIT JUICE | COFFEE | BEER | POTATO SNACK | RED CHIPS | GREEN CHIPS | BISCUIT | SPRAY CAN | LIGHT | WATERING POT | PEN STAND | SHAMPOO BOTTLE;
+<location> = RECEPTION TABLE | SHOEBOX | DESK | BROWN SHELF | LIBRARY TABLE | WHITE SHELF | SHOWCASE | DUST BIN | SOFA | TV BOARD | LIVING TABLE | DINING TABLE | DINING SHELF | BAR | KITCHEN TABLE | FRIDGE | KITCHEN BOARD;
+<person> = JACOB | MICHAEL | JOSHUA | MATTHEW | DANIEL | CHRISTOPHER | ANDREW | ETHAN | JOSEPH | WILLIAM | EMILY | MADISON | EMMA | OLIVIA | HANNAH | ISABELLA | SAMANTHA | ASHLEY | ALEXIS | SARAH;
+<noise> = STOP | GET OUT;

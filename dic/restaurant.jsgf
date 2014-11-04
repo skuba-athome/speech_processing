@@ -1,0 +1,14 @@
+#JSGF V1.0;
+grammar RESTAURANT;
+public <restaurant_command> = <follow> | <stop> | <confirm> | <intro_place> | <intro_shelf> | <bring_object> | <noise>;
+<follow> = FOLLOW ME;
+<stop> = ROBOT (STOP | HALTING | WAITING);
+<confirm> = ROBOT ( YES | NO );
+<intro_place> = LOCATION <location_number> ON MY <direction>;
+<intro_shelf> = <shelf_category> SHELF IS ON MY <direction>;
+<bring_object> = BRING <object> TO LOCATION <location_number>;
+<location_number> = ONE | TWO | THREE;
+<direction> = LEFT | RIGHT | BACK;
+<shelf_category> = CUP | TOY | DRINK | SNACK | TOOL;
+<object> = GREEN CUP | BLUE CUP | PINK CUP | YELLOW CUP | PAPER CUP | RABBIT | BEAR | CLAY | FIRE TRUCK | MIXER TRUCK | ORANGE JUICE | SODA | GREEN TEA | GRAPEFRUIT JUICE | COFFEE | BEER | POTATO SNACK | RED CHIPS | GREEN CHIPS | BISCUIT | SPRAY CAN | LIGHT | WATERING POT | PEN STAND | SHAMPOO BOTTLE;
+<noise> = GET OUT | LEAVE APARTMENT;
