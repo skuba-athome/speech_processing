@@ -5,7 +5,6 @@ Node for segment a command and generate action tuples.
 Action tuples : (verb,<object>,<data>)
 """
 
-import roslib; roslib.load_manifest('pocketsphinx')
 import rospy
 import collections
 from std_msgs.msg import String

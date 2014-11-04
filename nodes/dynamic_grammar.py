@@ -3,7 +3,6 @@
 """
 """
 
-import roslib; roslib.load_manifest('pocketsphinx')
 import rospy
 import collections
 import xml.etree.ElementTree as ET

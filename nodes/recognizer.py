@@ -15,7 +15,6 @@ recognizer.py is a wrapper for pocketsphinx.
     ~stop (std_srvs/Empty) - stop speech recognition
 """
 
-import roslib; roslib.load_manifest('pocketsphinx')
 import rospy
 
 import pygtk

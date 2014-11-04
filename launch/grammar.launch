@@ -1,13 +1,13 @@
 <launch>
 
-  <node name="recognizer_grammar" pkg="pocketsphinx" type="recognizer_grammar.py" output="screen">
+  <node name="recognizer_grammar" pkg="speech_processing" type="recognizer_grammar.py" output="screen">
     <remap from="recognizer/output" to="voice/grammar" />
-    <param name="grammar" value="$(find pocketsphinx)/dic/grammar.fsg"/>
-    <param name="dict" value="$(find pocketsphinx)/dic/grammar.dic"/>
+    <param name="grammar" value="$(find speech_processing)/dic/grammar.fsg"/>
+    <param name="dict" value="$(find speech_processing)/dic/grammar.dic"/>
   </node>
 
-  <node name="dynamic_grammar" pkg="pocketsphinx" type="dynamic_grammar.py" output="screen">
-    <param name="grammar" value="$(find pocketsphinx)/dic/grammar.xml"/>
+  <node name="dynamic_grammar" pkg="speech_processing" type="dynamic_grammar.py" output="screen">
+    <param name="grammar" value="$(find speech_processing)/dic/grammar.xml"/>
   </node>
 
 </launch>

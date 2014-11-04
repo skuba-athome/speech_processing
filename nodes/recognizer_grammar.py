@@ -1,10 +1,10 @@
 #!/usr/bin/env python
 
 """
-recognizer.py is a wrapper for pocketsphinx.
+recognizer_grammar.py is a wrapper for pocketsphinx.
   parameters:
-    ~lm - filename of language model
     ~dict - filename of dictionary
+    ~fsg - filename of grammar model
   publications:
     ~output (std_msgs/String) - text output
   services:
@@ -12,7 +12,6 @@ recognizer.py is a wrapper for pocketsphinx.
     ~stop (std_srvs/Empty) - stop speech recognition
 """
 
-import roslib; roslib.load_manifest('pocketsphinx')
 import rospy
 
 import pygtk
