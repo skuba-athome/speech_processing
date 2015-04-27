@@ -3,6 +3,7 @@
 """
 """
 
+import roslib; roslib.load_manifest('speech_processing')
 import rospy
 import collections
 import xml.etree.ElementTree as ET
