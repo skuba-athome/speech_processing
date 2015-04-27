@@ -1,9 +1,17 @@
 #JSGF V1.0;
 grammar COCKTAIL;
 public <cocktail> = <introduce> | <bring_object> | <confirm> | <noise>;
+
 <introduce> = MY NAME IS <name>;
-<bring_object> = I ( WANT | NEED ) <object>; 
+
+<bring_object> = I ( WANT | NEED ) [<article>] <object>; 
+
 <name> = JACOB | MICHAEL | JOSHUA | MATTHEW | DANIEL | CHRISTOPHER | ANDREW | ETHAN | JOSEPH | WILLIAM | EMILY | MADISON | EMMA | OLIVIA | HANNAH | ISABELLA | SAMANTHA | ASHLEY | ALEXIS | SARAH;
+
 <object> = GREEN CUP | BLUE CUP | PINK CUP | YELLOW CUP | PAPER CUP | RABBIT | BEAR | CLAY | FIRE TRUCK | MIXER TRUCK | ORANGE JUICE | SODA | GREEN TEA | GRAPEFRUIT JUICE | COFFEE | BEER | POTATO SNACK | RED CHIPS | GREEN CHIPS | BISCUIT | SPRAY CAN | LIGHT | WATERING POT | PEN STAND | SHAMPOO BOTTLE;
+
 <confirm> = ROBOT ( YES | NO );
+
 <noise> = STOP | GET OUT ;
+
+<article> = A | AN | THE | SOME | ONE ;

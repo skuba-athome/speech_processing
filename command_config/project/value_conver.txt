@@ -1,0 +1,112 @@
+food
+drink
+snack
+vegetable
+fruit
+appliance
+accesory
+costume
+medicine
+cosmetics
+drug
+equipment
+device
+electronic
+stationery
+machine
+bakery
+health care
+
+sphere
+prism
+cuboid
+cube
+cylinder
+pyramid
+cone
+
+reception table
+shoebox
+desk
+brown shelf
+library table
+white shelf
+showcase
+dust bin
+tv board
+living table
+dining table
+dining shelf
+kitchen table
+fridge
+kitchen board
+bookshelf
+shelf
+hanger
+umbrella stand
+stove
+sink
+plant
+TV counter
+hallway table
+kitchen counter
+cupboard
+sidetable
+living room
+bedroom
+hallway
+kitchen
+kitchen table
+cabinet
+pantry
+bar
+bench
+arm chair
+sofa
+bed
+dresser
+sideboard
+
+red
+green
+blue
+brown
+black
+white
+orange
+purple
+pink
+yellow
+gray
+violet
+aqua
+beige
+cream
+dark
+light
+silver
+gold
+clear
+
+sweet 
+sour 
+salty 
+bitter 
+pungent 
+astringent 
+sharp 
+spicy 
+acidic 
+tart 
+acrid 
+mellow 
+creamy 
+cheesy 
+juicy 
+mild 
+watery 
+bland 
+good 
+delicious 
+yummy 
+tasty

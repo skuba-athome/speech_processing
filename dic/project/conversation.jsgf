@@ -1,0 +1,83 @@
+#JSGF V1.0;
+grammar CONVERSATION;
+public <conversation> =  <object> | <val_feature> | <value> | <confirm> | <feature> | <confirm> | <statement> | <greeting>;
+
+<confirm> = ROBOT (YES | NO | CANCEL);
+<article> = A | AN | THE | SOME;
+<unit> = CENTIMETER | CUBIC | BAHT;
+<conjuction> = AND;
+
+
+
+<statement> = <question_1> | <statement_no> | <statement_yes>;
+
+<question_1> = WHAT IS THIS;
+<statement_no> = NO (I | IT) <verb> NOT;
+<statement_yes> = YES (I | IT) <verb>;
+<verb> = DO | HAVE | IS | WANT | AM ;
+<greeting> = HELLO | BYE | HI | NIGHT | DAY | GOOD MORNING | GOOD EVENING | GOOD AFTERNOON | GOOD BYE | GOOD NIGHT | GOOD  | MORNING | EVENING | AFTERNOON | HEY | GUY | SIR | HOW ARE YOU | I AM FINE  | THANK YOU | YOU;
+
+
+<value> = <value0> | <value1> | <value2> | <value3>;
+
+<value0> = <pattern_1> | <pattern_2>;  
+<value1> = <pattern_3> [<pattern_1>];  
+<value2> =  <pattern_1> HUNDRED [<conjuction>][<value0> | <value1>]; 
+<value3> =  [<value0> | <value1> | <value2>] THOUSAND [<conjuction>] [<value2>]; 
+
+<pattern_1> = ONE | TWO | THREE | FOUR | FIVE | SIX | SEVEN | EIGHT | NINE;
+<pattern_2> = TEN | ELEVEN | TWELVE | THIRTEEN | FOURTEEN | FIFTEEN | SIXTEEN | SEVENTEEN | EIGHTEEN | NINETEEN;
+<pattern_3> = TWENTY | THIRTY | FORTY | FIFTY | SIXTY | SEVENTY | EIGHTY | NINETY;
+<pattern_4> = HUNDRED | THOUSAND | MILLION | BILLION;
+
+
+
+<object> = <drink> | <fruit> | <food> | <addition> | <equipment> | <healthcare> | <costume> | <brand>;
+
+<drink> = COLA | COKE | WATER  | MILK | TEA | COFFEE | SODA | BEER | WINE | ALCOHOL | FANTA | JUICE | SEVEN UP | CHOCOLATE MILK | BANANA MILK | STRAWBERRY MILK | SOY MILK | ENERGY DRINK | ORANGE JUICE | APPLE JUICE | LEMON JUICE | MILK TEA | LEMON TEA | GREEN TEA | ORANGE JUICE | GRAPEFRUIT JUICE;
+
+<fruit> = ORANGE | LEMON | BANANA | STRAWBERRY | APPLE | SOY | POTATO | CORN;
+
+<food> = CHOCOLATE | COOKIES | DROPS | CRACKERS | POPCORN | TOFFEE | CANDY | DONUT | CAKE | SANDWITCH | HAM  | CHEESE | SAUSAGE | HOTDOG | YOGURT | BREAD | EGG | POTATO SNACK | PIZZA | HAMBURGER;
+
+<addition> = TOMATO SAUCE | PEANUT BUTTER | BUTTER | MARMELADE | GARLIC SAUCE | CARAMEL | SYRUB | APPLE SYRUB | VANILLA SYRUB;
+
+<equipment> = COMPUTER | KEYBOARD | MICROPHONE | SPEAKER | KINECT | WEBCAM | PERSONAL COMPUTER | PC | TELEVISION | CHAIR | TABLE | PEN | PENCIL | ERASER | LIQUID | BAG | NOTEBOOK | PAPER | BED | PILLOW | DOLL | TABLET | CAMERA;
+
+<healthcare> = TISSUE | PUFF | POWDER | LOTION | BRUSH | SOAF | SHAMPOO | TOOTH BRUSH | FOAM;
+
+<costume> = SHIRT | SHORTS | SKIRT | JACKET | SUIT | T-SHIRT | SWEATER;
+
+<brand> = I-PHONE | MAC BOOK | I-PAD | SAMSUNG | COLLON | YAKULT | OISHI | PARTY | HANAMI | OREO | TASTO;
+
+
+
+<val_feature> = <shape> | <location> | <obj_color> | <month> | <category> | <price> | <flavor> | <date>;
+
+<location> = RECEPTION TABLE | SHOEBOX | DESK | BROWN SHELF | LIBRARY TABLE | WHITE SHELF | SHOWCASE | DUST BIN | SOFA | TV BOARD | LIVING TABLE | DINING TABLE | DINING SHELF | BAR | KITCHEN TABLE | FRIDGE | KITCHEN BOARD | BOOKSHELF | HANGER| UMBRELLA STAND | STOVE | SINK | PLANT | TV COUNTER | HALLWAY | KITCHEN COUNTER | CUPBOARD | SIDETABLE | LIVING ROOM | BEDROOM | HALLWAY | KITCHEN | CABINET | PANTRY | BENCH | ARM CHAIR | SOFA | BED | DRESSER | SIDEBOARD | SHELF;
+
+<shape> = SPHERE | PRISM | CUBOID | CUBE | CYLINDER | PYRAMID | CONE;
+
+<month> = JANUARY | FEBRUARY | MARCH | APRIL | MAY | JUNE | JULY | AUGUST | SEPTEMBER | OCTOBER | NOVEMBER | DECEMBER;
+
+<obj_color> = [ <depth> ] <color>;
+<color> = RED | GREEN | BLUE | BROWN | BLACK | WHITE | ORANGE | PURPLE | PINK | YELLOW | GRAY | VIOLET | AQUA | BEIGE | CREAM | SILVER | GOLD | CLEAR;
+<depth> = LIGHT | DARK;
+
+<price> = ( <value0> | <value1> | <value2> | <value3> ) BAHT;
+
+<flavor> = SWEET | SOUR | SALTY | BITTER | PUNGENT | ASTRINGENT | SHARP | SPICY | ACIDIC | TART | ACRID | MELLOW | CREAMY | CHEESY | JUICY | MILD | WATERY | BLAND | GOOD | DELICIOUS | YUMMY | TASTY;
+
+<date> = <number> <month> <year>
+<number> = <pattern_1> | <pattern_2> | TWENTY [<pattern_1>] | THIRTY [<pattern_1>];
+<year> = TWO THOUSAND (<value0> | <value1>)
+
+<category> = FOOD | DRINK | SNACK | VEGETABLE | FRUIT | APPLIANCE | ACCESORY | COSTUME | MEDICINE | COSMETICS | DRUG | EQUIPMENT | DEVICE | ELECTRONIC | STATIONERY | MACHINE | BAKERY | HEALTH CARE | BLANK;
+
+
+
+<feature> = WIDTH | HEIGHT | LONG | PRICE | VOLUMN | PRODUCTION DATE | EXPIRATION DATE | CALORIES | SHAPE | LOCATION | CATEGORY | COLOR | FLAVOR;
+
+
+
+

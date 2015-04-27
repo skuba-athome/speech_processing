@@ -41,6 +41,7 @@ head to hallway
 go to bedroom
 move to bedroom
 head to bedroom
+
 bedside table
 couch table
 bookshelf
@@ -68,6 +69,7 @@ sofa
 bed
 dresser
 sideboard
+
 good job
 thank you
 yes
@@ -78,6 +80,7 @@ stoping
 halt
 halting
 come with me
+
 dinner table
 deodorant
 tooth paste
@@ -107,6 +110,34 @@ chocolate
 cookies
 drops
 crackers
+
+book   
+green cup   
+blue cup   
+pink cup   
+yellow cup   
+paper cup   
+rabbit   
+bear   
+clay   
+fire truck   
+mixer truck   
+orange juice   
+soda   
+green tea   
+grapefruit 
+juice   
+coffee   
+beer   
+potato snack   
+red chips   
+green chips   
+biscuit   
+spray can   
+light   
+watering pot   
+pen stand   
+shampoo bottle
 
 robot yes
 robot no

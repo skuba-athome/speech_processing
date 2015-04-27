@@ -5,10 +5,11 @@ Node for segment a command and generate action tuples.
 Action tuples : (verb,<object>,<data>)
 """
 
+import roslib; roslib.load_manifest('speech_processing')
 import rospy
 import collections
 from std_msgs.msg import String
-from pocketsphinx.msg import Action,ActionContainer
+#from speech_processing.msg  import Action,ActionContainer
 
 names = []
 objects = []
@@ -57,7 +58,7 @@ def extractAction(command):
 					if obj == None:	# If object is null assign it to obj
 						obj = commands[j].lower()
 					else:		# If object is not null, then assume it is a data
-							data = commands[j].lower()
+						data = commands[j].lower()
 				if isVerb(commands[j].lower()):
 					break
 			# Append an action to output list
@@ -73,24 +74,24 @@ def extractAction(command):
 class classify_command(object):
 	def __init__(self):
 		rospy.init_node('classify_command')
-		self.pub = rospy.Publisher('pocketsphinx/command_category',ActionContainer)
-		rospy.Subscriber('pocketsphinx/classify_command', String, self.callback)
+		#self.pub = rospy.Publisher('speech_processing/command_category',ActionContainer)
+		rospy.Subscriber('voice/output', String, self.callback)
 		
 		# Read config file
 		global names,objects,object_categories,locations,location_categories,verbs 
-		object_categories = readFileToList(roslib.packages.get_pkg_dir('pocketsphinx')+'/command_config/object_categories.txt')
-		objects = readFileToList(roslib.packages.get_pkg_dir('pocketsphinx')+'/command_config/objects.txt')
-		locations = readFileToList(roslib.packages.get_pkg_dir('pocketsphinx')+'/command_config/locations.txt')
-		names = readFileToList(roslib.packages.get_pkg_dir('pocketsphinx')+'/command_config/names.txt')
-		location_categories = readFileToList(roslib.packages.get_pkg_dir('pocketsphinx')+'/command_config/location_categories.txt')	
-		verbs = readFileToList(roslib.packages.get_pkg_dir('pocketsphinx')+'/command_config/verbs.txt')	
+		object_categories = readFileToList(roslib.packages.get_pkg_dir('speech_processing')+'/command_config/object_categories.txt')
+		objects = readFileToList(roslib.packages.get_pkg_dir('speech_processing')+'/command_config/objects.txt')
+		locations = readFileToList(roslib.packages.get_pkg_dir('speech_processing')+'/command_config/locations.txt')
+		names = readFileToList(roslib.packages.get_pkg_dir('speech_processing')+'/command_config/names.txt')
+		location_categories = readFileToList(roslib.packages.get_pkg_dir('speech_processing')+'/command_config/location_categories.txt')	
+		verbs = readFileToList(roslib.packages.get_pkg_dir('speech_processing')+'/command_config/verbs.txt')	
 		
 		rospy.spin()
 
 	def callback(self,data):
 		#print "I heard : %s" % (data.data)
 		command = data.data.lower()
-		msg = ActionContainer()
+		#msg = ActionContainer()
 		actions = extractAction(command)
 		#rospy.loginfo(action)
 		index = -1
@@ -98,14 +99,21 @@ class classify_command(object):
 			index += 1
 			if len(action) == 3:
 				msg.actions[index].action = action[0]
+				print ("action :"+ msg.actions[index].action)
 				msg.actions[index].object = action[1]
+				print ("object :"+ msg.actions[index].object)
 				msg.actions[index].data = action[2]
+				print ("data :"+ msg.actions[index].data)
 			elif len(action) == 2:
 				msg.actions[index].action = action[0]
+				print ("action :"+ msg.actions[index].action)
 				msg.actions[index].object = action[1]
+				print ("object :"+ msg.actions[index].object)
 			else:
 				msg.actions[index].action = action[0]
-		self.pub.publish(msg)
+				print ("action :"+ msg.actions[index].action)
+		#self.pub.publish(msg)
 
 if __name__=="__main__":
 	c = classify_command()
+

@@ -1,0 +1,125 @@
+cola
+coke
+water
+milk
+tea
+coffee
+soda
+beer 
+wine
+alcohol
+fanta
+juice
+seven up
+chocolate milk
+banana milk
+strawberry milk
+soy milk
+energy drink
+orange juice
+apple juice
+lemon juice
+milk tea
+lemon tea
+green tea
+orange juice
+grapefruit juice
+
+orange
+lemon
+banana
+strawberry
+apple
+soy
+potato
+corn
+
+
+chocolate
+cookies
+drops
+crackers
+popcorn
+toffee
+candy
+donut
+cake
+sandwitch
+ham 
+cheese
+sausage
+hotdog
+yogurt
+bread
+egg
+potato snack
+pizza
+hamburger
+
+collon
+lays
+yakult
+oishi
+party
+hanami
+oreo
+tasto
+
+tomato sauce
+peanut butter
+butter
+marmelade
+garlic sauce
+caramel
+syrub
+apple syrub
+vanilla syrub
+
+computer
+keyboard
+microphone
+speaker
+kinect
+webcam
+personal computer
+pc
+television
+
+chair
+table
+pen
+pencil
+eraser
+liquid
+
+tissue
+puff
+powder
+lotion
+brush
+soaf
+shampoo
+tooth brush
+foam
+
+bag
+notebook
+paper
+bed
+pillow
+doll
+
+shirt
+shorts
+skirt
+jacket
+suit
+t-shirt
+sweater
+
+i-phone
+mac book
+i-pad
+tablet
+samsung
+camera
