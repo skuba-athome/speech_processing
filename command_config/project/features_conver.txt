@@ -1,0 +1,13 @@
+width
+height
+long
+price
+volumn
+production date
+expiration date
+calories
+shape
+location
+category
+color
+flavor

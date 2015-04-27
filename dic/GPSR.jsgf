@@ -2,8 +2,8 @@
 grammar GPSR;
 public <gpsr_command> = <category_1> | <category_2> | <object> | <location> | <confirm> | <noise>;
 
-/* Category 1 rule */
-<category_1> = <category_1_command> [<conjunction>] <category_1_command>;
+/* Category 1 rule -- at most 3 commands */
+<category_1> = <category_1_command> [<conjunction>] <category_1_command>  [<conjuction>] <category_1_command>;
 
 <category_1_command> = <go_to> | <exit_apartment> | <bring_object> | <introduce_yourself> | <memorize_person> | <recognize_person> | <follow> | <find_person> | <retrieve_item> | <carry_object_1> | <detect_object> | <make_breakfast> | <notify>;
 
@@ -21,19 +21,30 @@ public <gpsr_command> = <category_1> | <category_2> | <object> | <location> | <c
 <make_breakfast> = <make> BREAKFAST;
 <notify> = <remind> ME AT <location>;
 
-/* Category 2 rule */
-<category_2> = <carry_object_2> | <bring_me_object> | <go_to_category>;
+
+/* Category 2 rule -- command is not complete */
+<category_2> = <carry_object_2> | <bring_me_object> | <go_to_category> | <find_object_2>;
+
 <carry_object_2> = <carry> [<article>] <object_category> FROM <location_category>;
 <go_to_category> = <go> TO [<article>] <location_category>;
 <bring_me_object> = <bring> ME [<article>] <object_category>;
 <find_object_2> = <detect> [<article>] <object_category>;
 
+
+/* Object & Location category */
+<object_category> = CUP | TOY | DRINK | SNACK | TOOL;
+<location_category> = TABLE | SHELF | APPLIANCE;
+
+/* Object & Location*/
+<object> = BOOK | GREEN CUP | BLUE CUP | PINK CUP | YELLOW CUP | PAPER CUP | RABBIT | BEAR | CLAY | FIRE TRUCK | MIXER TRUCK | ORANGE JUICE | SODA | GREEN TEA | GRAPEFRUIT JUICE | COFFEE | BEER | POTATO SNACK | RED CHIPS | GREEN CHIPS | BISCUIT | SPRAY CAN | LIGHT | WATERING POT | PEN STAND | SHAMPOO BOTTLE;
+
+<location> = RECEPTION TABLE | SHOEBOX | DESK | BROWN SHELF | LIBRARY TABLE | WHITE SHELF | SHOWCASE | DUST BIN | SOFA | TV BOARD | LIVING TABLE | DINING TABLE | DINING SHELF | BAR | KITCHEN TABLE | FRIDGE | KITCHEN BOARD;
+
+<person> = JACOB | MICHAEL | JOSHUA | MATTHEW | DANIEL | CHRISTOPHER | ANDREW | ETHAN | JOSEPH | WILLIAM | EMILY | MADISON | EMMA | OLIVIA | HANNAH | ISABELLA | SAMANTHA | ASHLEY | ALEXIS | SARAH;
+
 <confirm> = ROBOT (YES | NO);
-
-/* Article */
+<noise> = STOP | GET OUT;
 <article> = A | AN | THE | SOME;
-
-/* Conjunction */
 <conjunction> = AND | THEN;
 
 /* Verb */
@@ -47,12 +58,4 @@ public <gpsr_command> = <category_1> | <category_2> | <object> | <location> | <c
 <make> = MAKE;
 <remind> = NOTIFY | REMIND | TELL;
 
-/* Object & Location category */
-<object_category> = CUP | TOY | DRINK | SNACK | TOOL;
-<location_category> = TABLE | SHELF | APPLIANCE;
 
-/* Object & Location*/
-<object> = GREEN CUP | BLUE CUP | PINK CUP | YELLOW CUP | PAPER CUP | RABBIT | BEAR | CLAY | FIRE TRUCK | MIXER TRUCK | ORANGE JUICE | SODA | GREEN TEA | GRAPEFRUIT JUICE | COFFEE | BEER | POTATO SNACK | RED CHIPS | GREEN CHIPS | BISCUIT | SPRAY CAN | LIGHT | WATERING POT | PEN STAND | SHAMPOO BOTTLE;
-<location> = RECEPTION TABLE | SHOEBOX | DESK | BROWN SHELF | LIBRARY TABLE | WHITE SHELF | SHOWCASE | DUST BIN | SOFA | TV BOARD | LIVING TABLE | DINING TABLE | DINING SHELF | BAR | KITCHEN TABLE | FRIDGE | KITCHEN BOARD;
-<person> = JACOB | MICHAEL | JOSHUA | MATTHEW | DANIEL | CHRISTOPHER | ANDREW | ETHAN | JOSEPH | WILLIAM | EMILY | MADISON | EMMA | OLIVIA | HANNAH | ISABELLA | SAMANTHA | ASHLEY | ALEXIS | SARAH;
-<noise> = STOP | GET OUT;

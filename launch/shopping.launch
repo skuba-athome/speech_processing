@@ -1,9 +1,9 @@
 <launch>
 
-  <node name="recognizer" pkg="pocketsphinx" type="recognizer.py" output="screen">
+  <node name="recognizer" pkg="speech_processing" type="recognizer.py" output="screen">
     <remap from="recognizer/output" to="voice/output" />
-    <param name="lm" value="$(find pocketsphinx)/dic/shopping.lm"/>
-    <param name="dict" value="$(find pocketsphinx)/dic/shopping.dic"/>
+    <param name="lm" value="$(find speech_processing)/dic/shopping.lm"/>
+    <param name="dict" value="$(find speech_processing)/dic/shopping.dic"/>
   </node>
 
 </launch>
