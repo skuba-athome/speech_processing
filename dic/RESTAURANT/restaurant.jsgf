@@ -8,18 +8,17 @@ public <restaurant_command> = <follow> | <stop> | <confirm> | <intro_place> | <i
 
 <confirm> = ROBOT ( YES | NO );
 
-<intro_place> = LOCATION <location_number> ON MY <direction>;
+<intro_place> = THIS IS LOCATION <location_number>;
 
-<intro_shelf> = <shelf_category> SHELF IS ON MY <direction>;
+<intro_shelf> = THIS IS <shelf_category> SHELF;
 
 <bring_object> = BRING <object> TO LOCATION <location_number>;
 
 <location_number> = ONE | TWO | THREE;
 
-<direction> = LEFT | RIGHT | BACK;
+<shelf_category> = SNACK | DRINK | FOOD | CLEANER;
 
-<shelf_category> = CUP | TOY | DRINK | SNACK | TOOL;
-
-<object> = GREEN CUP | BLUE CUP | PINK CUP | YELLOW CUP | PAPER CUP | RABBIT | BEAR | CLAY | FIRE TRUCK | MIXER TRUCK | ORANGE JUICE | SODA | GREEN TEA | GRAPEFRUIT JUICE | COFFEE | BEER | POTATO SNACK | RED CHIPS | GREEN CHIPS | BISCUIT | SPRAY CAN | LIGHT | WATERING POT | PEN STAND | SHAMPOO BOTTLE;
+<object> = LONG POTATO | STICK POTATO | RED POTATO | BLUE POTATO | PRINGLES | CHIP STAR | JAPANESE TEA | LEMON TEA | RED TEA | GREEN TEA |STRAWBERRY JUICE | BROWN TEA | ORANGE JUICE | CUP STAR | CUP NOODLE | JAPANESE DRESSING | ONION DRESSING | KOREAN SOUP | EGG SOUP | SEAFOOD NOODLE | SOFTENER | BATH CLEANER | CLOTH CLEANER | BLEACH;
 
 <noise> = GET OUT | LEAVE APARTMENT;
+
