@@ -2,9 +2,9 @@
 grammar COCKTAIL;
 public <cocktail> = <introduce> | <bring_object> | <confirm> | <noise>;
 
-<introduce> = MY NAME IS <name>;
+<introduce> = MY NAME IS <name> | <name>;
 
-<bring_object> = I ( WANT | NEED ) [<article>] <object>; 
+<bring_object> = I ( WANT | NEED ) [<article>] <object> | <object>; 
 
 <name> = JACOB | MICHAEL | JOSHUA | MATTHEW | DANIEL | CHRISTOPHER | ANDREW | ETHAN | JOSEPH | WILLIAM | EMILY | MADISON | EMMA | OLIVIA | HANNAH | ISABELLA | SAMANTHA | ASHLEY | ALEXIS | SARAH;
 

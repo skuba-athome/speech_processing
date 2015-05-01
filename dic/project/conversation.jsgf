@@ -68,9 +68,9 @@ public <conversation> =  <object> | <val_feature> | <value> | <confirm> | <featu
 
 <flavor> = SWEET | SOUR | SALTY | BITTER | PUNGENT | ASTRINGENT | SHARP | SPICY | ACIDIC | TART | ACRID | MELLOW | CREAMY | CHEESY | JUICY | MILD | WATERY | BLAND | GOOD | DELICIOUS | YUMMY | TASTY;
 
-<date> = <number> <month> <year>
+<date> = <number> <month> <year>;
 <number> = <pattern_1> | <pattern_2> | TWENTY [<pattern_1>] | THIRTY [<pattern_1>];
-<year> = TWO THOUSAND (<value0> | <value1>)
+<year> = TWO THOUSAND (<value0> | <value1>);
 
 <category> = FOOD | DRINK | SNACK | VEGETABLE | FRUIT | APPLIANCE | ACCESORY | COSTUME | MEDICINE | COSMETICS | DRUG | EQUIPMENT | DEVICE | ELECTRONIC | STATIONERY | MACHINE | BAKERY | HEALTH CARE | BLANK;
 
