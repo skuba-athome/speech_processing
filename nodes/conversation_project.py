@@ -67,38 +67,46 @@ class getDirection:
                 fea_data[x] = 'no'
             i=-1
             if data.data in greeting:
-                call(['espeak',data.data+' sweety! Nice to meet you   My name is Antonio  I come to help your shopping life easier   So  What is the object do you want '])
-               	choose = readFileToList(roslib.packages.get_pkg_dir('speech_processing')+'/command_config/choose.txt')
+                call(['espeak', '-s 120', data.data+' sweety! Nice to meet you','-s 120'])
+                call(['espeak','-s 120','My name is Antonio  , I come to help your shopping life easier  , So  Do you choose the object do you want to know'])
+                stage = 'waiting'
+                #obj_recog = 'green tea'   	
+            #elif data.data == 'no':
+            #    call(['espeak', '-s 120', 'sorry I do not understand what do you want, can you repeat?'])
+            #    stage = 'start'
+        
+        elif stage == 'waiting':
+            if 'yes' in data.data:
+                choose = readFileToList(roslib.packages.get_pkg_dir('speech_processing')+'/command_config/choose.txt')
                 obj_recog = choose[0]
-                #obj_recog = 'green tea'
-                call(['espeak','It is'+obj_recog+ ' is not it ?'])
+                f = open('/home/antonio/skuba_underwater/src/speech_processing/command_config/choose.txt','w+')
+                f.write('') 
+                f.close()
+                call(['espeak', '-s 120', 'It is'+obj_recog+ ' is not it ?'])
                 stage = 'check_ans'
-            elif data.data == 'no':
-                call(['espeak','sorry I do not understand what do you want, can you repeat?'])
-                stage = 'start'
 
         elif stage == 'check_ans':
             if 'robot no' in data.data :
-                call(['espeak','I do not know what is this, Do you want me to recognize?'])
+                call(['espeak', '-s 120', 'I do not know what is this, Do you want me to recognize?'])
                 stage = 'learning'
-            elif 'robot yes' in data.data:
-                #call(['espeak','Wow , Why am I so genious , Do you want to know anything else?'])
-                call(['espeak','Wow , Why am I so genious , Do you want to know anything else?'])
+            elif 'yes' in data.data:
+                #call(['espeak', '-s 120', 'Wow , Why am I so genious , Do you want to know anything else?'])
+                call(['espeak', '-s 120', 'Wow , Why am I so genious , Do you want to know anything else?'])
                 stage = 'question'
             elif 'robot cancel' in data.data:
-                call(['espeak','Ok ,   no problem honey    see you next time  bye'])
+                call(['espeak', '-s 120', 'Ok ,   no problem honey    see you next time  bye'])
                 stage = 'start'
 
         
         elif stage == 'question':
             if 'robot no' in data.data :
-                call(['espeak','Ok , see you next time sweety. bye'])
+                call(['espeak', '-s 120', 'Ok , see you next time sweety. bye'])
                 stage = 'start'
-            elif 'robot yes' in data.data:
-                call(['espeak','What feature do you want to know?'])
+            elif 'yes' in data.data:
+                call(['espeak', '-s 120', 'What feature do you want to know?'])
                 stage = 'answering'
             elif 'robot cancel' in data.data:
-                call(['espeak','Ok ,   no problem honey    see you next time  bye'])
+                call(['espeak', '-s 120', 'Ok ,   no problem honey    see you next time  bye'])
                 stage = 'start'
 
         elif stage == 'answering':
@@ -109,164 +117,166 @@ class getDirection:
                 obj_value = str(find.FindDB(obj_recog,ans_fea))
                 if (obj_value == 'Not Found'):
                 #    print('Not Found')
-                #    call(['espeak','Sorry ,  I do not know  the  value of this feature   ,   Have '])
+                #    call(['espeak', '-s 120', 'Sorry ,  I do not know  the  value of this feature   ,   Have '])
                 #    stage = 'question'
-                    call(['espeak','Sorry , I do not know the value of this feature , can you give me the data ?'])
+                    call(['espeak', '-s 120', 'Sorry , I do not know the value of this feature , can you give me the data ?'])
                     stage = 'ask_for_learning_fea'
                 else :
                     print(obj_value)
-                    call(['espeak',' the '+ans_fea+ ' of '+obj_recog+' is '+obj_value+'  ,  Have any feature do you want to know more?'])
+                    call(['espeak', '-s 120', ' the '+ans_fea+ ' of '+obj_recog+' is '+obj_value+'  ,  Have any feature do you want to know more?'])
                     stage = 'question'
         
         elif stage == 'ask_for_learning_fea':
             if 'robot no' in data.data:
-               call(['espeak','So have another feature do you want to know?'])
+               call(['espeak', '-s 120', 'So have another feature do you want to know?'])
                stage = 'question'
-            elif 'robot yes' in data.data:
-                call(['espeak','What is the' +ans_fea+' of the'+obj_recog])  
+            elif 'yes' in data.data:
+                call(['espeak', '-s 120', 'What is the' +ans_fea+' of the'+obj_recog])  
                 stage = 'learning_fea'
 
         elif stage == 'learning_fea':
-            if data.data in value:
+            if (data.data not in objects and data.data not in features and data.data not in categories and data.data not in greeting and data.data not in date):
+            #if data.data in value:
                 data_fea = data.data
-                call(['espeak','Did you tell me  the'+ans_fea+'  of   the'+obj_recog+' is' + data_fea+ ', right?'])
+                call(['espeak', '-s 120', 'Did you tell me  the'+ans_fea+'  of   the'+obj_recog+' is' + data_fea+ ', right?'])
                 stage = 'ask_for_sure'
 
         elif stage == 'ask_for_sure' :
             if 'robot no' in data.data:
-                call(['espeak','Oh Sorry , Can you repeat it?'])
+                call(['espeak', '-s 120', 'Oh Sorry , Can you repeat it?'])
                 stage = 'learning_fea'
-            elif 'robot yes' in data.data:
-                call(['espeak','Ok , I will remember ,   Thank you for your information  , Have any feature do you want to know more?'])
+            elif 'yes' in data.data:
+                call(['espeak', '-s 120', 'Ok , I will remember ,   Thank you for your information  , Have any feature do you want to know more?'])
                 find.AddData(obj_recog,ans_fea,data_fea)
                 stage = 'question'
 
         elif stage == 'learning':
             if 'robot no' in data.data:
-            	call(['espeak','Ok  see you next time sweety. bye'])
+            	call(['espeak', '-s 120', 'Ok  see you next time sweety. bye'])
                 stage = 'start'
-            elif 'robot yes' in data.data:
-                call(['espeak','So what is this?'])
+            elif 'yes' in data.data:
+                call(['espeak', '-s 120', 'So what is this?'])
                 stage = 'store_data'
             elif 'robot cancel' in data.data:
-                call(['espeak','Ok ,   no problem honey    see you next time  bye'])
+                call(['espeak', '-s 120', 'Ok ,   no problem honey    see you next time  bye'])
                 stage = 'start'
 
         elif stage == 'store_data':
             if data.data in objects:
                 obj = data.data
-                call(['espeak','Did you tell me' +obj+'  right'])
+                call(['espeak', '-s 120', 'Did you tell me' +obj+'  right'])
                 stage = 'confirm_obj'
             #obj = data.data
 
         elif stage  == 'confirm_obj' :
-            if 'robot yes' in data.data:
-        		call(['espeak','what is the category of the'+obj])
+            if 'yes' in data.data:
+        		call(['espeak', '-s 120', 'what is the category of the'+obj])
         		stage = 'category'
             elif 'robot no' in data.data:
-                call(['espeak','If it not , can you repeat?'])
+                call(['espeak', '-s 120', 'If it not , can you repeat?'])
                 stage = 'store_data'
             elif 'robot cancel' in data.data:
-                call(['espeak','Ok ,   no problem honey    see you next time  bye'])
+                call(['espeak', '-s 120', 'Ok ,   no problem honey    see you next time  bye'])
                 stage = 'start'
 
         elif stage == 'category':
             if data.data in categories :
                 cat =  data.data
-                call(['espeak','Did you tell me' +cat+' right'])
+                call(['espeak', '-s 120', 'Did you tell me' +cat+' right'])
                 stage = 'confirm_cat'
 
         elif stage  == 'confirm_cat' :
-            if 'robot yes' in data.data:
-                call(['espeak','Do you know its feature?'])
+            if 'yes' in data.data:
+                call(['espeak', '-s 120', 'Do you know its feature?'])
                 stage = 'ask_data'
             elif 'robot no' in data.data:
-                call(['espeak','If it not , can you repeat?'])
+                call(['espeak', '-s 120', 'If it not , can you repeat?'])
                 stage = 'category'
             elif 'robot cancel' in data.data:
-                call(['espeak','Ok ,   no problem honey    see you next time  bye'])
+                call(['espeak', '-s 120', 'Ok ,   no problem honey    see you next time  bye'])
                 stage = 'start'
 
 
         elif stage == 'ask_data':
-            if  'robot yes' in data.data:
+            if  'yes' in data.data:
                 i=i+1
                 if(cat == 'food' or cat == 'drink' or cat == 'fruit' or cat == 'snack' or cat == 'vegetable' or cat == 'bakery'):
                     fea = ['price  in  baht','location', 'calories  in  kilo calories','volumn  in  millilitre', 'flavor',
                     'production date' , 'expired date']
                     if ( i <= 5):
                         print(fea[i])
-                        call(['espeak','what is the'+ fea[i] +' of the'+obj])
+                        call(['espeak', '-s 120', 'what is the'+ fea[i] +' of the'+obj])
                         stage = 'insert'
                     else:  
                         stage = 'finish'
 
-                elif (cat =='blank'):
+                elif (cat =='I dont know'):
                     #fea = 'price'
                     fea = ['price  in  baht','location', 'calories  in  kilo calories','volumn  in  milli litre', 'flavor',
-                    'production date' , 'expired date' , 'color', 'width  in  centimeter' , 'height  in  centimeter' , 'long  in  centimeter']
+                    'production date' , 'expired date' , 'color', 'width  in  centimeter' , 'height  in  centimeter' , 'long  in  centimeter','shape']
                     if ( i <= 2):
                         print(fea[i])
-                        call(['espeak','what is the'+ fea[i] +' of the'+obj])
+                        call(['espeak', '-s 120', 'what is the'+ fea[i] +' of the'+obj])
                         stage = 'insert'
                     else:  
                         stage = 'finish'
 
                 else:
-                    fea = ['price' , 'location' , 'color' , 'width  in  centimeter' , 'height  in  centimeter' , 'long  in  centimeter']
+                    fea = ['price  in  baht' , 'location' , 'color' , 'width  in  centimeter' , 'height  in  centimeter' , 'long  in  centimeter', 'shape']
                     if ( i <= 2):
                         print(fea[i])
-                        call(['espeak','what is the'+ fea[i] +' of the  '+obj])
+                        call(['espeak', '-s 120', 'what is the'+ fea[i] +' of the  '+obj])
                         stage = 'insert'
                     else:  
                         stage = 'finish'
 
             elif 'robot no' in data.data:
-                call(['espeak','Ok ,   no problem honey    see you next time  bye'])
+                call(['espeak', '-s 120', 'Ok ,   no problem honey    see you next time  bye'])
                 stage = 'finish'
             elif 'robot cancel' in data.data:
-                call(['espeak','Ok ,   no problem honey    see you next time  bye'])
+                call(['espeak', '-s 120', 'Ok ,   no problem honey    see you next time  bye'])
                 stage = 'start'
 
         elif stage == 'insert':
-            if data.data == 'blank' :
+            if data.data == 'I dont know' :
                 fea_data[i] = 'no'
                 print(fea_data[i])
-                call(['espeak','You do not know the' + fea[i]+'of   the'+obj+' , right?'])
+                call(['espeak', '-s 120', 'You do not know the' + fea[i]+'of   the'+obj+' , right?'])
                 stage = 'check_fea'
             else :
-                if 'in' in fea[i]:
+                if 'in' in fea[i] or fea[i] is 'height' or fea[i] is 'width' or fea[i] is 'price' or fea[i] is 'calories' or fea[i] is 'volumn' or fea[i] is 'long':
+                #if 'in' in fea[i]:
                     if ( data.data not in value and data.data not in objects and data.data not in features and data.data not in categories and data.data not in greeting and data.data not in date):
                         fea_data[i] = data.data
                         print(fea_data[i])
-                        call(['espeak','Did you tell me the'+fea[i]+'  of   the'+obj+' is' + fea_data[i]+ ', right?'])
+                        call(['espeak', '-s 120', 'Did you tell me the'+fea[i]+'  of   the'+obj+' is' + fea_data[i]+ ', right?'])
                         stage = 'check_fea'
                 elif 'date' in fea[i]:
                     if (data.data not in value and data.data not in objects and data.data not in features and data.data not in categories and data.data not in greeting):
                         fea_data[i] = data.data
                         print(fea_data[i])
-                        call(['espeak','Did you tell me the'+fea[i]+'  of   the'+obj+' is' + fea_data[i]+ ', right?'])
+                        call(['espeak', '-s 120', 'Did you tell me the'+fea[i]+'  of   the'+obj+' is' + fea_data[i]+ ', right?'])
                         stage = 'check_fea'
                 else:
                     if data.data in value :
                         fea_data[i] = data.data
                         print(fea_data[i])
-                        call(['espeak','Did you tell me the'+fea[i]+'  of   the'+obj+' is' + fea_data[i]+ ', right?'])
+                        call(['espeak', '-s 120', 'Did you tell me the'+fea[i]+'  of   the'+obj+' is' + fea_data[i]+ ', right?'])
                         stage = 'check_fea'
 
         elif stage == 'check_fea':
             if 'robot no' in data.data:
-                call(['espeak','Oh Sorry , Can you repeat it?'])
+                call(['espeak', '-s 120', 'Oh Sorry , Can you repeat it?'])
                 stage = 'insert'
-            elif 'robot yes' in data.data:
+            elif 'yes' in data.data:
                 if (i == 2) :
-                    call(['espeak','Ok , I will remember ,   Thank you for your information  see you next time ,  bye'])
+                    call(['espeak', '-s 120', 'Ok , I will remember ,   Thank you for your information  see you next time ,  bye'])
                     stage = 'finish'
                 else :
-                    call(['espeak','Ok , I will remember ,   Ready for next question?'])
+                    call(['espeak', '-s 120', 'Ok , I will remember ,   Ready for next question?'])
                     stage = 'ask_data'
             elif 'robot cancel' in data.data:
-                call(['espeak','Ok ,   no problem honey    see you next time  bye'])
+                call(['espeak', '-s 120', 'Ok ,   no problem honey    see you next time  bye'])
                 stage = 'start'
 
 
@@ -283,7 +293,7 @@ class getDirection:
                     "production date" : fea_data[5],
                     "expiration date" : fea_data[6]
                 }
-            elif (cat == 'blank'):
+            elif (cat == 'I dont know'):
                 doc = {
                     "name" : obj,
                     "category" : cat,
@@ -313,7 +323,7 @@ class getDirection:
                     "shape" : fea_data[6]
                 }
             print(doc)
-            find.InsertDB(doc)
+            find.InsertDB(doc,obj,obj_recog)
             find.RemoveBlank()
             stage = 'start'
 
