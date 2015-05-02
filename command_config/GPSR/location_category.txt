@@ -1,5 +1,2 @@
-seat
 table
-shelf
-door
-appliance
+sofa

@@ -14,132 +14,6 @@ breakfast
 at
 from
 
-cup
-toy 
-drink 
-snack 
-tool
-table 
-shelf
-appliance
-food
-kitchenary
-seat
-door
-
-book   
-green cup   
-blue cup   
-pink cup   
-yellow cup   
-paper cup   
-rabbit   
-bear   
-clay   
-fire truck   
-mixer truck   
-orange juice   
-soda   
-green tea   
-grapefruit juice   
-coffee   
-beer   
-potato snack   
-red chips   
-green chips   
-biscuit   
-spray can   
-light   
-watering pot   
-pen stand   
-shampoo bottle   
-beer bottle   
-fanta   
-beer can   
-coke   
-seven up   
-chocolate milk   
-energy drink   
-orange juice   
-milk   
-apple juice   
-tomato sauce   
-peanut butter   
-chicken noodles   
-marmalade   
-veggie noodles   
-garlic sauce   
-chocolate   
-cookies   
-drops   
-crackers
-chips
-biscuits
-original pringles
-lemon pringles
-cheese
-seafood
-cornflakes
-lemonade
-milo
-water
-yoghurt
-spoons
-metal cup
-red cup
-glass
-
-reception table   
-shoebox   
-desk   
-brown shelf   
-library table   
-white shelf   
-showcase   
-dust bin   
-sofa   
-tv board   
-living table   
-dining table   
-dining shelf   
-bar   
-kitchen table   
-fridge   
-kitchen board
-bedside table   
-couch table   
-bookshelf   
-hanger   
-umbrella stand   
-stove   
-sink   
-plant   
-tv counter   
-hallway table   
-kitchen counter   
-cupboard   
-sidetable   
-living room   
-bedroom   
-hallway   
-kitchen   
-cabinet   
-pantry   
-bench   
-armchair   
-bed   
-dresser   
-sideboard
-toilet
-closet
-drawer
-closet
-front door
-back door
-tv
-washing machine
-
-
 jacob   
 michael   
 joshua   
@@ -160,18 +34,6 @@ samantha
 ashley   
 alexis   
 sarah
-david
-james
-robert
-john
-jessica
-jennifer
-amanda
-stephanie
-melissa
-nicole
-elizabeth
-heather
 
 robot yes   
 robot no
@@ -211,6 +73,59 @@ notify
 remind   
 tell
 
+reception table
+kitchen table
+dining table
+side table
+living table
+
+bar
+sofa
+dining sofa
+living sofa
+
+exit
+entrance
+
+long potato 
+stick potato 
+red potato 
+blue potato 
+pringles 
+chip star 
+
+japanese tea 
+lemon tea 
+red tea 
+green tea 
+strawberry juice 
+brown tea 
+orange juice 
+
+cup star 
+cup noodle 
+japanese dressing 
+onion dressing 
+korean soup 
+egg soup 
+seafood noodle 
+
+softener 
+bath cleaner 
+cloth cleaner 
+dish cleaner
+bleach
+
+snack 
+drink 
+food 
+cleaner
+
+table
+sofa
+
+door
+
 get me some drink
 get me the drink
 bring me some drink
@@ -223,34 +138,15 @@ get me some food
 get me the food
 bring me some food
 bring me the food
-get me some cleaning stuff
-get me the cleaning stuff
-bring me some cleaning stuff
-bring me the cleaning stuff
+get me some cleaner
+get me the cleaner
+bring me some cleaner
+bring me the cleaner
 go to the table
 move to the table
 head to the table
-go to the shelf
-move to the shelf
-head to the shelf
-go to the seating
-move to the seating
-head to seating
-go to the appliance
-move to the appliance
-head to the appliance
-go to the utensil
-move to the utensil
-head to the utensil
-go to living room
-move to living room
-head to living room
-go to kitchen
-move to kitchen
-head to kitchen
-go to hallway
-move to hallway
-head to hallway
-go to bedroom
-move to bedroom
-head to bedroom
+go to the sofa
+move to the sofa
+head to the sofa
+
+
