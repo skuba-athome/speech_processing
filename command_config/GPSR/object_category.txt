@@ -1,11 +1,4 @@
-cup
-toy 
-drink 
 snack 
-tool
-table 
-shelf
-appliance
-food
-kitchenary
-
+drink 
+food 
+cleaner
