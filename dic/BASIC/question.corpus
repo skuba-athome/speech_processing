@@ -1,4 +1,3 @@
-<question_word> 
 what  
 when  
 who  
@@ -13,7 +12,6 @@ how long
 how often  
 which
 
-<modal_verb>
 is  
 am  
 are  
@@ -36,18 +34,15 @@ may
 might  
 must
 
-<article>
 a  
 an  
 the
 
-<manner> 
 big  
 small  
 large  
 capital
 
-<possessive> 
 my  
 your  
 his  
@@ -56,7 +51,6 @@ their
 our  
 its
 
-<prep> 
 in  
 on  
 at  
@@ -72,7 +66,6 @@ during
 after  
 before
 
-<v_inf>
 go  
 be  
 is  
@@ -80,23 +73,19 @@ am
 are
 come
 
-<v_2> 
 went  
 was  
 were
 came
 
-<v_3>
 gone  
 been
 came
-
-<v_ing> 
+ 
 going  
 being
 caming
 
-<subject_pronoun>
 i  
 you  
 we  
@@ -104,8 +93,7 @@ they
 he  
 she  
 it
-
-<object_pronoun> 
+ 
 me  
 you  
 us  
@@ -113,14 +101,12 @@ them
 him  
 her  
 it
-
-<proper_noun> 
+ 
 antonio  
 earth  
 bmw
 thailand
 
-<common_noun>
 city  
 animal  
 planet  
