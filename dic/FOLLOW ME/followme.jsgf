@@ -1,6 +1,0 @@
-#JSGF V1.0;
-grammar FOLLOWME;
-public <followme_command> = <follow> | <leave> | <noise>;
-<follow> = FOLLOW ME;
-<leave> = LEAVE [THE] ELEVATOR;
-<noise> = GET OUT | STOP | ROBOT YES | ROBOT NO;

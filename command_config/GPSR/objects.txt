@@ -1,0 +1,28 @@
+long potato 
+stick potato 
+red potato 
+blue potato 
+pringles 
+chip star 
+
+japanese tea 
+lemon tea 
+red tea 
+green tea 
+strawberry juice 
+brown tea 
+orange juice 
+
+cup star 
+cup noodle 
+japanese dressing 
+onion dressing 
+korean soup 
+egg soup 
+seafood noodle 
+
+softener 
+bath cleaner 
+cloth cleaner 
+dish cleaner
+bleach
