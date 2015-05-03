@@ -1,25 +1,7 @@
-green cup 
-blue cup 
-pink cup 
-yellow cup 
-paper cup 
-rabbit 
-bear 
-clay 
-fire truck 
-mixer truck 
-orange juice 
-soda 
+japanese tea 
+lemon tea 
+red tea 
 green tea 
-grapefruit juice 
-coffee 
-beer 
-potato snack 
-red chips 
-green chips 
-biscuit 
-spray can 
-light 
-watering pot 
-pen stand 
-shampoo bottle
+strawberry juice 
+brown tea 
+orange juice 
