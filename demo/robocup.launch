@@ -1,0 +1,8 @@
+<launch>
+
+  <node name="recognizer" pkg="speech_processing" type="recognizer.py" output="screen">
+    <param name="lm" value="$(find speech_processing)/demo/robocup.lm"/>
+    <param name="dict" value="$(find speech_processing)/demo/robocup.dic"/>
+  </node>
+
+</launch>

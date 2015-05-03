@@ -1,0 +1,22 @@
+food
+drink
+snack
+vegetable
+fruit
+bakery
+
+appliance
+accesory
+costume
+cosmetics
+equipment
+device
+electronic
+stationery
+machine
+
+medicine
+drug
+health care
+
+blank

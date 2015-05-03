@@ -1,0 +1,25 @@
+go 
+move
+navigate 
+point 
+head
+exit 
+leave
+introduce
+tell something about
+bring
+carry
+give 
+get 
+bring
+grasp 
+take
+detect 
+find 
+identify
+retrieve 
+bring
+make
+notify 
+remind 
+tell

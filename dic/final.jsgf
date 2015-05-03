@@ -1,0 +1,9 @@
+#JSGF V1.0;
+grammar final;
+public <final_command> = <breakfast> | <hungry> | <confirm> | <object> | <noise>;
+<breakfast> = I <want> BREAKFAST;
+<hungry> = I AM HUNGRY;
+<want> = WANT | NEED;
+<confirm> = ROBOT YES| ROBOT NO | ROBOT CANCEL | ALRIGHT;
+<object> = CORNFLAKE | ANYTHING | NOTHING | WHATEVER;
+<noise> = GET OUT | STOP | FOLLOW ME;
