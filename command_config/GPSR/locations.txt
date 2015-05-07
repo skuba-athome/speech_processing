@@ -11,3 +11,5 @@ living sofa
 
 exit
 entrance
+
+
