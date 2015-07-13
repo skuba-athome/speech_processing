@@ -1,0 +1,120 @@
+#JSGF V1-0;
+grammar GPSR_category_1;
+
+public <command> = [<conjunction>] <action> [ [<conjunction>] <action> [ [<conjunction>] <action> ]];
+
+
+/* Ability List Of 1 Action */
+<action> = <go_to>
+| <exiting>
+| <introduce_yourself>
+| <follow>
+| <find_person>
+| <answering>
+| <asking>
+| <telling>
+| <detect_object>
+| <bring_object>
+| <offer_object>
+| <recognize_person>
+| <retrieve_object>;
+
+/* | <memorize_person> */
+/* | <retrieve_item> */
+/* | <picking> */
+
+
+
+<go_to> = <go> TO [<article_location>] (<room> | <place>);
+
+<exiting> = <exit> <exit-locations>;
+<exit-locations> = [<article_location>] (APARTMENT | ARENA);
+
+/* <picking> = <pick> <picking-object> <picking-locations>;
+<picking-object> = <article-object> | it;
+<picking-locations> = [<locations-from>]; */
+
+<introduce_yourself> = <introduce> YOURSELF [TO (<person>|<pronoun>)];
+
+<follow> = FOLLOW <follow-person> <follow-locations>;
+<follow-person> = <article-person> | <pronoun>;
+<follow-locations> = [<locations-in> | <locations-at>];
+
+<find_person> = <detect> <find_person-person> <find_person-locations>;
+<find_person-person> = ( <person> | <article-person> );
+<find_person-locations> = [<locations-in> | <locations-at>];
+
+
+<answering> = <answer> <pronoun> <article_object> QUESTION;
+
+<asking> = <ask> <asking-person> <asking-locations>;
+<asking-person> = <article-person> FOR ( HER | HIS ) NAME | <article_object> PERSON'S NAME | FOR ( HER | HIS ) NAME;
+<asking-locations> = [<locations-in> | <locations-at>];
+
+<telling> = <tell> ( THE TIME | IT TO ( <pronoun> | <article-person>) ) <telling-locations>;
+<telling-locations> = [<locations-in> | <locations-at>];
+
+<detect_object> = <detect> <article-object> <detect_object-locations>;
+<detect_object-locations> = [<locations-in> | <locations-at>];
+
+<bring_object> = <bring> ( <bring_object-object> | <bring_object-to> | <bring_object-me> ) <bring_object-locations>;
+<bring_object-object> = <article-object> | IT;
+<bring_object-to> = (IT | THEM | <article-object>) TO ( ME | <article-person> | <person> | <locations-place> );
+<bring_object-me> = ME <article-object>;
+<bring_object-locations> = [ <locations-from> | <locations-at> | <locations-in>];
+
+<offer_object> = <offer> ( <offer_object-to> | <offer_object-me> ) <offer_object-locations>;
+<offer_object-to> = (IT | THEM | <article-object>) TO ( ME | <person> | <article-person>);
+<offer_object-me> = ME <article-object>;
+<offer_object-locations> = [<locations-in> | <locations-at>];
+
+<recognize_person> = RECOGNIZE ( <pronoun> |  <article-person> ) <recognize_person-locations>;
+<recognize_person-locations> = [<locations-in> | <locations-at>];
+
+
+<retrieve_object> = <bring> (IT | THEM | <article-object>) <retrieve_object-locations>;
+<retrieve_object-locations> = <locations-from>;
+
+/* <memorize_person> = MEMORIZE THE PERSON | ASK THE PERSON'S NAME; */
+/* <carry_object_1> = <carry> ( <article-object>  | IT) TO [<article_location>] <location>; */
+/* <retrieve_item> = <retrieve> <article-object>  FROM [<article_location>] <location>; */
+/* <make_breakfast> = <make> BREAKFAST; */
+/* <notify> = <remind> ME AT [<article_location>] <location>; */
+
+/* Verb */
+<go> = GO | MOVE | NAVIGATE | POINT | HEAD | DRIVE | ENTER | APPROACH;
+<exit> = EXIT | LEAVE;
+<introduce> = INTRODUCE | TELL SOMETHING ABOUT;
+
+<bring> = GIVE | GET | BRING | GRASP | GRAB | TAKE | HAND | DELIVER | CARRY | PICK;
+<retrieve> = RETRIEVE;
+<offer> = OFFER;
+<detect> = DETECT | FIND | IDENTIFY | LOOK FOR;
+<make> = MAKE;
+<tell> = NOTIFY | REMIND | TELL | ANNOUNCE | SPEAK;
+<remind> = NOTIFY | REMIND | TELL;
+<answer> = ANSWER;
+<ask> = ASK | REQUEST;
+
+/* Object, Person And Location */
+<object> =  COKE | CRACKERS | LIPTON | WATER | SODA | FANTA | OREO | PRINGLES | FORK | SPOON | MILK | CHOCOLATE MILK | CHOCOLATE | CHOCOLATE CAKE | CAKE | CLOTH;
+<room> = BATHROOM | BEDROOM | LIVING ROOM | KITCHEN | DINNING ROOM;
+<place> = DESK | DINNER-TABLE | SIDE-TABLE | DOOR | SINK | SOAP | SMALL TABLE | WINDOW | ELEVATOR | SMALL TREE | BIG TREE | BIG TABLE;
+<person> = JACOB | MICHAEL | JOSHUA | MATTHEW | DANIEL | CHRISTOPHER | ANDREW | ETHAN | JOSEPH | WILLIAM | EMILY | MADISON | EMMA | OLIVIA | HANNAH | ISABELLA | SAMANTHA | ASHLEY | ALEXIS | SARAH | FRANK | NUT;
+
+/* Article */
+<article_object> = [ A | AN | THE | SOME ];
+<article_location> = THE;
+<pronoun> = ME | HIM | HER;
+
+/* Conjunction */
+<conjunction> = AND | THEN | AND THEN;
+
+<locations-in> = IN [<article_location>] <room>;
+<locations-at> = AT [<article_location>] <place>;
+<locations-from> = FROM [<article_location>] <place>;
+
+<locations-place> = [<article_location>] <place>;
+
+<article-object> = [<article_object>] <object>;
+<article-person> = <article_object> [ WAVING ] PERSON [ THERE ];
