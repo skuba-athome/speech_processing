@@ -1,0 +1,4 @@
+kitchen
+livingroom
+bedroom
+hallway

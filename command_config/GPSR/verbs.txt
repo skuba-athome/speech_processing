@@ -1,24 +1,18 @@
-go   
-move   
-navigate   
-point   
-head
-exit   
-leave
-introduce   
-tell something about
-bring   
+bring
 carry
-give   
-get   
-bring   
-grasp   
+deliver
 take
-detect   
-find   
-identify
-retrieve
-make
-notify   
-remind   
+find
+look for
+follow
+go
+navigate
+reach
+get into
+take
+grasp
+get
 tell
+say
+speak
+answer

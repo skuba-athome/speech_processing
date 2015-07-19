@@ -1,0 +1,10 @@
+your name
+the name of your team
+the time
+what time is it
+the date
+what day is today
+what day is tomorrow
+the day of the month
+the day of the week
+person
