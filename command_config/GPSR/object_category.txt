@@ -1,4 +1,4 @@
 snack 
-drink 
+drinks
 food 
-cleaner
+cleaning stuff

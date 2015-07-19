@@ -1,28 +1,19 @@
-long potato 
-stick potato 
-red potato 
-blue potato 
-pringles 
-chip star 
-
-japanese tea 
-lemon tea 
-red tea 
-green tea 
-strawberry juice 
-brown tea 
-orange juice 
-
-cup star 
-cup noodle 
-japanese dressing 
-onion dressing 
-korean soup 
-egg soup 
-seafood noodle 
-
-softener 
-bath cleaner 
-cloth cleaner 
-dish cleaner
-bleach
+green tea
+papaya milk
+pure milk
+water
+orange juice
+beer
+coconut cereals
+coco balls
+egg stars
+gram soup
+bean sauce
+biscuits
+bubble gum
+chocolates
+tomato chips
+barbecue chips
+honey chips
+soap
+lotion
