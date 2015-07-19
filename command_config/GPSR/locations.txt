@@ -1,0 +1,15 @@
+reception table
+kitchen table
+dining table
+side table
+living table
+
+bar
+sofa
+dining sofa
+living sofa
+
+exit
+entrance
+
+

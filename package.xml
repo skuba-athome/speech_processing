@@ -1,0 +1,20 @@
+<package>
+  <name>speech_processing</name>
+  <version>0.1.0</version>
+  <description>
+    This package using speech_processing for speech recognition.
+    And this package provide speech processing, eg., Question and Answering
+  </description>
+  <author>SKUBA</author>
+  <maintainer email="skuba2002@gmail.com">SKUBA</maintainer>
+  <license>BSD</license>
+  <url type="website">http://robocupssl.cpe.ku.ac.th/hg/skuba_athome/speech_processing</url>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <run_depend>rospy</run_depend>
+  <run_depend>std_msgs</run_depend>
+  <run_depend>std_srvs</run_depend>
+  <run_depend>gstreamer0.10-speech_processing</run_depend>
+  <run_depend>python-gst</run_depend>
+</package>

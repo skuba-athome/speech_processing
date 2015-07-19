@@ -1,0 +1,36 @@
+#JSGF V1.0;
+grammar question;
+
+public <question> = <question_1> | <question_2>;
+
+<question_1> = <q1_b>;
+/*<q1_a> = <modal_verb> <noun> [<verb>] <adj>;*/
+<q1_b> = <modal_verb> [<article>] [<adj>] <noun> <verb> [<prep>] [<article>] [<adj>] <noun>;
+
+<question_2> = <question_word> [[<article>] [<adj>] <noun>] ( <modal_verb> | <verb> ) [<article>] [<adj>] <noun>  [<verb>] [<prep>] [[<article>] [<adj>] <noun>] ;
+
+<question_word> = WHAT | WHEN | WHO | WHOSE | WHERE | WHY | HOW | HOW MUCH | HOW MANY | HOW FAR | HOW LONG | HOW OFTEN | WHICH;
+
+<modal_verb> = IS | AM | ARE | WAS | WERE | BEEN | DO | DOES | DID | HAS | HAVE | HAD | CAN | COULD | SHALL | SHOULD | WILL | WOULD | MAY | MIGHT | MUST;
+
+<article> = A | AN | THE;
+
+<adj> = <manner> | <possessive>
+<manner> = BIG | SMALL | LARGE | CAPITAL;
+<possessive> = MY | YOUR | HIS | HER | THEIR | OUR | ITS;
+
+<prep> = IN | ON | AT | TO | FROM | FOR | WITH | OF | BY | BETWEEN | BESIDE | DURING | AFTER | BEFORE;
+
+<verb> = <v_inf> | <v_2> | <v_3> | <v_ing>;
+<v_inf> = GO | BE | IS | AM | ARE | COME;
+<v_2> = WENT | WAS | WERE | CAME;
+<v_3> = GONE | BEEN | CAME;
+<v_ing> = GOING | BEING | COMING;
+
+<noun> = <subject_pronoun> | <object_pronoun> | <proper_noun> | <common_noun>;
+<subject_pronoun> = I | YOU | WE | THEY | HE | SHE | IT;
+<object_pronoun> = ME | YOU | US | THEM | HIM | HER | IT;
+<proper_noun> = ANTONIO | EARTH | BMW | THAILAND;
+<common_noun> = CITY | ANIMAL | PLANET | CAR | TIME | FOOD | NAME;
+
+

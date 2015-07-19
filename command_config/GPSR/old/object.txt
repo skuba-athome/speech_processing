@@ -1,0 +1,61 @@
+book   
+green cup   
+blue cup   
+pink cup   
+yellow cup   
+paper cup   
+rabbit   
+bear   
+clay   
+fire truck   
+mixer truck   
+orange juice   
+soda   
+green tea   
+grapefruit juice   
+coffee   
+beer   
+potato snack   
+red chips   
+green chips   
+biscuit   
+spray can   
+light   
+watering pot   
+pen stand   
+shampoo bottle   
+beer bottle   
+fanta   
+beer can   
+coke   
+seven up   
+chocolate milk   
+energy drink   
+orange juice   
+milk   
+apple juice   
+tomato sauce   
+peanut butter   
+chicken noodles   
+marmalade   
+veggie noodles   
+garlic sauce   
+chocolate   
+cookies   
+drops   
+crackers
+chips
+biscuits
+original pringles
+lemon pringles
+cheese
+seafood
+cornflakes
+lemonade
+milo
+water
+yoghurt
+spoons
+metal cup
+red cup
+glass

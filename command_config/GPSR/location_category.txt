@@ -1,0 +1,7 @@
+table
+sofa
+visitor room
+kitchen room
+corridor
+dining room
+living room

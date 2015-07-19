@@ -1,0 +1,64 @@
+<grammar name='robocup'>
+	<rule name='robocup_command' public='true' conj='or' >
+		<subrule name='introduce' />
+		<subrule name='command' />
+		<subrule name='location' />
+		<subrule name='etc'/>
+	</rule>
+	<rule name='introduce' public='false' conj='none'>
+		<subrule name='preword'/>
+		<subrule name='names'/>
+	</rule>
+	<rule name='command' public='false' conj='none'>
+		<subrule name='verb'/>
+		<subrule name='subject'/>
+		<subrule name='object'/>
+	</rule>
+	<rule name='location' public='false' conj='none'>
+		<subrule name='prelocation'/>
+		<subrule name='number'/>
+	</rule>
+	<rule name='etc' public='false' conj='none'>
+		<subrule name='general'/>
+	</rule>
+	<words name='preword'>
+		<word>MY NAME IS</word>
+		<word>I AM</word>
+	</words>
+	<words name='names'>
+		<word>TINA</word>
+		<word>THOMAS</word>
+		<word>ROBERT</word>
+		<word>EMMA</word>
+		<word>DONNA</word>
+	</words>
+	<words name='verb'>
+		<word>BRING</word>
+		<word>TAKE</word>
+	</words>
+	<words name='subject'>
+		<word>ME</word>
+	</words>
+	<words name='object'>
+		<word>PRINGLES</word>
+		<word>COFFEE</word>
+		<word>COFFEE MAX</word>
+		<word>DEODORANT</word>
+		<word>PEPSI</word>
+	</words>
+	<words name='prelocation'>
+		<word>THIS IS LOCATION</word>
+	</words>
+	<words name='number'>
+		<word>ONE</word>
+		<word>TWO</word>
+		<word>THREE</word>
+	</words>
+	<words name='general'>
+		<word>FOLLOW ME</word>
+		<word>THANK YOU</word>
+		<word>ROBOT YES</word>
+		<word>ROBOT NO</word>
+		<word>GET OUT</word>
+	</words>
+</grammar>
