@@ -1,0 +1,4 @@
+snack 
+drinks
+food 
+cleaning stuff

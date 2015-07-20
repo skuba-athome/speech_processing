@@ -1,0 +1,13 @@
+kitchen table
+kitchen counter
+cupboard
+bar
+couch table
+dinner table
+sofa
+left bedside table
+right bedside table
+desk
+bed
+bookcase
+hallway table

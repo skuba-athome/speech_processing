@@ -1,0 +1,5 @@
+appliance
+table
+shelf
+utility
+seat
