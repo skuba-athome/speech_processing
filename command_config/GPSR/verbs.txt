@@ -16,3 +16,11 @@ tell
 say
 speak
 answer
+identify
+detect
+notify
+announce
+pick
+grab
+move
+enter

@@ -1,4 +1,4 @@
 kitchen
-livingroom
+living room
 bedroom
 hallway
