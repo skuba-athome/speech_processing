@@ -1,0 +1,11 @@
+<launch>
+
+  <node name="recognizer_grammar" pkg="speech_processing" type="recognizer_test.py" output="screen">
+    <remap from="recognizer_grammar/output" to="voice/output" />
+    <param name="grammar" value="$(find speech_processing)/dic/GPSR/GPSR.fsg"/>
+    <param name="grammar_2" value="$(find speech_processing)/dic/final.fsg"/>
+    <param name="dict" value="$(find speech_processing)/dic/GPSR/GPSR.dic"/>
+    <param name="dict_2" value="$(find speech_processing)/dic/final.dic"/>
+  </node>
+
+</launch>
