@@ -3,7 +3,7 @@
 
   <node name="recognizer" pkg="speech_processing" type="recognizer.py" output="screen">
 
-    <remap from="recognizer_grammar/output" to="voice/output" />
+    <remap from="recognizer/output" to="voice/output" />
 
     <param name="lm" value="$(find speech_processing)/dic/robo_nurse_2/robo_nurse.lm"/>
 
