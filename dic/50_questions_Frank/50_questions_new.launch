@@ -5,9 +5,9 @@
 
     <remap from="recognizer_grammar/output" to="voice/output" />
 
-    <param name="grammar" value="$(find speech_processing)/dic/50_questions/50_questions.fsg"/>
+    <param name="grammar" value="$(find speech_processing)/dic/50_questions_Frank/50_questions.fsg"/>
 
-    <param name="dict" value="$(find speech_processing)/dic/50_questions/50_questions.dic"/>
+    <param name="dict" value="$(find speech_processing)/dic/50_questions_Frank/50_questions.dic"/>
 
   </node>
 
