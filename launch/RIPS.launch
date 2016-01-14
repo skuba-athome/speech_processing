@@ -2,8 +2,8 @@
 
   <node name="recognizer_grammar" pkg="speech_processing" type="recognizer_grammar.py" output="screen">
     <remap from="recognizer_grammar/output" to="voice/output" />
-    <param name="lm" value="$(find speech_processing)/dic/RIPS.fsg"/>
-    <param name="dict" value="$(find speech_processing)/dic/RIPS.dic"/>
+    <param name="lm" value="$(find speech_processing)/voice_recog/RIPS/RIPS.lm"/>
+    <param name="dict" value="$(find speech_processing)/voice_recog/RIPS/RIPS.dic"/>
   </node>
 
 </launch>

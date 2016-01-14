@@ -2,8 +2,8 @@
 
   <node name="recognizer" pkg="speech_processing" type="recognizer.py" output="screen">
     <remap from="recognizer/output" to="voice/output" />
-    <param name="lm" value="$(find speech_processing)/dic/shopping.lm"/>
-    <param name="dict" value="$(find speech_processing)/dic/shopping.dic"/>
+    <param name="lm" value="$(find speech_processing)/voice_recog/shopping/shopping.lm"/>
+    <param name="dict" value="$(find speech_processing)/voice_recog/shopping/shopping.dic"/>
   </node>
 
 </launch>
