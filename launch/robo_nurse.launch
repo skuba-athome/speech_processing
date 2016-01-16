@@ -1,0 +1,15 @@
+<launch>
+
+
+  <node name="recognizer" pkg="speech_processing" type="recognizer.py" output="screen">
+
+    <remap from="recognizer/output" to="voice/output" />
+
+    <param name="lm" value="$(find speech_processing)/voice_recog/robo_nurse_Frank/robo_nurse.lm"/>
+
+    <param name="dict" value="$(find speech_processing)/voice_recog/robo_nurse_Frank/robo_nurse.dic"/>
+
+  </node>
+
+
+</launch>

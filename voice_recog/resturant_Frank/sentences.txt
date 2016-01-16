@@ -1,0 +1,363 @@
+this is a table A
+this is a table B
+this is a table C
+
+go to table A
+go to table B
+go to table C
+
+navigate to table A
+navigate to table B
+navigate to table C
+
+reach table A
+reach table B
+reach table C
+
+get into table A
+get into table B
+get into table C
+
+I want coconut cereals and coco balls
+I want coconut cereals and egg stars
+I want coconut cereals and gram soup
+I want coconut cereals and bean sauce
+I want coconut cereals and apple
+I want coconut cereals and lemon
+I want coconut cereals and pear
+I want coco balls and coconut cereals
+I want coco balls and egg stars
+I want coco balls and gram soup
+I want coco balls and bean sauce
+I want coco balls and apple
+I want coco balls and lemon
+I want coco balls and pear
+I want egg stars and coconut cereals
+I want egg stars and coco balls
+I want egg stars and gram soup
+I want egg stars and bean sauce
+I want egg stars and apple
+I want egg stars and lemon
+I want egg stars and pear
+I want gram soup and coconut cereals
+I want gram soup and coco balls
+I want gram soup and egg stars
+I want gram soup and bean sauce
+I want gram soup and apple
+I want gram soup and lemon
+I want gram soup and pear
+I want bean sauce and coconut cereals
+I want bean sauce and coco balls
+I want bean sauce and egg stars
+I want bean sauce and gram soup
+I want bean sauce and apple
+I want bean sauce and lemon
+I want bean sauce and pear
+I want apple and coconut cereals
+I want apple and coco balls
+I want apple and egg stars
+I want apple and gram soup
+I want apple and bean sauce
+I want apple and lemon
+I want apple and pear
+I want lemon and coconut cereals
+I want lemon and coco balls
+I want lemon and egg stars
+I want lemon and gram soup
+I want lemon and bean sauce
+I want lemon and apple
+I want lemon and pear
+I want pear and coconut cereals
+I want pear and coco balls
+I want pear and egg stars
+I want pear and gram soup
+I want pear and bean sauce
+I want pear and apple
+I want pear and lemon
+
+Bring me coconut cereals and coco balls
+Bring me coconut cereals and egg stars
+Bring me coconut cereals and gram soup
+Bring me coconut cereals and bean sauce
+Bring me coconut cereals and apple
+Bring me coconut cereals and lemon
+Bring me coconut cereals and pear
+Bring me coco balls and coconut cereals
+Bring me coco balls and egg stars
+Bring me coco balls and gram soup
+Bring me coco balls and bean sauce
+Bring me coco balls and apple
+Bring me coco balls and lemon
+Bring me coco balls and pear
+Bring me egg stars and coconut cereals
+Bring me egg stars and coco balls
+Bring me egg stars and gram soup
+Bring me egg stars and bean sauce
+Bring me egg stars and apple
+Bring me egg stars and lemon
+Bring me egg stars and pear
+Bring me gram soup and coconut cereals
+Bring me gram soup and coco balls
+Bring me gram soup and egg stars
+Bring me gram soup and bean sauce
+Bring me gram soup and apple
+Bring me gram soup and lemon
+Bring me gram soup and pear
+Bring me bean sauce and coconut cereals
+Bring me bean sauce and coco balls
+Bring me bean sauce and egg stars
+Bring me bean sauce and gram soup
+Bring me bean sauce and apple
+Bring me bean sauce and lemon
+Bring me bean sauce and pear
+Bring me apple and coconut cereals
+Bring me apple and coco balls
+Bring me apple and egg stars
+Bring me apple and gram soup
+Bring me apple and bean sauce
+Bring me apple and lemon
+Bring me apple and pear
+Bring me lemon and coconut cereals
+Bring me lemon and coco balls
+Bring me lemon and egg stars
+Bring me lemon and gram soup
+Bring me lemon and bean sauce
+Bring me lemon and apple
+Bring me lemon and pear
+Bring me pear and coconut cereals
+Bring me pear and coco balls
+Bring me pear and egg stars
+Bring me pear and gram soup
+Bring me pear and bean sauce
+Bring me pear and apple
+Bring me pear and lemon
+
+Take me coconut cereals and coco balls
+Take me coconut cereals and egg stars
+Take me coconut cereals and gram soup
+Take me coconut cereals and bean sauce
+Take me coconut cereals and apple
+Take me coconut cereals and lemon
+Take me coconut cereals and pear
+Take me coco balls and coconut cereals
+Take me coco balls and egg stars
+Take me coco balls and gram soup
+Take me coco balls and bean sauce
+Take me coco balls and apple
+Take me coco balls and lemon
+Take me coco balls and pear
+Take me egg stars and coconut cereals
+Take me egg stars and coco balls
+Take me egg stars and gram soup
+Take me egg stars and bean sauce
+Take me egg stars and apple
+Take me egg stars and lemon
+Take me egg stars and pear
+Take me gram soup and coconut cereals
+Take me gram soup and coco balls
+Take me gram soup and egg stars
+Take me gram soup and bean sauce
+Take me gram soup and apple
+Take me gram soup and lemon
+Take me gram soup and pear
+Take me bean sauce and coconut cereals
+Take me bean sauce and coco balls
+Take me bean sauce and egg stars
+Take me bean sauce and gram soup
+Take me bean sauce and apple
+Take me bean sauce and lemon
+Take me bean sauce and pear
+Take me apple and coconut cereals
+Take me apple and coco balls
+Take me apple and egg stars
+Take me apple and gram soup
+Take me apple and bean sauce
+Take me apple and lemon
+Take me apple and pear
+Take me lemon and coconut cereals
+Take me lemon and coco balls
+Take me lemon and egg stars
+Take me lemon and gram soup
+Take me lemon and bean sauce
+Take me lemon and apple
+Take me lemon and pear
+Take me pear and coconut cereals
+Take me pear and coco balls
+Take me pear and egg stars
+Take me pear and gram soup
+Take me pear and bean sauce
+Take me pear and apple
+Take me pear and lemon
+
+Get me coconut cereals and coco balls
+Get me coconut cereals and egg stars
+Get me coconut cereals and gram soup
+Get me coconut cereals and bean sauce
+Get me coconut cereals and apple
+Get me coconut cereals and lemon
+Get me coconut cereals and pear
+Get me coco balls and coconut cereals
+Get me coco balls and egg stars
+Get me coco balls and gram soup
+Get me coco balls and bean sauce
+Get me coco balls and apple
+Get me coco balls and lemon
+Get me coco balls and pear
+Get me egg stars and coconut cereals
+Get me egg stars and coco balls
+Get me egg stars and gram soup
+Get me egg stars and bean sauce
+Get me egg stars and apple
+Get me egg stars and lemon
+Get me egg stars and pear
+Get me gram soup and coconut cereals
+Get me gram soup and coco balls
+Get me gram soup and egg stars
+Get me gram soup and bean sauce
+Get me gram soup and apple
+Get me gram soup and lemon
+Get me gram soup and pear
+Get me bean sauce and coconut cereals
+Get me bean sauce and coco balls
+Get me bean sauce and egg stars
+Get me bean sauce and gram soup
+Get me bean sauce and apple
+Get me bean sauce and lemon
+Get me bean sauce and pear
+Get me apple and coconut cereals
+Get me apple and coco balls
+Get me apple and egg stars
+Get me apple and gram soup
+Get me apple and bean sauce
+Get me apple and lemon
+Get me apple and pear
+Get me lemon and coconut cereals
+Get me lemon and coco balls
+Get me lemon and egg stars
+Get me lemon and gram soup
+Get me lemon and bean sauce
+Get me lemon and apple
+Get me lemon and pear
+Get me pear and coconut cereals
+Get me pear and coco balls
+Get me pear and egg stars
+Get me pear and gram soup
+Get me pear and bean sauce
+Get me pear and apple
+Get me pear and lemon
+
+I want green tea
+I want papaya milk
+I want pure milk
+I want water
+I want orange juice
+I want beer
+
+Bring me green tea
+Bring me papaya milk
+Bring me pure milk
+Bring me water
+Bring me orange juice
+Bring me beer
+
+Take me green tea
+Take me papaya milk
+Take me pure milk
+Take me water
+Take me orange juice
+Take me beer
+
+Get me green tea
+Get me papaya milk
+Get me pure milk
+Get me water
+Get me orange juice
+Get me beer
+
+Follow me
+
+Robot yes
+Robot no
+Robot stop
+robot halt
+Robot wait for command
+
+green tea
+papaya milk
+pure milk
+water
+orange juice
+beer
+
+coconut cereals and coco balls
+coconut cereals and egg stars
+coconut cereals and gram soup
+coconut cereals and bean sauce
+coconut cereals and apple
+coconut cereals and lemon
+coconut cereals and pear
+coco balls and coconut cereals
+coco balls and egg stars
+coco balls and gram soup
+coco balls and bean sauce
+coco balls and apple
+coco balls and lemon
+coco balls and pear
+egg stars and coconut cereals
+egg stars and coco balls
+egg stars and gram soup
+egg stars and bean sauce
+egg stars and apple
+egg stars and lemon
+egg stars and pear
+gram soup and coconut cereals
+gram soup and coco balls
+gram soup and egg stars
+gram soup and bean sauce
+gram soup and apple
+gram soup and lemon
+gram soup and pear
+bean sauce and coconut cereals
+bean sauce and coco balls
+bean sauce and egg stars
+bean sauce and gram soup
+bean sauce and apple
+bean sauce and lemon
+bean sauce and pear
+apple and coconut cereals
+apple and coco balls
+apple and egg stars
+apple and gram soup
+apple and bean sauce
+apple and lemon
+apple and pear
+lemon and coconut cereals
+lemon and coco balls
+lemon and egg stars
+lemon and gram soup
+lemon and bean sauce
+lemon and apple
+lemon and pear
+pear and coconut cereals
+pear and coco balls
+pear and egg stars
+pear and gram soup
+pear and bean sauce
+pear and apple
+pear and lemon
+
+get out
+visit
+sun
+moon
+sex
+person
+man
+woman
+gesture
+what
+speak
+tell
+say
+room
+describe

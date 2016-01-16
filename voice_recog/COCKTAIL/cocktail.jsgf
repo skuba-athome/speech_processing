@@ -1,0 +1,17 @@
+#JSGF V1.0;
+grammar COCKTAIL;
+public <cocktail> = <introduce> | <bring_object> | <confirm> | <noise>;
+
+<introduce> = MY NAME IS <name> | <name>;
+
+<bring_object> = I ( WANT | NEED ) [<article>] <object> | <object>; 
+
+<name> = JACOB | MICHAEL | JOSHUA | MATTHEW | DANIEL | CHRISTOPHER | ANDREW | ETHAN | JOSEPH | WILLIAM | EMILY | MADISON | EMMA | OLIVIA | HANNAH | ISABELLA | SAMANTHA | ASHLEY | ALEXIS | SARAH;
+
+<object> =  JAPANESE TEA | LEMON TEA | RED TEA | GREEN TEA | STRAWBERRY JUICE | BROWN TEA | ORANGE JUICE;
+
+<confirm> = ROBOT ( YES | NO );
+
+<noise> = STOP | GET OUT ;
+
+<article> = A | AN | THE | SOME | ONE ;
