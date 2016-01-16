@@ -1,0 +1,28 @@
+#JSGF V1.0;
+grammar question;
+
+public <question> = <question_1> |<question_2>;
+
+<question_1> = ( HOW MANY | WHAT ) <first_noun>  <verb>  [<article>] ( TODAY | COW ) [HAVE];
+<question_2> = <question_word> IS [<article>] [<adj>] [OF] <noun> [<phase>];
+
+
+<question_word> = WHAT | WHO | WHICH | WHICH ONE;
+
+<verb> = IS | DOES;
+
+<article> = AN | THE;
+
+<phase> = IN THE WORLD | OR CHINA | OR JAPAN;
+<adj> = <manner> | <possessive>;
+<manner> = CAPITAL | HEIGHT | LONGEST | BIGGER | HEAVIEST | TODAY;
+<possessive> = YOUR;
+
+
+<first_noun> = DAY | LEGS;
+<noun> = <proper_noun> | <common_noun> | <multi_noun>;
+<multi_noun> = <common_noun> <proper_noun> | <proper_noun> <common_noun>;
+<proper_noun> = JAPAN | FUJI | AMERICAN | CHINA;
+<common_noun> = NAME | WEATHER | MOUNTAIN | RIVER | WORLD | PRESIDENT | ANIMAL;
+
+

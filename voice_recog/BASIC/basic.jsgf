@@ -1,0 +1,19 @@
+#JSGF V1.0;
+grammar question;
+
+public <question> = <question_1> |<question_2>;
+
+<question_1> = ( HOW MANY | WHAT ) <first_noun>  <verb>  [<article>] ( TODAY | COW ) [HAVE];
+<question_2> = <question_word> IS <phase>;
+
+<question_word> = WHAT | WHO | WHICH | WHICH ONE;
+
+<verb> = IS | DOES;
+
+<article> = AN | THE;
+
+<phase> = YOUR NAME | TODAY WEATHER | THE CAPITAL OF JAPAN | THE HEIGHT OF MOUNTAIN FUJI | THE LONGEST RIVER IN THE WORLD | AMERICAN PRESIDENT | BIGGER JAPAN OR CHINA | THE HEAVIEST ANIMAL IN THE WORLD;
+
+<first_noun> = DAY | LEGS;
+
+
