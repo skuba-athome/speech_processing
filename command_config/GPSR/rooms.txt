@@ -2,3 +2,4 @@ kitchen
 living room
 bedroom
 hallway
+bathroom

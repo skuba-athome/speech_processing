@@ -1,9 +1,13 @@
 kitchen table
+small table
 kitchen counter
 cupboard
 bar
+reception table
 couch table
 dinner table
+dinner-table
+side-table
 sofa
 left bedside table
 right bedside table
@@ -11,3 +15,7 @@ desk
 bed
 bookcase
 hallway table
+sink
+door
+apartment
+show case

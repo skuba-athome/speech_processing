@@ -1,0 +1,22 @@
+#JSGF V1.0;
+grammar GPSR;
+public <gpsr_command> = <category_1>
+
+$complex	= $findprsat and $talk
+
+$findprsat	= $vbfind a person in the {room}
+
+<talk>		= $tell | answer a {question}
+<tell>		= $vbspeak ($time | $date | $name)
+
+<name>		= THE NAME OF YOUR TEAM | YOUR NAME
+<time>		= WHAT TIME IS IT | THE TIME
+<date>		= TELL THE DATE | TELL THE DATE | WHAT DAY IS <day> | TELL THE DAY OF THE (MONTH | WEEK)
+<day>		= TODAY | TOMORROW
+
+<deliver>	= BRING | CARRY | DELIVER | TAKE
+<find>		= FIND | LOOK FOR
+<follow>	= FOLLOW
+<goto>		= GO TO | NAVIGATE TO | REACH | GET INTO
+<take>		= TAKE | GRASP | GET
+<speak>		= TELL | SAY | SPEAK

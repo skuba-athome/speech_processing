@@ -1,0 +1,7 @@
+<launch>
+
+  <node name="recognizer" pkg="speech_processing" type="recognizer_grammar_LM_switch.py" output="screen">
+    <remap from="recognizer/output" to="voice/output" />
+  </node>
+
+</launch>
