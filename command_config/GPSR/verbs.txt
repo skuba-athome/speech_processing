@@ -24,3 +24,9 @@ pick
 grab
 move
 enter
+exit
+give
+introduce
+ask
+offer
+leave

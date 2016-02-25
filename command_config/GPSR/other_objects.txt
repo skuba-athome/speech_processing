@@ -1,10 +1,15 @@
 your name
 the name of your team
-the time
+time
 what time is it
 the date
 what day is today
 what day is tomorrow
 the day of the month
 the day of the week
+waving person
 person
+question
+her name 
+his name
+yourself

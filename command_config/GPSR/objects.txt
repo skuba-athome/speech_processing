@@ -1,3 +1,8 @@
+coke
+soda
+coffee
+cake
+crackers
 green tea
 papaya milk
 pure milk
@@ -17,3 +22,6 @@ barbecue chips
 honey chips
 soap
 lotion
+toy
+banana
+green cup

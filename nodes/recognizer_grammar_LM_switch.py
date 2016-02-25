@@ -39,7 +39,7 @@ class grammar_recognizer(object):
 
     def __init__(self):
         """ Initialize the speech pipeline components. """
-        rospy.init_node('recognizer_grammar')
+        rospy.init_node('recognizer')
         self.pub = rospy.Publisher('~output',String)
         rospy.on_shutdown(self.shutdown)
 
@@ -69,16 +69,16 @@ class grammar_recognizer(object):
         self.vader_lm = self.pipeline_lm.get_by_name('vad_lm')
 
         # parameters for lm and dic
-        try:
-            self.grammar_ = rospy.get_param('~grammar')
-        except:
-            rospy.logerr('Please specify a grammar file')
-            return
-        try:
-            self.dict_ = rospy.get_param('~dict')
-        except:
-            rospy.logerr('Please specify a dictionary')
-            return
+        # try:
+        #     self.grammar_ = rospy.get_param('~grammar')
+        # except:
+        #     rospy.logerr('Please specify a grammar file')
+        #     return
+        # try:
+        #     self.dict_ = rospy.get_param('~dict')
+        # except:
+        #     rospy.logerr('Please specify a dictionary')
+        #     return
 
         # asr.set_property('fsg',self.grammar_)
         # asr.set_property('dict',self.dict_)
