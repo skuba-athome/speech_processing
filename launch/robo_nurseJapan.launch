@@ -1,0 +1,15 @@
+<launch>
+
+
+  <node name="recognizer" pkg="speech_processing" type="recognizer.py" output="screen">
+
+    <remap from="recognizer/output" to="voice/output" />
+
+    <param name="grammar" value="$(find speech_processing)/voice_recog/RoboNurse_Jap2016/NurseJap.fsg"/>
+
+    <param name="dict" value="$(find speech_processing)/voice_recog/RoboNurse_Jap2016/NurseJap.dic"/>
+
+  </node>
+
+
+</launch>

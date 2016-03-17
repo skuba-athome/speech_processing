@@ -6,7 +6,7 @@ find
 look for
 follow
 go
-navigate
+navigate to
 reach
 get into
 take
