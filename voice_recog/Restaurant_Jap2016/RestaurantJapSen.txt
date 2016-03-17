@@ -1,0 +1,47 @@
+follow me
+robot get out
+leave apartment
+robot stop
+robot halting
+robot waiting
+robot yes
+robot no
+robot get order
+
+go to table one
+go to table two
+go to table three
+go to kitchen bar
+go to kitchen
+
+table one is on my left
+table one is on my right
+table two is on my left
+table two is on my right
+table three is on my left
+table three is on my right
+kitchen bar is on my left
+kitchen bar is on my right
+kitchen is on my left
+kitchen is on my right
+
+I want and noodles
+I want and peanuts
+I want and hamburger
+I want and fries
+I want with noodles
+I want with peanuts
+I want with hamburger
+I want with fries
+I want orange juice
+I want water
+I will take and noodles
+I will take and peanuts
+I will take and hamburger
+I will take and fries
+I will take with noodles
+I will take with peanuts
+I will take with hamburger
+I will take with fries
+I will take orange juice
+I will take water

@@ -1,0 +1,97 @@
+Language model created by QuickLM on Tue Mar 15 19:03:34 EDT 2016
+Copyright (c) 1996-2010 Carnegie Mellon University and Alexander I. Rudnicky
+
+The model is in standard ARPA format, designed by Doug Paul while he was at MITRE.
+
+The code that was used to produce this language model is available in Open Source.
+Please visit http://www.speech.cs.cmu.edu/tools/ for more information
+
+The (fixed) discount mass is 0.5. The backoffs are computed using the ratio method.
+This model based on a corpus of 28 sentences and 20 words
+
+\data\
+ngram 1=20
+ngram 2=36
+ngram 3=18
+
+\1-grams:
+-0.7782 </s> -0.3010
+-0.7782 <s> -0.2218
+-1.6232 BOTTLE -0.2218
+-2.2253 FOLLOW -0.2218
+-2.2253 FOUR -0.2218
+-2.2253 GET -0.2218
+-2.2253 HELP -0.2218
+-2.2253 I -0.2218
+-1.9243 ME -0.2218
+-1.9243 MY -0.2218
+-2.2253 NEED -0.2218
+-2.2253 NO -0.2218
+-2.2253 ONE -0.2218
+-1.9243 PILLS -0.2218
+-2.2253 PLEASE -0.2218
+-1.5263 ROBOT -0.2218
+-2.2253 STOP -0.2218
+-2.2253 THREE -0.2218
+-2.2253 TWO -0.2218
+-2.2253 YES -0.2218
+
+\2-grams:
+-1.1461 <s> BOTTLE 0.0000
+-1.7482 <s> FOLLOW 0.0000
+-1.7482 <s> FOUR 0.0000
+-1.7482 <s> GET 0.0000
+-1.7482 <s> HELP 0.0000
+-1.7482 <s> I 0.0000
+-1.4472 <s> ME 0.0000
+-1.4472 <s> MY 0.0000
+-1.7482 <s> NEED 0.0000
+-1.7482 <s> NO 0.0000
+-1.7482 <s> ONE 0.0000
+-1.4472 <s> PILLS 0.0000
+-1.7482 <s> PLEASE 0.0000
+-1.0492 <s> ROBOT 0.0000
+-1.7482 <s> STOP 0.0000
+-1.7482 <s> THREE 0.0000
+-1.7482 <s> TWO 0.0000
+-1.7482 <s> YES 0.0000
+-0.3010 BOTTLE </s> -0.3010
+-0.3010 FOLLOW </s> -0.3010
+-0.3010 FOUR </s> -0.3010
+-0.3010 GET </s> -0.3010
+-0.3010 HELP </s> -0.3010
+-0.3010 I </s> -0.3010
+-0.3010 ME </s> -0.3010
+-0.3010 MY </s> -0.3010
+-0.3010 NEED </s> -0.3010
+-0.3010 NO </s> -0.3010
+-0.3010 ONE </s> -0.3010
+-0.3010 PILLS </s> -0.3010
+-0.3010 PLEASE </s> -0.3010
+-0.3010 ROBOT </s> -0.3010
+-0.3010 STOP </s> -0.3010
+-0.3010 THREE </s> -0.3010
+-0.3010 TWO </s> -0.3010
+-0.3010 YES </s> -0.3010
+
+\3-grams:
+-0.3010 <s> BOTTLE </s>
+-0.3010 <s> FOLLOW </s>
+-0.3010 <s> FOUR </s>
+-0.3010 <s> GET </s>
+-0.3010 <s> HELP </s>
+-0.3010 <s> I </s>
+-0.3010 <s> ME </s>
+-0.3010 <s> MY </s>
+-0.3010 <s> NEED </s>
+-0.3010 <s> NO </s>
+-0.3010 <s> ONE </s>
+-0.3010 <s> PILLS </s>
+-0.3010 <s> PLEASE </s>
+-0.3010 <s> ROBOT </s>
+-0.3010 <s> STOP </s>
+-0.3010 <s> THREE </s>
+-0.3010 <s> TWO </s>
+-0.3010 <s> YES </s>
+
+\end\

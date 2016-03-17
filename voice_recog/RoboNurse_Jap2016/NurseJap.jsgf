@@ -1,0 +1,11 @@
+#JSGF V1.0;
+grammar RoboNurse;
+public <nurse> = [ <common> | <help> | <get_pill> | <bottle> ];
+
+<common> = FOLLOW ME | ROBOT STOP | ROBOT YES | ROBOT NO;
+
+<help> = ROBOT HELP;
+
+<get_pill> = I NEED MY PILLS | ROBOT PLEASE GET ME MY PILLS;
+
+<bottle> = BOTTLE ONE | BOTTLE TWO | BOTTLE THREE | BOTTLE FOUR;

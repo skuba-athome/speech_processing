@@ -1,0 +1,60 @@
+#JSGF V1.0;
+grammar GPSR;
+
+public <gpsr_command> = [ <complex1> | <complex2> | <complex3> | <complex4> | <confirm> ];
+
+<confirm> = ROBOT (YES | NO);
+
+/* MAIN */
+<complex1> = <findprs> AND (<talk> | <follow>);
+
+<follow> = <vbfollow> HER TO THE <room>;
+<findprs> = <vbfind> A PERSON;
+
+/* Complex Command: Get an object and deliver it */
+<complex2> = <getobj> AND <deliver>;
+
+<getobj> = <vbtake> THE <kobject> FROM THE <placement1>;
+
+<deliver> = <vbdeliver> IT TO <target>;
+<target> = ME | <name> (AT | IN | WHICH IS IN) THE <room> | THE <placement2>;
+
+/*Complex Command: Go to room and search for an object */
+<complex3> = <goroom> AND <findobj>;
+
+<goroom> = <vbgoto> THE <room>;
+<findobj> = <vbfind> THE <kobject>;
+
+/* Complex Command: Find a person and talk with */
+<complex4> = <findprsat> AND <talk>;
+
+<findprsat>	= <vbfind> A PERSON IN THE <room>;
+
+<talk> = <tell> | ANSWER A QUESTION;
+<tell> = <vbspeak> (<time> | <date> | <name>);
+
+<name> = THE NAME OF YOUR TEAM | YOUR NAME;
+<time> = WHAT TIME IS IT | THE TIME;
+<date> = TELL THE DATE | WHAT DAY IS <day> | TELL THE DAY OF THE (MONTH | WEEK);
+<day> = TODAY | TOMORROW;
+
+/* VERBS */
+
+<vbdeliver>	= BRING | CARRY | DELIVER | TAKE;
+<vbfind> = FIND | LOOK FOR;
+<vbfollow> = FOLLOW;
+<vbgoto> = GO TO | NAVIGATE TO | REACH | GET INTO;
+<vbtake> = TAKE | GRASP | GET;
+<vbspeak> = TELL | SAY | SPEAK;
+
+/* ROOM OBJECT QUESTION NAME PLACEMENT2 PLACEMENT1 */
+
+<room> = KITCHEN | LIVING ROOM | BEDROOM | HALLWAY | BATHROOM;
+
+<kobject> = COKE | SODA | COFFEE | CAKE | CRACKERS | GREEN TEA | PAPAYA MILK | PURE MILK | WATER | ORANGE JUICE | BEER | COCONUT CEREALS | COCO BALLS | EGG STARS | GRAM SOUP | BEAN SAUCE | BISCUITS | BUBBLE GUM | CHOCOLATES | TOMATO CHIPS | BARBECUE CHIPS | HONEY CHIPS | SOAP | LOTION | TOY | BANANA | GREEN CUP;
+
+<name> = ALEX | ANGEL | EVE | JAMIE | JANE | LIZA | MELISSA | TRACY | ROBIN | SOPHIA | ALEX | ANGEL | EDWARD | HOMER | JAMIE | JOHN | KEVIN | KURT | TRACY | ROBIN | FRANK;
+
+<placement1> =  CUPBOARD | COUCH TABLE | DINNER TABLE | LEFT BEDSIDE TABLE | DESK | KITCHEN TABLE | KITCHEN COUNTER | HALLWAY TABLE | BED | RIGHT BEDSIDE TABLE | BOOKCASE | SOFA | BAR;
+
+<placement2> = CUPBOARD | COUCH TABLE | DINNER TABLE | LEFT BEDSIDE TABLE | DESK | KITCHEN TABLE | KITCHEN COUNTER | HALLWAY TABLE | BED | RIGHT BEDSIDE TABLE | BOOKCASE | SOFA | BAR; 
