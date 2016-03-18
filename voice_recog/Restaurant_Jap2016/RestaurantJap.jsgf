@@ -1,16 +1,21 @@
 #JSGF V1.0;
 grammar RESTAURANT;
-public <restaurant_command> = [ <follow> | <leave> | <stop> | <confirm> | <get_order> | <tell_location> | <order> | <order2> | <go> ];
+public <restaurant_command> = [<follow> | <leave> | <stop> | <confirm> | <get_order> | <tell_location> | <order> | <go>];
 
 <follow> = FOLLOW ME;
+
 <leave> = ROBOT GET OUT | LEAVE APARTMENT;
+
 <stop> = ROBOT (STOP | HALTING | WAITING);
+
 <confirm> = ROBOT ( YES | NO );
 
 <get_order> = ROBOT GET ORDER;
 
 <go> = GO TO <location>;
+
 <tell_location> = <location> IS ON MY <sides>;
+
 <bring_object> = BRING <object> TO <location>;
 
 <location> = TABLE ONE | TABLE TWO | TABLE THREE | KITCHEN | KITCHEN BAR;
@@ -18,10 +23,13 @@ public <restaurant_command> = [ <follow> | <leave> | <stop> | <confirm> | <get_o
 <sides> = LEFT | RIGHT;
 
 <order> = I WILL TAKE <combo> | I WILL TAKE <drink>;
-<order2> = I WANT <combo> | I WANT <drink>;
 
 <combo> = <food> <and> <food>;
+
 <and> = AND | WITH;
+
 <food> = NOODLES | PEANUTS | HAMBURGER | FRIES;
+
 <drink> = ORANGE JUICE | WATER;
+
 <object> = <combo> | <drink>;
