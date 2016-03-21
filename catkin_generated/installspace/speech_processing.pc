@@ -1,8 +1,0 @@
-prefix=/usr/local
-
-Name: speech_processing
-Description: Description of speech_processing
-Version: 0.1.0
-Cflags: 
-Libs: -L/usr/local/lib 
-Requires: 

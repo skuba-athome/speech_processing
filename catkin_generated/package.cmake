@@ -1,7 +1,0 @@
-set(_CATKIN_CURRENT_PACKAGE "speech_processing")
-set(speech_processing_MAINTAINER "SKUBA <skuba2002@gmail.com>")
-set(speech_processing_DEPRECATED "")
-set(speech_processing_VERSION "0.1.0")
-set(speech_processing_BUILD_DEPENDS )
-set(speech_processing_RUN_DEPENDS "rospy" "std_msgs" "std_srvs" "gstreamer0.10-speech_processing" "python-gst")
-set(speech_processing_BUILDTOOL_DEPENDS "catkin")
