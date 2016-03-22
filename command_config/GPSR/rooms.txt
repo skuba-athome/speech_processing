@@ -3,3 +3,4 @@ living room
 bedroom
 hallway
 bathroom
+partyroom

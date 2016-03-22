@@ -1,35 +1,38 @@
 #JSGF V1.0;
-grammar GPSR;
+grammar GPSR2;
 
-public <gpsr_command> = [ <complex1> | <complex2> | <complex3> | <complex4> | <confirm> ];
+public <gpsr2> = [ <complex1> | <complex2> | <complex3> | <complex4> | <confirm> ];
 
 <confirm> = ROBOT (YES | NO);
 
-/* MAIN */
-<complex1> = <findprs> AND (<talk> | <follow>);
-
-<follow> = <vbfollow> HER TO THE <room>;
-<findprs> = <vbfind> A PERSON;
-
 /* Complex Command: Get an object and deliver it */
-<complex2> = <getobj> AND <deliver>;
+<complex1>	= <getobj> AND <deliver>;
 
-<getobj> = <vbtake> THE <kobject> FROM THE <placement1>;
+<getobj>	= <vbtake> THE <object> FROM THE <placement1>;
 
-<deliver> = <vbdeliver> IT TO <target>;
-<target> = ME | <name> (AT | IN | WHICH IS IN) THE <room> | THE <placement2>;
+<deliver>	= <vbdeliver> IT TO <target>;
+<target>	= ME | <name> (AT | IN | WHICH IS IN) THE <room> | THE <placement2>;
 
-/*Complex Command: Go to room and search for an object */
-<complex3> = <goroom> AND <findobj>;
+/* Complex Command: Go to room and search for an object */
+<complex2>	= <goroom> AND <findobj>;
+<findobj>	= <vbfind> THE <object>;
 
+/* Complex Command: Find a person and talk or follow */
+<complex3> = <goroom> <findprs> AND (<talk> | <follow>);
+<complex4>	= (<findprsat> | <fndclprsat>) AND (<talk> | <follow>);
+
+/* Find a person */
+<findprs>	= <vbfind> A PERSON;
+<findprsat>	= <vbfind> A PERSON IN THE PARTYROOM;
+<fndclprsat>	= <vbfind> THE CALLING PERSON IN THE PARTYROOM;
+
+/* Follow a person */
+<follow> = <vbfollow> HER | <vbfollow> HER TO THE <room>;
+
+/* Go to room */
 <goroom> = <vbgoto> THE <room>;
-<findobj> = <vbfind> THE <kobject>;
 
-/* Complex Command: Find a person and talk with */
-<complex4> = <findprsat> AND <talk>;
-
-<findprsat>	= <vbfind> A PERSON IN THE <room>;
-
+/* Talk to person */
 <talk> = <tell> | ANSWER A QUESTION;
 <tell> = <vbspeak> (<time> | <date> | <name>);
 
@@ -51,7 +54,7 @@ public <gpsr_command> = [ <complex1> | <complex2> | <complex3> | <complex4> | <c
 
 <room> = KITCHEN | LIVING ROOM | BEDROOM | HALLWAY | BATHROOM;
 
-<kobject> = COKE | SODA | COFFEE | CAKE | CRACKERS | GREEN TEA | PAPAYA MILK | PURE MILK | WATER | ORANGE JUICE | BEER | COCONUT CEREALS | COCO BALLS | EGG STARS | GRAM SOUP | BEAN SAUCE | BISCUITS | BUBBLE GUM | CHOCOLATES | TOMATO CHIPS | BARBECUE CHIPS | HONEY CHIPS | SOAP | LOTION | TOY | BANANA | GREEN CUP;
+<object> = COKE | SODA | COFFEE | CAKE | CRACKERS | GREEN TEA | PAPAYA MILK | PURE MILK | WATER | ORANGE JUICE | BEER | COCONUT CEREALS | COCO BALLS | EGG STARS | GRAM SOUP | BEAN SAUCE | BISCUITS | BUBBLE GUM | CHOCOLATES | TOMATO CHIPS | BARBECUE CHIPS | HONEY CHIPS | SOAP | LOTION | TOY | BANANA | GREEN CUP;
 
 <name> = ALEX | ANGEL | EVE | JAMIE | JANE | LIZA | MELISSA | TRACY | ROBIN | SOPHIA | ALEX | ANGEL | EDWARD | HOMER | JAMIE | JOHN | KEVIN | KURT | TRACY | ROBIN | FRANK;
 
