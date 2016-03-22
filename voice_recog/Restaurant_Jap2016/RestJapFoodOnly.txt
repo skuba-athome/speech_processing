@@ -1,22 +1,6 @@
-I want and noodles
-I want and peanuts
-I want and hamburger
-I want and fries
-I want with noodles
-I want with peanuts
-I want with hamburger
-I want with fries
-I want orange juice
-I want water
-I will take and noodles
-I will take and peanuts
-I will take and hamburger
-I will take and fries
-I will take with noodles
-I will take with peanuts
-I will take with hamburger
-I will take with fries
-I will take orange juice
-I will take water
-
-bring
+NOODLES
+PEANUTS
+HAMBURGER
+FRIES
+ORANGE JUICE
+WATER
