@@ -8,37 +8,37 @@ public <gpsr2> = [ <complex1> | <complex2> | <complex3> | <complex4> | <confirm>
 /* Complex Command: Get an object and deliver it */
 <complex1>	= <getobj> AND <deliver>;
 
-<getobj>	= <vbtake> THE <object> FROM THE <placement1>;
+<getobj>	= <vbtake> [<articles>] <object> FROM [<articles>] <placement1>;
 
 <deliver>	= <vbdeliver> IT TO <target>;
-<target>	= ME | <name> (AT | IN | WHICH IS IN) THE <room> | THE <placement2>;
+<target>	= ME | <name> (AT | IN | WHICH IS IN) [<articles>] <room> | [<articles>] <placement2>;
 
 /* Complex Command: Go to room and search for an object */
 <complex2>	= <goroom> AND <findobj>;
-<findobj>	= <vbfind> THE <object>;
+<findobj>	= <vbfind> [<articles>] <object>;
 
 /* Complex Command: Find a person and talk or follow */
 <complex3> = <goroom> <findprs> AND (<talk> | <follow>);
 <complex4>	= (<findprsat> | <fndclprsat>) AND (<talk> | <follow>);
 
 /* Find a person */
-<findprs>	= <vbfind> A PERSON;
-<findprsat>	= <vbfind> A PERSON IN THE PARTYROOM;
-<fndclprsat>	= <vbfind> THE CALLING PERSON IN THE PARTYROOM;
+<findprs>	= <vbfind> [<articles>] PERSON;
+<findprsat>	= <vbfind> [<articles>] PERSON IN [<articles>] PARTYROOM;
+<fndclprsat>	= <vbfind> [<articles>] CALLING PERSON IN [<articles>] PARTYROOM;
 
 /* Follow a person */
-<follow> = <vbfollow> HER | <vbfollow> HER TO THE <room>;
+<follow> = <vbfollow> HER | <vbfollow> HER TO [<articles>] <room>;
 
 /* Go to room */
-<goroom> = <vbgoto> THE <room>;
+<goroom> = <vbgoto> [<articles>] <room>;
 
 /* Talk to person */
-<talk> = <tell> | ANSWER A QUESTION;
+<talk> = <tell> | ANSWER [<articles>] QUESTION;
 <tell> = <vbspeak> (<time> | <date> | <name>);
 
-<name> = THE NAME OF YOUR TEAM | YOUR NAME;
-<time> = WHAT TIME IS IT | THE TIME;
-<date> = TELL THE DATE | WHAT DAY IS <day> | TELL THE DAY OF THE (MONTH | WEEK);
+<name> = [<articles>] NAME OF YOUR TEAM | YOUR NAME;
+<time> = WHAT TIME IS IT | [<articles>] TIME;
+<date> = TELL [<articles>] DATE | WHAT DAY IS <day> | TELL [<articles>] DAY OF [<articles>] (MONTH | WEEK);
 <day> = TODAY | TOMORROW;
 
 /* VERBS */
@@ -61,3 +61,6 @@ public <gpsr2> = [ <complex1> | <complex2> | <complex3> | <complex4> | <confirm>
 <placement1> = KITCHEN TABLE | SMALL TABLE | KITCHEN COUNTER | CUPBOARD | BAR | RECEPTION TABLE | COUCH TABLE | DINNER TABLE | SIDE TABLE | SOFA | LEFT BEDSIDE TABLE | RIGHT BEDSIDE TABLE | DESK | BED | BOOKCASE | HALLWAY TABLE | SINK | DOOR | APARTMENT | SHOW CASE;
 
 <placement2> = KITCHEN TABLE | SMALL TABLE | KITCHEN COUNTER | CUPBOARD | BAR | RECEPTION TABLE | COUCH TABLE | DINNER TABLE | SIDE TABLE | SOFA | LEFT BEDSIDE TABLE | RIGHT BEDSIDE TABLE | DESK | BED | BOOKCASE | HALLWAY TABLE | SINK | DOOR | APARTMENT | SHOW CASE;
+
+/* Article */
+<articles> = A | AN | THE;

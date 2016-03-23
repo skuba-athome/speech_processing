@@ -3,11 +3,9 @@ soda
 coffee
 cake
 crackers
-green tea
 papaya milk
 pure milk
 water
-orange juice
 beer
 coconut cereals
 coco balls
@@ -25,3 +23,19 @@ lotion
 toy
 banana
 green cup
+
+green tea
+la te
+iced tea
+orange juice
+strawberry juice
+potato chips
+cookie
+potato stick
+potage soup
+egg soup
+orange
+apple
+bowl
+tray
+cup

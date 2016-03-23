@@ -8,34 +8,34 @@ public <gpsr_command> = [ <complex1> | <complex2> | <complex3> | <complex4> | <c
 /* MAIN */
 <complex1> = <findprs> AND (<talk> | <follow>);
 
-<follow> = <vbfollow> HER TO THE <room>;
-<findprs> = <vbfind> A PERSON;
+<follow> = <vbfollow> HER TO [<articles>] <room>;
+<findprs> = <vbfind> [<articles>] PERSON;
 
 /* Complex Command: Get an object and deliver it */
 <complex2> = <getobj> AND <deliver>;
 
-<getobj> = <vbtake> THE <kobject> FROM THE <placement1>;
+<getobj> = <vbtake> [<articles>] <kobject> FROM [<articles>] <placement1>;
 
 <deliver> = <vbdeliver> IT TO <target>;
-<target> = ME | <name> (AT | IN | WHICH IS IN) THE <room> | THE <placement2>;
+<target> = ME | <name> (AT | IN | WHICH IS IN) [<articles>] <room> | [<articles>] <placement2>;
 
 /*Complex Command: Go to room and search for an object */
 <complex3> = <goroom> AND <findobj>;
 
-<goroom> = <vbgoto> THE <room>;
-<findobj> = <vbfind> THE <kobject>;
+<goroom> = <vbgoto> [<articles>] <room>;
+<findobj> = <vbfind> [<articles>] <kobject>;
 
 /* Complex Command: Find a person and talk with */
 <complex4> = <findprsat> AND <talk>;
 
-<findprsat>	= <vbfind> A PERSON IN THE <room>;
+<findprsat>	= <vbfind> [<articles>] PERSON IN [<articles>] <room>;
 
-<talk> = <tell> | ANSWER A QUESTION;
+<talk> = <tell> | ANSWER [<articles>] QUESTION;
 <tell> = <vbspeak> (<time> | <date> | <name>);
 
-<name> = THE NAME OF YOUR TEAM | YOUR NAME;
-<time> = WHAT TIME IS IT | THE TIME;
-<date> = TELL THE DATE | WHAT DAY IS <day> | TELL THE DAY OF THE (MONTH | WEEK);
+<name> = [<articles>] NAME OF YOUR TEAM | YOUR NAME;
+<time> = WHAT TIME IS IT | [<articles>] TIME;
+<date> = TELL [<articles>] DATE | WHAT DAY IS <day> | TELL [<articles>] DAY OF [<articles>] (MONTH | WEEK);
 <day> = TODAY | TOMORROW;
 
 /* VERBS */
@@ -51,10 +51,15 @@ public <gpsr_command> = [ <complex1> | <complex2> | <complex3> | <complex4> | <c
 
 <room> = KITCHEN | LIVING ROOM | BEDROOM | HALLWAY | BATHROOM;
 
-<kobject> = COKE | SODA | COFFEE | CAKE | CRACKERS | GREEN TEA | PAPAYA MILK | PURE MILK | WATER | ORANGE JUICE | BEER | COCONUT CEREALS | COCO BALLS | EGG STARS | GRAM SOUP | BEAN SAUCE | BISCUITS | BUBBLE GUM | CHOCOLATES | TOMATO CHIPS | BARBECUE CHIPS | HONEY CHIPS | SOAP | LOTION | TOY | BANANA | GREEN CUP;
+<old_object> = COKE | SODA | COFFEE | CAKE | CRACKERS | GREEN TEA | PAPAYA MILK | PURE MILK | WATER | ORANGE JUICE | BEER | COCONUT CEREALS | COCO BALLS | EGG STARS | GRAM SOUP | BEAN SAUCE | BISCUITS | BUBBLE GUM | CHOCOLATES | TOMATO CHIPS | BARBECUE CHIPS | HONEY CHIPS | SOAP | LOTION | TOY | BANANA | GREEN CUP;
+
+<kobject> = GREEN TEA | LA TE | ICED TEA | ORANGE JUICE | STRAWBERRY JUICE | POTATO CHIPS | COOKIE | POTATO STICK | POTAGE SOUP | EGG SOUP | ORANGE | APPLE | BOWL | TRAY | CUP;
 
 <name> = ALEX | ANGEL | EVE | JAMIE | JANE | LIZA | MELISSA | TRACY | ROBIN | SOPHIA | ALEX | ANGEL | EDWARD | HOMER | JAMIE | JOHN | KEVIN | KURT | TRACY | ROBIN | FRANK;
 
 <placement1> = KITCHEN TABLE | SMALL TABLE | KITCHEN COUNTER | CUPBOARD | BAR | RECEPTION TABLE | COUCH TABLE | DINNER TABLE | SIDE TABLE | SOFA | LEFT BEDSIDE TABLE | RIGHT BEDSIDE TABLE | DESK | BED | BOOKCASE | HALLWAY TABLE | SINK | DOOR | APARTMENT | SHOW CASE;
 
 <placement2> = KITCHEN TABLE | SMALL TABLE | KITCHEN COUNTER | CUPBOARD | BAR | RECEPTION TABLE | COUCH TABLE | DINNER TABLE | SIDE TABLE | SOFA | LEFT BEDSIDE TABLE | RIGHT BEDSIDE TABLE | DESK | BED | BOOKCASE | HALLWAY TABLE | SINK | DOOR | APARTMENT | SHOW CASE;
+
+/* Article */
+<articles> = A | AN | THE;
