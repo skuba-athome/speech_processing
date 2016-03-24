@@ -23,9 +23,8 @@ lotion
 toy
 banana
 green cup
-
 green tea
-la te
+cafe au lait
 iced tea
 orange juice
 strawberry juice
