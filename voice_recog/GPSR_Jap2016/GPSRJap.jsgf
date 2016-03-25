@@ -1,7 +1,7 @@
 #JSGF V1.0;
 grammar GPSR;
 
-public <gpsr_command> = [ <complex1> | <complex2> | <complex3> | <complex4> | <confirm> ];
+public <gpsr_command> = [ <complex1> | <complex2> | <complex3> | <complex4> | <confirm> | <questions> ];
 
 <confirm> = ROBOT (YES | NO);
 
@@ -37,6 +37,13 @@ public <gpsr_command> = [ <complex1> | <complex2> | <complex3> | <complex4> | <c
 <time> = WHAT TIME IS IT | [<articles>] TIME;
 <date> = TELL [<articles>] DATE | WHAT DAY IS <day> | TELL [<articles>] DAY OF [<articles>] (MONTH | WEEK);
 <day> = TODAY | TOMORROW;
+
+/* Predifined questions */
+<questions> = <what> | <where> | <how> | <aff>;
+<what> = WHAT IS YOUR NAME | WHAT IS THE DATE TODAY | WHAT DAY IS TODAY;
+<where> = WHERE ARE YOU FROM | WHERE ARE WE;
+<how> = HOW IS THE WEATHER TODAY;
+<aff> = PLEASE TELL ME YOUR AFFILIATION;
 
 /* VERBS */
 

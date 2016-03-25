@@ -1,0 +1,14 @@
+ROBOT YES
+ROBOT NO
+FIND A WAVING PERSON IN THE CORRIDOR AND ANSWER A QUESTION
+FIND A WAVING PERSON IN THE LIBRARY AND TELL THE TIME
+GO TO A TELEVISION BOARD and find apple
+go to the sofa find A calling person and follow him to the library
+go to the table and find a potato chips
+
+Question\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+WHAT IS YOUR NAME | WHAT IS THE DATE TODAY | WHAT DAY IS TODAY;
+WHERE ARE YOU FROM | WHERE ARE WE;
+HOW IS THE WEATHER TODAY;
+PLEASE TELL ME YOUR AFFILIATION;

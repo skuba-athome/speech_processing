@@ -1,6 +1,11 @@
 kitchen
-living room
 bedroom
 hallway
 bathroom
 partyroom
+dining room
+dining
+living room
+living
+corridor
+library

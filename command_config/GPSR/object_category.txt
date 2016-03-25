@@ -1,4 +1,7 @@
 snack 
 drinks
+soup
+fruit
+container
 food 
 cleaning stuff

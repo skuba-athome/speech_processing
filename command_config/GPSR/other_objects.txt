@@ -7,9 +7,18 @@ what day is today
 what day is tomorrow
 the day of the month
 the day of the week
+calling person
 waving person
 person
 question
-her name 
+her name
 his name
+him
+her
 yourself
+affiliation 
+where are you
+where are you from
+where are we
+how is the weather today
+what is the date today

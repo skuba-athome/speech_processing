@@ -1,0 +1,11 @@
+#JSGF V1.0;
+grammar GPSR2;
+
+public <gpsr2> = [ <questions> ];
+
+/* Predefined Questions */
+<questions> = <what> | <where> | <how> | <aff>;
+<what> = WHAT IS YOUR NAME | WHAT IS THE DATE TODAY | WHAT DAY IS TODAY;
+<where> = WHERE ARE YOU FROM | WHERE ARE WE;
+<how> = HOW IS THE WEATHER TODAY;
+<aff> = PLEASE TELL ME YOUR AFFILIATION;

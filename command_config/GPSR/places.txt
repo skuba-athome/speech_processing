@@ -19,3 +19,12 @@ sink
 door
 apartment
 show case
+table
+dining table
+side table
+living table
+tv board
+television board
+table set
+dining table
+book shelf

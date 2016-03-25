@@ -1,0 +1,101 @@
+Language model created by QuickLM on Thu Mar 24 21:07:40 EDT 2016
+Copyright (c) 1996-2010 Carnegie Mellon University and Alexander I. Rudnicky
+
+The model is in standard ARPA format, designed by Doug Paul while he was at MITRE.
+
+The code that was used to produce this language model is available in Open Source.
+Please visit http://www.speech.cs.cmu.edu/tools/ for more information
+
+The (fixed) discount mass is 0.5. The backoffs are computed using the ratio method.
+This model based on a corpus of 30 sentences and 21 words
+
+\data\
+ngram 1=21
+ngram 2=38
+ngram 3=19
+
+\1-grams:
+-0.7782 </s> -0.3010
+-0.7782 <s> -0.2218
+-2.2553 AFFILIATION -0.2218
+-1.9542 ARE -0.2218
+-2.2553 DATE -0.2218
+-2.2553 DAY -0.2218
+-2.2553 FROM -0.2218
+-2.2553 HOW -0.2218
+-1.6532 IS -0.2218
+-2.2553 ME -0.2218
+-2.2553 NAME -0.2218
+-2.2553 PLEASE -0.2218
+-2.2553 TELL -0.2218
+-1.9542 THE -0.2218
+-1.7782 TODAY -0.2218
+-2.2553 WE -0.2218
+-2.2553 WEATHER -0.2218
+-1.7782 WHAT -0.2218
+-1.9542 WHERE -0.2218
+-2.2553 YOU -0.2218
+-1.9542 YOUR -0.2218
+
+\2-grams:
+-1.7782 <s> AFFILIATION 0.0000
+-1.4771 <s> ARE 0.0000
+-1.7782 <s> DATE 0.0000
+-1.7782 <s> DAY 0.0000
+-1.7782 <s> FROM 0.0000
+-1.7782 <s> HOW 0.0000
+-1.1761 <s> IS 0.0000
+-1.7782 <s> ME 0.0000
+-1.7782 <s> NAME 0.0000
+-1.7782 <s> PLEASE 0.0000
+-1.7782 <s> TELL 0.0000
+-1.4771 <s> THE 0.0000
+-1.3010 <s> TODAY 0.0000
+-1.7782 <s> WE 0.0000
+-1.7782 <s> WEATHER 0.0000
+-1.3010 <s> WHAT 0.0000
+-1.4771 <s> WHERE 0.0000
+-1.7782 <s> YOU 0.0000
+-1.4771 <s> YOUR 0.0000
+-0.3010 AFFILIATION </s> -0.3010
+-0.3010 ARE </s> -0.3010
+-0.3010 DATE </s> -0.3010
+-0.3010 DAY </s> -0.3010
+-0.3010 FROM </s> -0.3010
+-0.3010 HOW </s> -0.3010
+-0.3010 IS </s> -0.3010
+-0.3010 ME </s> -0.3010
+-0.3010 NAME </s> -0.3010
+-0.3010 PLEASE </s> -0.3010
+-0.3010 TELL </s> -0.3010
+-0.3010 THE </s> -0.3010
+-0.3010 TODAY </s> -0.3010
+-0.3010 WE </s> -0.3010
+-0.3010 WEATHER </s> -0.3010
+-0.3010 WHAT </s> -0.3010
+-0.3010 WHERE </s> -0.3010
+-0.3010 YOU </s> -0.3010
+-0.3010 YOUR </s> -0.3010
+
+\3-grams:
+-0.3010 <s> AFFILIATION </s>
+-0.3010 <s> ARE </s>
+-0.3010 <s> DATE </s>
+-0.3010 <s> DAY </s>
+-0.3010 <s> FROM </s>
+-0.3010 <s> HOW </s>
+-0.3010 <s> IS </s>
+-0.3010 <s> ME </s>
+-0.3010 <s> NAME </s>
+-0.3010 <s> PLEASE </s>
+-0.3010 <s> TELL </s>
+-0.3010 <s> THE </s>
+-0.3010 <s> TODAY </s>
+-0.3010 <s> WE </s>
+-0.3010 <s> WEATHER </s>
+-0.3010 <s> WHAT </s>
+-0.3010 <s> WHERE </s>
+-0.3010 <s> YOU </s>
+-0.3010 <s> YOUR </s>
+
+\end\

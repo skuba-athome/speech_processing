@@ -1,0 +1,6 @@
+#JSGF V1.0;
+grammar GPSR2;
+
+public <gpsr2> = [ <confirm> ];
+
+<confirm> = ROBOT (YES | NO);
