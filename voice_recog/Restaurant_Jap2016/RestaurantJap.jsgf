@@ -16,20 +16,22 @@ public <restaurant_command> = [<follow> | <leave> | <stop> | <confirm> | <get_or
 
 <tell_location> = <location> IS ON MY <sides>;
 
-<bring_object> = BRING <object> TO <location>;
+<bring_object> = BRING [<articles>] <object> TO [THE] <location>;
 
-<location> = TABLE ONE | TABLE TWO | TABLE THREE | KITCHEN | KITCHEN BAR;
+<location> = TABLE ONE | TABLE TWO | TABLE THREE | TABLE FOUR | KITCHEN | KITCHEN BAR;
 
 <sides> = LEFT | RIGHT;
 
-<order> = I WILL TAKE <combo> | I WILL TAKE <drink>;
+<order> = I (WILL TAKE | WANT) <combo> | I (WILL TAKE | WANT) [<articles>] <drink>;
 
-<combo> = <food> <and> <food>;
+<combo> = [<articles>] <food> <and> [<articles>] <food>;
 
 <and> = AND | WITH;
 
-<food> = NOODLES | PEANUTS | HAMBURGER | FRIES;
+<food> = POTATO CHIPS | COOKIE | POTATO STICK | POTAGE SOUP | EGG SOUP | ORANGE | APPLE;
 
-<drink> = ORANGE JUICE | WATER;
+<drink> = GREEN TEA | CAFE AU LAIT | ICED TEA | ORANGE JUICE | STRAWBERRY JUICE;
 
 <object> = <combo> | <drink>;
+
+<articles> = A | AN | THE;
