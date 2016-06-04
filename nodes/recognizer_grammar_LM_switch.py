@@ -26,7 +26,6 @@ gobject.threads_init()
 import gst
 
 from std_msgs.msg import String
-# from std_srvs.srv import Trigger
 from speech_processing.srv import *
 import sys
 
@@ -38,7 +37,7 @@ class grammar_recognizer(object):
     """ GStreamer based speech recognizer. """
 
     def __init__(self):
-        """ Initialize the speech pipeline components. """
+        """ Initialize the speech pipelinec omponents. """
         rospy.init_node('recognizer')
         self.pub = rospy.Publisher('~output',String)
         rospy.on_shutdown(self.shutdown)

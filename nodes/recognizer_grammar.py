@@ -15,15 +15,32 @@ recognizer.py is a wrapper for speech_processing.
 import roslib; roslib.load_manifest('speech_processing')
 import rospy
 
-import pygtk
-pygtk.require('2.0')
-import gtk
+# import pygtk
+# pygtk.require('2.0')
+# import gtk
 
-import gobject
-import pygst
-pygst.require('0.10')
-gobject.threads_init()
-import gst
+# import gobject
+# import pygst
+# pygst.require('0.10')
+# gobject.threads_init()
+# import gst
+
+from gi import pygtkcompat
+import gi
+
+gi.require_version('Gst', '1.0')
+from gi.repository import GObject, Gst
+GObject.threads_init()
+Gst.init(None)
+    
+gst = Gst
+    
+print("Using pygtkcompat and Gst from gi")
+
+pygtkcompat.enable() 
+pygtkcompat.enable_gtk(version='3.0')
+
+import gtk
 
 from std_msgs.msg import String
 from std_srvs.srv import *
