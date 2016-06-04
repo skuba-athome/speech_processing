@@ -34,7 +34,7 @@ pygtkcompat.enable_gtk(version='3.0')
 import gtk
 
 class grammar_recognizer(object):
-    """GStreamer/PocketSphinx Demo Application"""
+    """GStreamer with PocketSphinx switch grammar and lm by goal id"""
 
     def __init__(self):
         """ Initialize the speech pipelinec omponents. """
