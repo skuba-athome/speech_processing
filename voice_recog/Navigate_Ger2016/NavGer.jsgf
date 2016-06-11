@@ -1,0 +1,6 @@
+#JSGF V1.0;
+grammar Navigate;
+public <Navigate> = [ <follow> | <start> ];
+
+<follow> = FOLLOW ME;
+<start> = START;
