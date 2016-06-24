@@ -1,5 +1,5 @@
 1. มีไฟล์ประโยคเป็น .txt 
-2. python txt2cvs.py filename.txt filename.csv
+2. python text2csv.py filename.txt filename.csv
 3. python sectences_extractor.py filename.csv foldername
 4. sphinx_jsgf2fsg file.jsgf>file.fsg
 5. ./fsg2wlist.pl "file.fsg">"filename.txt"

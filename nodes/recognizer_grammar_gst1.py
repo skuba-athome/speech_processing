@@ -14,6 +14,7 @@ recognizer.py is a wrapper for speech_processing.
 
 import roslib; roslib.load_manifest('speech_processing')
 import rospy
+import datetime
 
 # import pygtk
 # pygtk.require('2.0')
@@ -60,10 +61,23 @@ class grammar_recognizer(object):
         rospy.Service("~stop", Empty, self.stop)
 
         # configure pipeline
+        self.start_record = False
+        self.timestamp = '{:%Y-%m-%d_%H:%M:%S}'.format(datetime.datetime.now())
+        self.pipeline_rec = gst.parse_launch('autoaudiosrc name=audiosrc ! audioconvert ! audioresample ! wavenc ' +
+                                             '! filesink name=filesink location=/home/ketamine/skuba_ws/src' +
+                                             '/speech_processing/SKUBA_ShotgunMic_' +
+                                             self.timestamp + '.wav')
+
         self.pipeline = gst.parse_launch('autoaudiosrc ! audioconvert ! audioresample '
-                                         + '! pocketsphinx name=asr ! fakesink')
+                                         + '! pocketsphinx  name=asr ! fakesink ')
+
+        # audiosrc = self.pipeline_rec.get_by_name('audiosrc')
+        self.filesink = self.pipeline_rec.get_by_name('filesink')
+
+
+
         asr = self.pipeline.get_by_name('asr')
-        
+
         # parameters for lm and dic
         try:
             self.grammar_ = rospy.get_param('~grammar')
@@ -76,31 +90,43 @@ class grammar_recognizer(object):
             rospy.logerr('Please specify a dictionary')
             return
 
-        asr.set_property('fsg',self.grammar_)
-        asr.set_property('dict',self.dict_)
+        asr.set_property('fsg', self.grammar_)
+        asr.set_property('dict', self.dict_)
+
 
         bus = self.pipeline.get_bus()
         bus.add_signal_watch()
         bus.connect('message::element', self.element_message)
+
+
+        # bus_rec = self.pipeline_rec.get_bus()
+        # bus_rec.add_signal_watch()
+        # bus_rec.connect('message::element', self.element_message)
 
         self.start(None)
         gtk.main()
         
     def shutdown(self):
         """ Shutdown the GTK thread. """
-        print 'shut----------------------------------------kuy'
+        print 'shut----------------------------------------'
         self.pipeline.set_state(gst.State.NULL)
+        self.pipeline_rec.set_state(gst.State.NULL)
         gtk.main_quit()
         # sys.exit()
 
     def start(self, msg):
         self.pipeline.set_state(gst.State.PLAYING)
+        # self.pipeline_rec.set_state(gst.State.PAUSED)
+        print self.timestamp, "----------------------"
+        # print self.pipeline.get_by_name('asr').get_property('decoder').get_string("-rawlogdir")
+        # self.pipeline_rec.change_state(gst.StateChange.PLAYING_TO_PAUSED)
         # self.pipeline.get_by_name('asr').set_property('fsg',self.grammar_)
         # self.pipeline.get_by_name('asr').set_property('dict',self.dict_)
         return EmptyResponse()
 
     def stop(self):
         self.pipeline.set_state(gst.State.PAUSED)
+        self.pipeline_rec.set_state(gst.State.PAUSED)
         #vader = self.pipeline.get_by_name('vad')
         #vader.set_property('silent', True)
         return EmptyResponse()
@@ -118,14 +144,58 @@ class grammar_recognizer(object):
 
     def element_message(self, bus, msg):
         """Receive element messages from the bus."""
+        print type(msg)
         msgtype = msg.get_structure().get_name()
         if msgtype != 'pocketsphinx':
             return
 
         if msg.get_structure().get_value('final'):
             self.final_result(msg.get_structure().get_value('hypothesis'), msg.get_structure().get_value('confidence'))
+            self.pipeline_rec.change_state(gst.StateChange.PLAYING_TO_PAUSED)
+            self.pipeline_rec.change_state(gst.StateChange.PAUSED_TO_READY)
+            self.pipeline_rec.change_state(gst.StateChange.READY_TO_NULL)
+            self.start_record = False
+            # try:
+            #     self.pipeline_rec.set_state(gst.State.NULL)
+            # except:
+            #     print 'no pipeline'
+            #     return
+            # self.pipeline_rec.change_state(gst.StateChange.PLAYING_TO_PAUSED)
         elif msg.get_structure().get_value('hypothesis'):
+            # self.pipeline_rec = gst.parse_launch('autoaudiosrc name=audiosrc ! audioconvert ! audioresample ! wavenc ' +
+            #                                      '! filesink name=filesink location=/home/ketamine/skuba_ws/src' +
+            #                                      '/speech_processing/SKUBA_ShotgunMic_' +
+            #                                      self.timestamp + '.wav')
+            # self.pipeline.set_state(gst.State.PLAYING)
+            if self.start_record == False:
+                self.start_record = True
+                self.record_pipeline()
+            # self.pipeline_rec.change_state(gst.StateChange.PAUSED_TO_PLAYING)
+            # print self.filesink.get_property('ts-offset'), "-------------------------------------"
             self.partial_result(msg.get_structure().get_value('hypothesis'))
+
+    def record_pipeline(self):
+        self.timestamp = '{:%Y-%m-%d_%H:%M:%S}'.format(datetime.datetime.now())
+        print 'record--------------', self.timestamp
+
+        self.filesink.set_property('location', '/home/ketamine/skuba_ws/src' +
+                                   '/speech_processing/SKUBA_ShotgunMic_' +
+                                   self.timestamp + '.wav')
+
+        # self.pipeline_rec = gst.parse_launch('autoaudiosrc name=audiosrc ! audioconvert ! audioresample ! wavenc ' +
+        #                                      '! filesink name=filesink location=/home/ketamine/skuba_ws/src' +
+        #                                      '/speech_processing/SKUBA_ShotgunMic_' +
+        #                                      self.timestamp + '.wav')
+
+        self.pipeline_rec.set_state(gst.State.NULL)
+
+        bus_rec = self.pipeline_rec.get_bus()
+        bus_rec.add_signal_watch()
+        bus_rec.connect('message::element', self.element_message)
+
+        self.pipeline_rec.change_state(gst.StateChange.NULL_TO_READY)
+        self.pipeline_rec.change_state(gst.StateChange.READY_TO_PAUSED)
+        self.pipeline_rec.change_state(gst.StateChange.PAUSED_TO_PLAYING)
 
 if __name__=="__main__":
     r = grammar_recognizer()
