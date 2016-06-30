@@ -1,7 +1,7 @@
 1. มีไฟล์ประโยคเป็น .txt 
 2. python text2csv.py filename.txt filename.csv
 3. python sectences_extractor.py filename.csv foldername
-4. sphinx_jsgf2fsg file.jsgf>file.fsg
+*4. sphinx_jsgf2fsg file.jsgf>file.fsg (version 0.1) , sphinx_jsgf2fsg -jsgf file.jsgf -fsg file.fsg (version 1.0)
 5. ./fsg2wlist.pl "file.fsg">"filename.txt"
 6. นำ .txt ไปทำเปน .dict ในเวป http://www.speech.cs.cmu.edu/tools/lmtool-new.html
 
