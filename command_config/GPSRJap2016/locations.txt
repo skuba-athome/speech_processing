@@ -1,0 +1,18 @@
+couch table
+sideboard
+dining table
+kitchen table
+stove
+sofa
+toilet
+armchair
+bed
+bookshelf
+drawer
+closet
+cupboard
+front door
+back door
+TV
+washing machine
+fridge

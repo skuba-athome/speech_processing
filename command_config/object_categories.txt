@@ -1,4 +1,6 @@
+snacks
+candies
 food
-drink
-snack
-kitchenary
+drinks
+toiletries
+containers

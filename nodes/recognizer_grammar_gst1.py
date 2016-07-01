@@ -74,11 +74,7 @@ class grammar_recognizer(object):
                                              '! filesink name=filesink location=' + self.ROS_PATH +
                                              'SKUBA_ShotgunMic_' + self.timestamp + '.wav')
 
-<<<<<<< HEAD
         self.pipeline = gst.parse_launch('autoaudiosrc ! audioconvert ! audioresample ! volume name=volume '
-=======
-        self.pipeline = gst.parse_launch('autoaudiosrc ! audioconvert ! audioresample '
->>>>>>> 649904c15e99b59a87d84bd4a83d45d9e1027302
                                          + '! pocketsphinx name=asr ! fakesink')
 
         # audiosrc = self.pipeline_rec.get_by_name('audiosrc')
@@ -116,12 +112,10 @@ class grammar_recognizer(object):
         bus.connect('message::element', self.element_message)
 
         self.record_pipeline()
-<<<<<<< HEAD
 
         service_open = rospy.Service('~mic_control_open', Empty, self.microphone_open)
         service_close = rospy.Service('~mic_control_close', Empty, self.microphone_close)
-=======
->>>>>>> 649904c15e99b59a87d84bd4a83d45d9e1027302
+
         # bus_rec = self.pipeline_rec.get_bus()
         # bus_rec.add_signal_watch()
         # bus_rec.connect('message::element', self.element_message)
@@ -132,6 +126,7 @@ class grammar_recognizer(object):
     def shutdown(self):
         """ Shutdown the GTK thread. """
         print 'shut----------------------------------------'
+        self.csvfile.close()
         self.pipeline.set_state(gst.State.NULL)
         self.pipeline_rec.set_state(gst.State.NULL)
         gtk.main_quit()
@@ -225,14 +220,17 @@ class grammar_recognizer(object):
             self.command_timestamp = '{:%Y-%m-%d_%H:%M:%S}'.format(datetime.datetime.now())
 
     def write_command_file(self, data):
+        self.csvfile = open(self.command_filename, 'a')
+        fieldnames = ['TimeStamp', 'Command']
+        self.writer = csv.DictWriter(self.csvfile, fieldnames=fieldnames)
         print 'write file====================================================='
         if self.command_timestamp == None:
             self.command_timestamp = '{:%Y-%m-%d_%H:%M:%S}'.format(datetime.datetime.now())
-<<<<<<< HEAD
 
         self.writer.writerow({'TimeStamp': self.command_timestamp, 'Command': data.data})
         # self.command_filename = None
         self.command_timestamp = None
+        self.csvfile.close()
 
     def microphone_open(self, data):
         print 'open==========================='
@@ -243,12 +241,7 @@ class grammar_recognizer(object):
         print  'close========================='
         self.volume.set_property('mute', True)
         return EmptyResponse()
-=======
 
-        self.writer.writerow({'TimeStamp': self.command_timestamp, 'Command': data.data})
-        # self.command_filename = None
-        self.command_timestamp = None
->>>>>>> 649904c15e99b59a87d84bd4a83d45d9e1027302
 
 if __name__=="__main__":
     r = grammar_recognizer()

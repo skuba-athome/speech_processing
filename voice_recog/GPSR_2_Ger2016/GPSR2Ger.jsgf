@@ -1,0 +1,151 @@
+#JSGF V1.0;
+grammar GPSR2;
+
+public <gpsr2> = [ <complex1> | <complex2> | <complex3> | <complex4> | <confirm> ];
+
+<confirm> = ROBOT (YES | NO);
+
+/* COMPLEX COMMANDS */
+<complex1>  = <triple>;
+<complex2>  = <single> <single> AND <single>;
+<complex3>  = <doubler> AND <single>;
+<complex4>  = <single> <doubler>;
+
+/* TRIPLE TASK COMMANDS */
+
+<triple>   = <take> <deliver> AND <answer> | <take> <deliverf> AND (<followf> | <guidef>) | <take> <deliverm> AND (<followm> | <guidem>) | <moveobj> <findpr> AND <answer> | <findor> AND (<place> | <deliver>) | <findmp> AND <guidem> | <findfp> AND <guidef>;
+
+/* DOUBLE TASK COMMANDS */
+
+<doubler>  = <take> AND (<place> | <deliver>) | <take> (<place> | <deliver>) | <findor> AND (<place> | <deliver>) | <findor> (<place> | <deliver>) | <findp> AND <answer> | <findpr> <answer> | <findcp> AND <followm> | <findmpr> AND <followm> | <findfpr> AND <followf> | <findmpr> <followm> | <findfpr> <followf> | <findcp> <followm> | <findcp> AND <guidem> | <findmp> AND <guidem> | <findfp> AND <guidef> | <findmp> <guidem> | <findfp> <guidef> | <findcp> <guidem>;
+
+/* SINGLE TASK COMMANDS */
+
+<single>   = <moveobj> | <speak> | <take> | <goplace> | <findor> | <findp> | <findpr> | <follow> | <guide>;
+
+/* TASKS */
+
+<findor>   = <vbfind> A <object> IN THE <room>;
+
+<take>     = <vbtake> THE <object> FROM THE <placement>;
+
+<place>    = <vbplace> IT ON THE <placement>;
+
+<moveobj>  = <vbplace> A <object> ON THE <placement>;
+
+<deliver>  = <vbdeliver> IT TO (ME | <name> IN THE <beacon>);
+<deliverf> = <vbdeliver> IT TO <female> IN THE <beacon>;
+<deliverm> = <vbdeliver> IT TO <male> IN THE <beacon>;
+
+<findp>    = <vbfind> <name> IN THE <beacon>;
+<findmp>   = <vbfind> <male> IN THE <beacon>;
+<findfp>   = <vbfind> <female> IN THE <beacon>;
+
+<findcp>   = <vbfind> THE <gesture> PERSON IN THE <room>;
+<findpr>   = <vbfind> <name> IN THE <room>;
+<findmpr>  = <vbfind> <male> IN THE <room>;
+<findfpr>  = <vbfind> <female> IN THE <room>;
+
+<follow>   = <vbfollow> <name> WHO IS AT THE <beacon>;
+<followm>  = <vbfollow> HIM;
+<followf>  = <vbfollow> HER;
+
+<guide>    = <vbguide> <name> FROM THE <beacon> TO THE ( <room> | <beacon> | EXIT );
+<guidem>   = <vbguide> HIM TO THE ( <room> | <beacon> | EXIT );
+<guidef>   = <vbguide> HER TO THE ( <room> | <beacon> | EXIT );
+
+<answer>   = ANSWER A <question>;
+<speak>    = <vbspeak> <whattosay>;
+
+<goplace>  = <vbgopl> TO THE <placement>;
+<gobeacon> = <vbgopl> TO THE <beacon>;
+
+/* WHAT TO SAY */
+
+<whattosay> = SOMETHING ABOUT YOURSELF | THE TIME | WHAT DAY IS (TODAY | TOMORROW) | YOUR TEAM'S (NAME | COUNTRY | AFFILIATION) | THE DAY OF THE (WEEK | MONTH) | A JOKE;
+
+/* VERBS */
+
+<vbtake>   = GET | GRASP | TAKE | PICK UP;
+<vbplace>  = DELIVER | PUT | PLACE;
+<vbspeak>  = TELL | SAY;
+<vbgopl>   = GO | NAVIGATE;
+<vbgor>    = <vbgopl> | ENTER;
+<vbfind>   = FIND | LOCATE | LOOK FOR;
+<vbguide>  = GUIDE | ESCORT | TAKE;
+<vbfollow> = FOLLOW;
+<vbdeliver> = BRING | DELIVER | GIVE | HAND;
+
+/* POLITE */
+
+<polite>   = PLEASE | COULD YOU | ROBOT PLEASE | COULD YOU PLEASE;
+
+/* ROOM OBJECT QUESTION PLACEMENT2 PLACEMENT1 */
+
+<object> = <snacks> | <candies> | <food> | <drinks> | <toiletries> | <containers>;
+<snacks> = CHIPS | PRETZELS | PRINGLES;
+<candies> = CHOCO SYRUP | BISQUITS | BABY SWEETS | EGG;
+<food> = APPLE | PAPRIKA | PUMPER NICKEL;
+<drinks> = TEA | BEER | COKE | COCONUT MILK;
+<toiletries> = SHAMPOO | SOAP | CLOTH | SPPONGE;
+<containers> = BOWL | TRAY | PLATE;
+
+<beacon> = BED | TV STAND | LIVING TABLE | DESK | SINK | DINING TABLE | CABINET;
+
+<placement> = BEDSIDE | LIVING SHELF | TV STAND | LIVING TABLE | DRAWER | DESK | BAR | CUPBOARD | SINK | SIDESHELF | BOOKCASE | DINING TABLE | CABINET | SIDESHELF | BOOKCASE;
+
+<room> = OFFICE | LIVING ROOM | CORRIDOR | BEDROOM | KITCHEN | DINING ROOM;
+
+/* Article */
+<articles> = A | AN | THE;
+
+/* PEOPLE */
+<name> = EMMA | TAYLOR | SOPHIA | ISABELLA | AVA | ROBIN | EMILY | ANGEL | MADISON | CHARLOTTE | NOAH | LIAM | MASON | JACOB | WILLIAM | ETHAN | MICHAEL | ALEXANDER | JAMES | DANIEL;
+<female> = EMMA | TAYLOR | SOPHIA | ISABELLA | AVA | ROBIN | EMILY | ANGEL | MADISON | CHARLOTTE;
+<male> = NOAH | LIAM | MASON | JACOB | WILLIAM | ETHAN | MICHAEL | ALEXANDER | JAMES | DANIEL;
+
+/* GESTURE */
+<gesture> = WAVING | RISING LEFT ARM | RISING RIGHT ARM | POINTING LEFT | POINTING RIGHT;
+
+/* QUESTION */
+<question> = ( <command_1> | <command_2> | <command_3> | <command_4> | <command_5> ( <command_5_1> | <command_5_2> ) | <command_6> | <command_7> | <command_8> | <command_9> ( <command_9_1> | <command_9_2> | <command_9_3> | <command_9_4> | <command_9_5> | <command_9_6> | <command_9_7> ) | <command_10> | <command_11> ( <command_11_1> | <command_11_2> | <command_11_3> ( <command_11_3_1> | <command_11_3_2> | <command_11_3_3> | <command_11_3_4> ) ) | <command_12> ( <command_12_1> | <command_12_2> | <command_12_3> ) | <command_13> ( <command_13_1> | <command_13_2> | <command_13_3> ( <command_13_3_1> | <command_13_3_2> ) | <command_13_4> | <command_13_5> ) );
+
+<command_1> = DO YOU ( HAVE DREAMS | KNOW ANY CYBORG );
+<command_2> = FEBRUARY HAS ( 28 DAYS TRUE OR FALSE | 31 DAYS TRUE OR FALSE );
+<command_3> = HEY WHAT'S UP;
+<command_4> = HOW MANY ( ARMS DO YOU HAVE | CURRY SAUSAGES ARE EATEN IN GERMANY EACH YEAR | METRES ARE IN A MILE | PEOPLE LIVE IN THE GERMANY );
+<command_5> = IN WHICH;
+<command_5_1> = CITY ( IS THIS YEAR'S ROBOCUP HOSTED | WILL NEXT YEAR'S ROBOCUP BE HOSTED );
+<command_5_2> = COUNTY IS THE PLAY OF HAMLET SET;
+<command_6> = JANUARY HAS ( 28 DAYS TRUE OR FALSE | 31 DAYS TRUE OR FALSE );
+<command_7> = NAME ( A DRAGON IN THE LORD OF THE RINGS | ONE OF THE GREATEST GERMAN COMPOSERS | THE MAIN RIVERS SURROUNDING LEIPZIG );
+<command_8> = THERE ARE ( ELEVEN DAYS IN A WEEK TRUE OR FALSE | SEVEN DAYS IN A WEEK TRUE OR FALSE );
+<command_9> = WHAT;
+<command_9_1> = APOLLO WAS THE LAST TO LAND ON THE MOON;
+<command_9_2> = ARE ( NAMES OF DONALD DUCK'S NEPHEWS | THE COLOURS OF THE GERMAN FLAG );
+<command_9_3> = CITY ( ARE YOU FROM | IS THE CAPITAL OF THE GERMANY );
+<command_9_4> = COMPANY MAKES BIG DOG;
+<command_9_5> = DID ALAN TURING CREATE;
+<command_9_6> = IS THE ( FUNNY CLUMSY CHARACTER OF THE STAR WARS PREQUELS | HEAVIEST ELEMENT | NAME OF THE ROUND ROBOT IN THE NEW STAR WARS MOVIE );
+<command_9_7> = ORIGIN HAS THE WORD ROBOT;
+<command_10> = WHAT'S THE DIFFERENCE BETWEEN A CYBORG AND AN ANDROID;
+<command_11> = WHERE;
+<command_11_1> = DID THE PEACEFUL REVOLUTION OF 1989 START;
+<command_11_2> = DOES THE TERM COMPUTER BUG COME FROM;
+<command_11_3> = IS;
+<command_11_3_1> = EUROPE'S OLDEST CONTINUOUS COFFEE SHOP HOSTED;
+<command_11_3_2> = JOHANN SEBASTIAN BACH BURIED;
+<command_11_3_3> = ONE OF THE WORLD'S LARGEST DARK MUSIC FESTIVALS HOSTED;
+<command_11_3_4> = THE ( WORLD'S OLDEST TRADE FAIR HOSTED | ZOO OF THIS CITY LOCATED );
+<command_12> = WHICH;
+<command_12_1> = CITY HOSTED LAST YEAR'S ROBOCUP;
+<command_12_2> = COMPANY MAKES ASIMO;
+<command_12_3> = ROBOT ( IS THE LOVE INTEREST IN WALL-E | WAS THE STAR IN THE MOVIE WALL-E );
+<command_13> = WHO;
+<command_13_1> = ARE THE INVENTORS OF THE C PROGRAMMING LANGUAGE;
+<command_13_2> = DEVELOPED THE FIRST INDUSTRIAL ROBOT;
+<command_13_3> = IS;
+<command_13_3_1> = PRESIDENT OF THE GALAXY IN THE HITCHHIKER'S GUIDE TO THE GALAXY;
+<command_13_3_2> = THE ( CHANCELLOR OF GERMANY | HELICOPTER PILOT IN THE A-TEAM | INVENTOR OF THE PYTHON PROGRAMMING LANGUAGE );
+<command_13_4> = USED FIRST THE WORD ROBOT;
+<command_13_5> = WAS THE LAST MAN TO STEP ON THE MOON;
