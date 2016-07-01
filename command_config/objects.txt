@@ -21,3 +21,9 @@ bowl
 tray
 plate
 question
+waving person
+rising left arm person
+rising right arm person
+pointing left person
+pointing right person
+

@@ -5,3 +5,4 @@ bedroom
 kitchen
 dining room
 bathroom
+exit

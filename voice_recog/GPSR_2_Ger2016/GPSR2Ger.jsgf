@@ -54,7 +54,7 @@ public <gpsr2> = [ <complex1> | <complex2> | <complex3> | <complex4> | <confirm>
 <guidem>   = <vbguide> HIM TO THE ( <room> | <beacon> | EXIT );
 <guidef>   = <vbguide> HER TO THE ( <room> | <beacon> | EXIT );
 
-<answer>   = ANSWER A <question>;
+<answer>   = ANSWER A QUESTION;
 <speak>    = <vbspeak> <whattosay>;
 
 <goplace>  = <vbgopl> TO THE <placement>;
