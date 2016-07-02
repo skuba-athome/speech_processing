@@ -26,4 +26,504 @@ rising left arm person
 rising right arm person
 pointing left person
 pointing right person
-
+children
+people
+elders
+men
+women
+waving people
+rising left arm people
+rising right arm people
+pointing left people
+pointing right people
+waving elders
+rising left arm elders
+rising right arm elders
+pointing left elders
+pointing right elders
+waving men
+rising left arm men
+rising right arm men
+pointing left men
+pointing right men
+waving women
+rising left arm women
+rising right arm women
+pointing left women
+pointing right women
+standing people
+sitting people
+lying people
+standing elders
+sitting elders
+lying elders
+standing men
+sitting men
+lying men
+standing women
+sitting women
+lying women
+children wearing t-shirt
+children wearing shirt
+children wearing blouse
+children wearing shoes
+children wearing sweater
+children wearing pants
+children wearing coat
+children wearing jacket
+people wearing t-shirt
+people wearing shirt
+people wearing blouse
+people wearing shoes
+people wearing sweater
+people wearing pants
+people wearing coat
+people wearing jacket
+elders wearing t-shirt
+elders wearing shirt
+elders wearing blouse
+elders wearing shoes
+elders wearing sweater
+elders wearing pants
+elders wearing coat
+elders wearing jacket
+men wearing t-shirt
+men wearing shirt
+men wearing blouse
+men wearing shoes
+men wearing sweater
+men wearing pants
+men wearing coat
+men wearing jacket
+women wearing t-shirt
+women wearing shirt
+women wearing blouse
+women wearing shoes
+women wearing sweater
+women wearing pants
+women wearing coat
+women wearing jacket
+blue-dressed children
+blue-dressed people
+blue-dressed elders
+blue-dressed men
+blue-dressed women
+yellow-dressed children
+yellow-dressed people
+yellow-dressed elders
+yellow-dressed men
+yellow-dressed women
+black-dressed children
+black-dressed people
+black-dressed elders
+black-dressed men
+black-dressed women
+white-dressed children
+white-dressed people
+white-dressed elders
+white-dressed men
+white-dressed women
+red-dressed children
+red-dressed people
+red-dressed elders
+red-dressed men
+red-dressed women
+orange-dressed children
+orange-dressed people
+orange-dressed elders
+orange-dressed men
+orange-dressed women
+grey-dressed children
+grey-dressed people
+grey-dressed elders
+grey-dressed men
+grey-dressed women
+child
+person
+man
+woman
+waving person
+rising left arm person
+rising right arm person
+pointing left person
+pointing right person
+waving man
+rising left arm man
+rising right arm man
+pointing left man
+pointing right man
+waving woman
+rising left arm woman
+rising right arm woman
+pointing left woman
+pointing right woman
+tallest person
+tallest man
+tallest woman
+smallest person
+smallest man
+smallest woman
+oldest person
+oldest man
+oldest woman
+youngest person
+youngest man
+youngest woman
+slimmest person
+slimmest man
+slimmest woman
+fattest person
+fattest man
+fattest woman
+man dressed with blue t-shirt
+man dressed with blue shirt
+man dressed with blue blouse
+man dressed with blue shoes
+man dressed with blue sweater
+man dressed with blue pants
+man dressed with blue coat
+man dressed with blue jacket
+man dressed with yellow t-shirt
+man dressed with yellow shirt
+man dressed with yellow blouse
+man dressed with yellow shoes
+man dressed with yellow sweater
+man dressed with yellow pants
+man dressed with yellow coat
+man dressed with yellow jacket
+man dressed with black t-shirt
+man dressed with black shirt
+man dressed with black blouse
+man dressed with black shoes
+man dressed with black sweater
+man dressed with black pants
+man dressed with black coat
+man dressed with black jacket
+man dressed with white t-shirt
+man dressed with white shirt
+man dressed with white blouse
+man dressed with white shoes
+man dressed with white sweater
+man dressed with white pants
+man dressed with white coat
+man dressed with white jacket
+man dressed with red t-shirt
+man dressed with red shirt
+man dressed with red blouse
+man dressed with red shoes
+man dressed with red sweater
+man dressed with red pants
+man dressed with red coat
+man dressed with red jacket
+man dressed with orange t-shirt
+man dressed with orange shirt
+man dressed with orange blouse
+man dressed with orange shoes
+man dressed with orange sweater
+man dressed with orange pants
+man dressed with orange coat
+man dressed with orange jacket
+man dressed with grey t-shirt
+man dressed with grey shirt
+man dressed with grey blouse
+man dressed with grey shoes
+man dressed with grey sweater
+man dressed with grey pants
+man dressed with grey coat
+man dressed with grey jacket
+woman dressed with blue t-shirt
+woman dressed with blue shirt
+woman dressed with blue blouse
+woman dressed with blue shoes
+woman dressed with blue sweater
+woman dressed with blue pants
+woman dressed with blue coat
+woman dressed with blue jacket
+woman dressed with yellow t-shirt
+woman dressed with yellow shirt
+woman dressed with yellow blouse
+woman dressed with yellow shoes
+woman dressed with yellow sweater
+woman dressed with yellow pants
+woman dressed with yellow coat
+woman dressed with yellow jacket
+woman dressed with black t-shirt
+woman dressed with black shirt
+woman dressed with black blouse
+woman dressed with black shoes
+woman dressed with black sweater
+woman dressed with black pants
+woman dressed with black coat
+woman dressed with black jacket
+woman dressed with white t-shirt
+woman dressed with white shirt
+woman dressed with white blouse
+woman dressed with white shoes
+woman dressed with white sweater
+woman dressed with white pants
+woman dressed with white coat
+woman dressed with white jacket
+woman dressed with red t-shirt
+woman dressed with red shirt
+woman dressed with red blouse
+woman dressed with red shoes
+woman dressed with red sweater
+woman dressed with red pants
+woman dressed with red coat
+woman dressed with red jacket
+woman dressed with orange t-shirt
+woman dressed with orange shirt
+woman dressed with orange blouse
+woman dressed with orange shoes
+woman dressed with orange sweater
+woman dressed with orange pants
+woman dressed with orange coat
+woman dressed with orange jacket
+woman dressed with grey t-shirt
+woman dressed with grey shirt
+woman dressed with grey blouse
+woman dressed with grey shoes
+woman dressed with grey sweater
+woman dressed with grey pants
+woman dressed with grey coat
+woman dressed with grey jacket
+person dressed with blue t-shirt
+person dressed with blue shirt
+person dressed with blue blouse
+person dressed with blue shoes
+person dressed with blue sweater
+person dressed with blue pants
+person dressed with blue coat
+person dressed with blue jacket
+person dressed with yellow t-shirt
+person dressed with yellow shirt
+person dressed with yellow blouse
+person dressed with yellow shoes
+person dressed with yellow sweater
+person dressed with yellow pants
+person dressed with yellow coat
+person dressed with yellow jacket
+person dressed with black t-shirt
+person dressed with black shirt
+person dressed with black blouse
+person dressed with black shoes
+person dressed with black sweater
+person dressed with black pants
+person dressed with black coat
+person dressed with black jacket
+person dressed with white t-shirt
+person dressed with white shirt
+person dressed with white blouse
+person dressed with white shoes
+person dressed with white sweater
+person dressed with white pants
+person dressed with white coat
+person dressed with white jacket
+person dressed with red t-shirt
+person dressed with red shirt
+person dressed with red blouse
+person dressed with red shoes
+person dressed with red sweater
+person dressed with red pants
+person dressed with red coat
+person dressed with red jacket
+person dressed with orange t-shirt
+person dressed with orange shirt
+person dressed with orange blouse
+person dressed with orange shoes
+person dressed with orange sweater
+person dressed with orange pants
+person dressed with orange coat
+person dressed with orange jacket
+person dressed with grey t-shirt
+person dressed with grey shirt
+person dressed with grey blouse
+person dressed with grey shoes
+person dressed with grey sweater
+person dressed with grey pants
+person dressed with grey coat
+person dressed with grey jacket
+man wearing hat
+man wearing glasses
+man wearing necklace
+man wearing tie
+man wearing earrings
+woman wearing hat
+woman wearing glasses
+woman wearing necklace
+woman wearing tie
+woman wearing earrings
+person wearing hat
+person wearing glasses
+person wearing necklace
+person wearing tie
+person wearing earrings
+man wearing blue t-shirt
+man wearing blue shirt
+man wearing blue blouse
+man wearing blue shoes
+man wearing blue sweater
+man wearing blue pants
+man wearing blue coat
+man wearing blue jacket
+man wearing yellow t-shirt
+man wearing yellow shirt
+man wearing yellow blouse
+man wearing yellow shoes
+man wearing yellow sweater
+man wearing yellow pants
+man wearing yellow coat
+man wearing yellow jacket
+man wearing black t-shirt
+man wearing black shirt
+man wearing black blouse
+man wearing black shoes
+man wearing black sweater
+man wearing black pants
+man wearing black coat
+man wearing black jacket
+man wearing white t-shirt
+man wearing white shirt
+man wearing white blouse
+man wearing white shoes
+man wearing white sweater
+man wearing white pants
+man wearing white coat
+man wearing white jacket
+man wearing red t-shirt
+man wearing red shirt
+man wearing red blouse
+man wearing red shoes
+man wearing red sweater
+man wearing red pants
+man wearing red coat
+man wearing red jacket
+man wearing orange t-shirt
+man wearing orange shirt
+man wearing orange blouse
+man wearing orange shoes
+man wearing orange sweater
+man wearing orange pants
+man wearing orange coat
+man wearing orange jacket
+man wearing grey t-shirt
+man wearing grey shirt
+man wearing grey blouse
+man wearing grey shoes
+man wearing grey sweater
+man wearing grey pants
+man wearing grey coat
+man wearing grey jacket
+woman wearing blue t-shirt
+woman wearing blue shirt
+woman wearing blue blouse
+woman wearing blue shoes
+woman wearing blue sweater
+woman wearing blue pants
+woman wearing blue coat
+woman wearing blue jacket
+woman wearing yellow t-shirt
+woman wearing yellow shirt
+woman wearing yellow blouse
+woman wearing yellow shoes
+woman wearing yellow sweater
+woman wearing yellow pants
+woman wearing yellow coat
+woman wearing yellow jacket
+woman wearing black t-shirt
+woman wearing black shirt
+woman wearing black blouse
+woman wearing black shoes
+woman wearing black sweater
+woman wearing black pants
+woman wearing black coat
+woman wearing black jacket
+woman wearing white t-shirt
+woman wearing white shirt
+woman wearing white blouse
+woman wearing white shoes
+woman wearing white sweater
+woman wearing white pants
+woman wearing white coat
+woman wearing white jacket
+woman wearing red t-shirt
+woman wearing red shirt
+woman wearing red blouse
+woman wearing red shoes
+woman wearing red sweater
+woman wearing red pants
+woman wearing red coat
+woman wearing red jacket
+woman wearing orange t-shirt
+woman wearing orange shirt
+woman wearing orange blouse
+woman wearing orange shoes
+woman wearing orange sweater
+woman wearing orange pants
+woman wearing orange coat
+woman wearing orange jacket
+woman wearing grey t-shirt
+woman wearing grey shirt
+woman wearing grey blouse
+woman wearing grey shoes
+woman wearing grey sweater
+woman wearing grey pants
+woman wearing grey coat
+woman wearing grey jacket
+person wearing blue t-shirt
+person wearing blue shirt
+person wearing blue blouse
+person wearing blue shoes
+person wearing blue sweater
+person wearing blue pants
+person wearing blue coat
+person wearing blue jacket
+person wearing yellow t-shirt
+person wearing yellow shirt
+person wearing yellow blouse
+person wearing yellow shoes
+person wearing yellow sweater
+person wearing yellow pants
+person wearing yellow coat
+person wearing yellow jacket
+person wearing black t-shirt
+person wearing black shirt
+person wearing black blouse
+person wearing black shoes
+person wearing black sweater
+person wearing black pants
+person wearing black coat
+person wearing black jacket
+person wearing white t-shirt
+person wearing white shirt
+person wearing white blouse
+person wearing white shoes
+person wearing white sweater
+person wearing white pants
+person wearing white coat
+person wearing white jacket
+person wearing red t-shirt
+person wearing red shirt
+person wearing red blouse
+person wearing red shoes
+person wearing red sweater
+person wearing red pants
+person wearing red coat
+person wearing red jacket
+person wearing orange t-shirt
+person wearing orange shirt
+person wearing orange blouse
+person wearing orange shoes
+person wearing orange sweater
+person wearing orange pants
+person wearing orange coat
+person wearing orange jacket
+person wearing grey t-shirt
+person wearing grey shirt
+person wearing grey blouse
+person wearing grey shoes
+person wearing grey sweater
+person wearing grey pants
+person wearing grey coat
+person wearing grey jacket
+something

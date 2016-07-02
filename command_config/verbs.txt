@@ -22,3 +22,7 @@ deliver
 give
 hand
 answer
+greet
+kill
+meet
+offer

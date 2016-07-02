@@ -1,0 +1,74 @@
+#JSGF V1.0;
+grammar EEGPSR;
+
+public <eegpsr> = [ <advprn1> | <advprn2> | <advprn3> | <advprn4> | <advprn5> | <advprn6> | <advprn7> | <advprn8> | <confirm> ];
+
+<confirm> = ROBOT (YES | NO);
+
+/* GREET PERSON MATCHING DESCRIPTION */
+<advprn1>	= [ <polite> ] GREET THE <gwho>;
+<advprn2>	= [ <polite> ] KILL THE <gwho>;
+<gwho>	= <person> IN THE <room>;
+
+/* BRING TO PERSON MATCHING DESCRIPTION */
+<advprn3>	= [ <polite> ] BRING A <bwho> TO THE <bwho>;
+
+<bwho>  = <object> | <object> PLACED AT <placement> | <person> IN THE <room>;
+
+/* MEET AND GREET PERSON */
+<advprn4>	= <mgreet>;
+
+<mgreet> = MEET <male> AT THE <beacon> THEN (GREET | FIND) HIM IN THE <room> | MEET <female> AT THE <beacon> THEN (GREET | FIND) HER IN THE <room>;
+
+/* COUNT */
+<advprn5>	= [<polite>] TELL ME HOW MANY <people> ARE IN THE <room>;
+<advprn6>	= OFFER SOMETHING TO (EAT | DRINK) TO ALL THE <people> IN THE <room>;
+
+/* FOLLOW & GUIDE */
+<advprn7>	= [<polite>] FIND THE <fgwho> AND FOLLOW THEM;
+<advprn8>	= [<polite>] FIND THE <fgwho> AND GUIDE THEM TO THE (EXIT | <room>);
+<fgwho>	= <person> IN THE <room>;
+
+/* PEOPLE */
+<people> = <ppl> | <posture> <ppl> | <gesture> <ppl> | <ppl> WEARING <outfit> | <color_dressed> <ppl>;
+
+<posture>= STANDING | SITTING | LYING;
+<ppl>    = PEOPLE | CHILDREN | ELDERS | MEN | WOMEN;
+<color_dressed> = BLUE-DRESSED | YELLOW-DRESSED | BLACK-DRESSED | WHITE-DRESSED | RED-DRESSED | ORANGE-DRESSED | GRAY-DRESSED;
+
+/* PERSON */
+<person> = CHILD | <lpdesc> (MAN | WOMAN | PERSON) | (MAN | WOMAN | PERSON) <rpdesc>;
+<lpdesc> = <gesture> | TALLEST | SMALLEST | OLDEST | YOUNGEST | SLIMMEST | FATTEST;
+<rpdesc> = DRESSED WITH <color> <outfit> | WEARING (<apparel> | <color> <outfit>);
+
+<color>	= BLUE | YELLOW | BLACK | WHITE | RED | ORANGE | GRAY;
+<outfit> = T-SHIRT | SHIRT | BLOUSE | SHOES | SWEATER | PANTS | COAT | JACKET;
+<apparel> = HAT | GLASSES | NECKLACE | TIE | EARRINGS;
+
+/* ROOM BEACON PLACEMENT */
+<room>   = OFFICE | LIVING ROOM | CORRIDOR | BEDROOM | KITCHEN | DINING ROOM;
+
+<beacon> = BED | TV STAND | LIVING TABLE | DESK | SINK | DINING TABLE | CABINET;
+
+<placement> = BEDSIDE | LIVING SHELF | TV STAND | LIVING TABLE | DRAWER | DESK | BAR | CUPBOARD | SINK | SIDESHELF | BOOKCASE | DINING TABLE | CABINET | SIDESHELF | BOOKCASE;
+
+/* POLITE */
+<polite> = PLEASE | COULD YOU | ROBOT PLEASE | COULD YOU PLEASE;
+
+/* GESTURE */
+<gesture> = WAVING | RISING LEFT ARM | RISING RIGHT ARM | POINTING LEFT | POINTING RIGHT;
+
+/* NAME */
+<name> = EMMA | TAYLOR | SOPHIA | ISABELLA | AVA | ROBIN | EMILY | ANGEL | MADISON | CHARLOTTE | NOAH | LIAM | MASON | JACOB | WILLIAM | ETHAN | MICHAEL | ALEXANDER | JAMES | DANIEL;
+<female> = EMMA | TAYLOR | SOPHIA | ISABELLA | AVA | ROBIN | EMILY | ANGEL | MADISON | CHARLOTTE;
+<male> = NOAH | LIAM | MASON | JACOB | WILLIAM | ETHAN | MICHAEL | ALEXANDER | JAMES | DANIEL;
+
+/* OBJECT */
+
+<object> = <snacks> | <candies> | <food> | <drinks> | <toiletries> | <containers>;
+<snacks> = CHIPS | PRETZELS | PRINGLES;
+<candies> = CHOCO SYRUP | BISQUITS | BABY SWEETS | EGG;
+<food> = APPLE | PAPRIKA | PUMPER NICKEL;
+<drinks> = TEA | BEER | COKE | COCONUT MILK;
+<toiletries> = SHAMPOO | SOAP | CLOTH | SPPONGE;
+<containers> = BOWL | TRAY | PLATE;
