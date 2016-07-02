@@ -1,0 +1,33 @@
+#JSGF V1.0;
+grammar RESTAURANT;
+public <restaurant_command> = [<follow> | <stop> | <confirm> | <get_order> | <go> | <tell_location> | <bring_order> | <order>];
+
+/* GENERAL COMMAND */
+<follow> = FOLLOW ME;
+<stop> = ROBOT (STOP | WAITING);
+<confirm> = ROBOT ( YES | NO );
+
+/* LOCATION AND DELIVER ORDER */
+<get_order> = ROBOT GET ORDER;
+<go> = GO TO <location>;
+<tell_location> = <location> IS ON MY <sides>;
+<bring_order> = (BRING | TAKE) <object> TO [THE] <location>;
+
+<location> = TABLE ONE | TABLE TWO | TABLE THREE | TABLE FOUR | KITCHEN | KITCHEN BAR;
+<sides> = LEFT | RIGHT;
+
+/* ORDER AND FOOD */
+<order> = I (WILL TAKE | WANT) <combo> | I (WILL TAKE | WANT) [<articles>] <drink>;
+
+<object> = <combo> | <articles> <drink>;
+<combo> = [<articles>] <food> <and> [<articles>] <food>;
+<food> = <candies> | <snacks> | <main_food>;
+
+<candies> = CHOCO SYRUP | BISQUITS | BABY SWEETS | EGG;
+<snacks> = CHIPS | PRETZELS | PRINGLES;
+<main_food> = APPLE | PAPRIKA | PUMPER NICKEL;
+
+<drink> = BEER | COCONUT MILK | COKE | TEA;
+
+<articles> = A | AN | THE;
+<and> = AND | WITH;
