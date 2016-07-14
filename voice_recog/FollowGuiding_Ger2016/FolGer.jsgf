@@ -1,9 +1,10 @@
 #JSGF V1.0;
 grammar Navigate;
-public <navigate> = [ <follow> | <start> | <guide> | <yes> | <no> ];
+public <navigate> = [ <follow> | <start> | <stop> | <guide> | <yes> | <no> ];
 
 <follow> = FOLLOW ME;
 <start> = START;
+<stop> = STOP;
 <guide> = GUIDE BACK;
 <yes> = ROBOT YES;
 <no> = ROBOT NO;
