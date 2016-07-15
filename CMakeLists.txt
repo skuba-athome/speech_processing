@@ -11,6 +11,8 @@ find_package(catkin REQUIRED COMPONENTS
   actionlib
 )
 
+catkin_python_setup()
+
 add_service_files(
   FILES
   Gram.srv

@@ -94,3 +94,5 @@ fabric.properties
 
 # Recorded file
 SKUBA_ShotgunMic_*
+
+*.pyc

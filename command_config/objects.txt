@@ -527,3 +527,4 @@ person wearing grey pants
 person wearing grey coat
 person wearing grey jacket
 something
+how many people
