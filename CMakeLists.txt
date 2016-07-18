@@ -19,8 +19,6 @@ add_service_files(
 )
 
 add_action_files(
-  DIRECTORY 
-  action 
   FILES 
   VoiceReg.action
 )
@@ -31,4 +29,5 @@ generate_messages(
   actionlib_msgs
 )
 
-catkin_package(DEPENDS)
+catkin_package(CATKIN_DEPENDS message_runtime)
+

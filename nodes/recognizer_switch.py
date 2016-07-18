@@ -9,12 +9,12 @@ import roslib; roslib.load_manifest('speech_processing')
 import rospy
 
 from std_msgs.msg import String
-from speech_processing.srv import *
+
 import sys
 
 import actionlib
 import speech_processing.msg
-from include import gram_lm
+from speech_processing_.include import gram_lm
 
 from gi import pygtkcompat
 import gi
