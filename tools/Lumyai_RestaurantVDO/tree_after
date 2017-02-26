@@ -1,0 +1,13 @@
+digraph fq_tree {
+		"root[0] [11]" -> "COKE[0] [0]"
+		"root[0] [11]" -> "COOKIE[0] [0]"
+		"root[0] [11]" -> "FOLLOW ME[0] [0]"
+		"root[0] [11]" -> "I'VE ALREADY TAKE MY ORDER[0] [0]"
+		"root[0] [11]" -> "KITCHEN BAR[0] [0]"
+		"root[0] [11]" -> "LAMYAI ( FOLLOW ME | NO | SERVE ORDER | STANDBY MODE | STOP | TAKE ORDER | YES )[0] [0]"
+		"root[0] [11]" -> "ORANGE JUICE[0] [0]"
+		"root[0] [11]" -> "PLEASE[0] [0]"
+		"root[0] [11]" -> "SNACK[0] [0]"
+		"root[0] [11]" -> "TABLE ( A | B | C )[0] [0]"
+		"root[0] [11]" -> "WATER[0] [0]"
+}

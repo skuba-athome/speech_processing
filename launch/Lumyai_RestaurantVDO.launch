@@ -1,0 +1,7 @@
+<launch>
+  <node name="recognizer_grammar" pkg="speech_processing" type="recognizer_grammar_gst1.py" output="screen">
+    <remap from="recognizer_grammar/output" to="voice/output" />
+    <param name="grammar" value="$(find speech_processing)/voice_recog/Lumyai_RestaurantVDO/lumyai_RestaurantVDO.fsg"/>
+    <param name="dict" value="$(find speech_processing)/voice_recog/Lumyai_RestaurantVDO/lumyai_RestaurantVDO/.dic"/>
+  </node>
+</launch>

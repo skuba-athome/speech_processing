@@ -1,0 +1,39 @@
+#JSGF V1.0;
+grammar TEST;
+public <commands> = ( <command_1> | <command_2> | <command_3> | <command_4> | <command_5> | <command_6> | <command_7> | <command_8> | <command_9> | <command_10> | <command_11> );
+
+<command_1> = COKE;
+<command_2> = COOKIE;
+<command_3> = FOLLOW ME;
+<command_4> = I'VE ALREADY TAKE MY ORDER;
+<command_5> = KITCHEN BAR;
+<command_6> = LAMYAI ( FOLLOW ME | NO | SERVE ORDER | STANDBY MODE | STOP | TAKE ORDER | YES );
+<command_7> = ORANGE JUICE;
+<command_8> = PLEASE;
+<command_9> = SNACK;
+<command_10> = TABLE ( A | B | C );
+<command_11> = WATER;
+
+
+/**
+  * SENTENCES -- 19
+  *     1 COKE
+  *     2 COOKIE
+  *     3 FOLLOW ME
+  *     4 I'VE ALREADY TAKE MY ORDER
+  *     5 KITCHEN BAR
+  *     6 LAMYAI FOLLOW ME
+  *     7 LAMYAI NO
+  *     8 LAMYAI SERVE ORDER
+  *     9 LAMYAI STANDBY MODE
+  *    10 LAMYAI STOP
+  *    11 LAMYAI TAKE ORDER
+  *    12 LAMYAI YES
+  *    13 ORANGE JUICE
+  *    14 PLEASE
+  *    15 SNACK
+  *    16 TABLE A
+  *    17 TABLE B
+  *    18 TABLE C
+  *    19 WATER
+  */
